@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  get 'users/create'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: 'home#index'
+  root to: 'static_pages#root'
 
-  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/:provider/callback', to: 'api/sessions#create'
 
-  delete 'sign_out', to: 'sessions#destroy', as: 'sign_out'
-
-  resource :session, only: [:create, :destroy]
+  namespace :api, defaults: { format: :json } do
+    resource :session, only: [:create, :destroy]
+    resources :users, only: [:create]
+  end
 end
