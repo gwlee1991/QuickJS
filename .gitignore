@@ -15,3 +15,12 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+
+node_modules
+/yarn-error.log
+
+/bundle.js
+/bundle.js.map
+.DS_Store
+/npm-debug.log
