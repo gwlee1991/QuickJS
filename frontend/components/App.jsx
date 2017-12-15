@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
 
 class App extends React.Component {
   render() {
@@ -12,3 +11,5 @@ class App extends React.Component {
 }
 
 export default App;
+// add browserrouter(provides the history object)
+// and set up routes that renders components
