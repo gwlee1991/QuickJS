@@ -1,15 +1,17 @@
-import React from "react";
+import React, {Component} from "react";
+import { Route, Switch } from 'react-router-dom';
+import HeaderContainer from './header/header_container';
 
-class App extends React.Component {
+class App extends Component {
   render() {
     return (
       <div>
-        <a href="/auth/facebook">facebook</a>
+        <header>
+          <HeaderContainer />
+        </header>
       </div>
     );
   }
 }
 
 export default App;
-// add browserrouter(provides the history object)
-// and set up routes that renders components
