@@ -8,6 +8,13 @@ import { Provider } from 'react-redux';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore();
+  if (window.currentUser){
+      const preloadedState = { currentUser: window.currentUser };
+      store = configureStore(preloadedState);
+      delete window.currentUser;
+    } else {
+      store = configureStore();
+    }
   const root = document.getElementById('root');
   ReactDOM.render(
     <Provider store={store}>
