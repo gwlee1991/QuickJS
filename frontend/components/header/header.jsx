@@ -13,4 +13,5 @@ class Header extends Component{
 
 export default Header;
 
-
+//remind to create new branch before start working.
+//the whole gitflow thing.
