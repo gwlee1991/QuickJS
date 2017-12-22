@@ -25639,32 +25639,49 @@ var Header = function (_Component) {
     key: 'logInForm',
     value: function logInForm() {
       return _react2.default.createElement(
-        'form',
-        { onSubmit: this.handleSubmit },
+        'div',
+        null,
         _react2.default.createElement(
-          'label',
-          null,
-          _react2.default.createElement('input', {
-            type: 'email',
-            value: this.state.email,
-            onChange: this.update('email'),
-            placeholder: 'Email address'
-          })
-        ),
-        _react2.default.createElement(
-          'label',
-          null,
-          _react2.default.createElement('input', {
-            type: 'password',
-            value: this.state.password,
-            onChange: this.update('password'),
-            placeholder: 'Password'
-          })
+          'form',
+          { onSubmit: this.handleSubmit },
+          _react2.default.createElement(
+            'label',
+            null,
+            _react2.default.createElement('input', {
+              type: 'email',
+              value: this.state.email,
+              onChange: this.update('email'),
+              placeholder: 'Email address'
+            })
+          ),
+          _react2.default.createElement(
+            'label',
+            null,
+            _react2.default.createElement('input', {
+              type: 'password',
+              value: this.state.password,
+              onChange: this.update('password'),
+              placeholder: 'Password'
+            })
+          ),
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement('input', { type: 'submit', value: 'Submit' })
+          )
         ),
         _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement('input', { type: 'submit', value: 'Submit' })
+          _react2.default.createElement(
+            'span',
+            null,
+            _react2.default.createElement(
+              'a',
+              { href: '/auth/facebook' },
+              'facebook'
+            )
+          )
         )
       );
     }

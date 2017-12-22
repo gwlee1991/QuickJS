@@ -32,28 +32,35 @@ class Header extends Component {
 
   logInForm() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          <input
-            type="email"
-            value={this.state.email}
-            onChange={this.update('email')}
-            placeholder="Email address"
-          />
-        </label>
-        <label>
-          <input
-            type="password"
-            value={this.state.password}
-            onChange={this.update('password')}
-            placeholder="Password"
-          />
-        </label>
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            <input
+              type="email"
+              value={this.state.email}
+              onChange={this.update('email')}
+              placeholder="Email address"
+            />
+          </label>
+          <label>
+            <input
+              type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              placeholder="Password"
+            />
+          </label>
 
+          <div>
+            <input type="submit" value="Submit" />
+          </div>
+        </form>
         <div>
-          <input type="submit" value="Submit" />
+          <span>
+            <a href="/auth/facebook">facebook</a>
+          </span>
         </div>
-      </form>
+      </div>
     );
   }
 
