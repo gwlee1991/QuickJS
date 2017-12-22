@@ -6,7 +6,7 @@ class Api::SessionsController < ApplicationController
       session[:omniauth] = auth.except('extra')
       @user = User.sign_in_from_omniauth(auth)
       session[:user_id] = @user.id
-      render "/api/users/show.json.jbuilder"
+      redirect_to root_url
     else
       @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
       if @user
