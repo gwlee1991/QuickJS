@@ -25610,6 +25610,7 @@ var Header = function (_Component) {
     };
     _this.handleSubmit = _this.handleSubmit.bind(_this);
     _this.sessionField = _this.sessionField.bind(_this);
+    _this.logInForm = _this.logInForm.bind(_this);
     return _this;
   }
 
@@ -25632,7 +25633,40 @@ var Header = function (_Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var user = this.state;
-      this.props.processForm({ user: user });
+      this.props.logIn({ user: user });
+    }
+  }, {
+    key: 'logInForm',
+    value: function logInForm() {
+      return _react2.default.createElement(
+        'form',
+        { onSubmit: this.handleSubmit },
+        _react2.default.createElement(
+          'label',
+          null,
+          _react2.default.createElement('input', {
+            type: 'email',
+            value: this.state.email,
+            onChange: this.update('email'),
+            placeholder: 'Email address'
+          })
+        ),
+        _react2.default.createElement(
+          'label',
+          null,
+          _react2.default.createElement('input', {
+            type: 'password',
+            value: this.state.password,
+            onChange: this.update('password'),
+            placeholder: 'Password'
+          })
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement('input', { type: 'submit', value: 'Submit' })
+        )
+      );
     }
   }, {
     key: 'sessionField',
@@ -25641,19 +25675,23 @@ var Header = function (_Component) {
         return _react2.default.createElement(
           'div',
           null,
-          'SignOut'
+          _react2.default.createElement(
+            'button',
+            { onClick: this.props.logOut },
+            'logOut'
+          )
         );
       }
       return _react2.default.createElement(
         'div',
         null,
-        'SignIn'
+        this.logInForm()
       );
     }
   }, {
     key: 'render',
     value: function render() {
-      console.log(this.props.currentUser);
+      console.log(this.props);
       return _react2.default.createElement(
         'nav',
         null,
@@ -25719,7 +25757,7 @@ var clearSessionErrors = exports.clearSessionErrors = function clearSessionError
 
 var logIn = exports.logIn = function logIn(user) {
   return function (dispatch) {
-    return APIUtil.login(user).then(function (user) {
+    return APIUtil.logIn(user).then(function (user) {
       dispatch(receiveCurrentUser(user));
       dispatch(clearSessionErrors());
     }, function (err) {
@@ -25757,7 +25795,7 @@ var signup = exports.signup = function signup(user) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var login = exports.login = function login(user) {
+var logIn = exports.logIn = function logIn(user) {
   return $.ajax({
     method: 'POST',
     url: '/api/session',
@@ -25765,7 +25803,7 @@ var login = exports.login = function login(user) {
   });
 };
 
-var signup = exports.signup = function signup(user) {
+var signUp = exports.signUp = function signUp(user) {
   return $.ajax({
     method: 'POST',
     url: '/api/users',
@@ -25773,7 +25811,7 @@ var signup = exports.signup = function signup(user) {
   });
 };
 
-var logout = exports.logout = function logout() {
+var logOut = exports.logOut = function logOut() {
   return $.ajax({
     method: 'DELETE',
     url: '/api/session'

@@ -10,6 +10,7 @@ class Header extends Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.sessionField = this.sessionField.bind(this);
+    this.logInForm = this.logInForm.bind(this);
   }
 
   componentWillUnmount() {
@@ -26,18 +27,49 @@ class Header extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.processForm({ user });
+    this.props.logIn({ user });
+  }
+
+  logInForm() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          <input
+            type="email"
+            value={this.state.email}
+            onChange={this.update('email')}
+            placeholder="Email address"
+          />
+        </label>
+        <label>
+          <input
+            type="password"
+            value={this.state.password}
+            onChange={this.update('password')}
+            placeholder="Password"
+          />
+        </label>
+
+        <div>
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    );
   }
 
   sessionField() {
     if (this.props.currentUser) {
-      return <div>SignOut</div>;
+      return (
+        <div>
+          <button onClick={this.props.logOut}>logOut</button>
+        </div>
+      );
     }
-    return <div>SignIn</div>;
+    return <div>{this.logInForm()}</div>;
   }
 
   render() {
-    console.log(this.props.currentUser);
+    console.log(this.props);
     return (
       <nav>
         <div>logo</div>

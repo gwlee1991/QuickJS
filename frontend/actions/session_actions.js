@@ -19,7 +19,7 @@ export const clearSessionErrors = () => ({
 });
 
 export const logIn = user => dispatch =>
-  APIUtil.login(user).then(
+  APIUtil.logIn(user).then(
     (user) => {
       dispatch(receiveCurrentUser(user));
       dispatch(clearSessionErrors());
