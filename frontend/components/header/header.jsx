@@ -11,6 +11,7 @@ class Header extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.sessionField = this.sessionField.bind(this);
     this.logInForm = this.logInForm.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentWillUnmount() {
@@ -50,6 +51,7 @@ class Header extends Component {
               placeholder="Password"
             />
           </label>
+          <div>{this.props.errors ? this.renderErrors() : ''}</div>
 
           <div>
             <input type="submit" value="Submit" />
@@ -75,8 +77,11 @@ class Header extends Component {
     return <div>{this.logInForm()}</div>;
   }
 
+  renderErrors() {
+    return <ul>{this.props.errors.map((error, i) => <li key={`error-${i}`}>{error}</li>)}</ul>;
+  }
+
   render() {
-    console.log(this.props);
     return (
       <nav>
         <div>logo</div>

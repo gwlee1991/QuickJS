@@ -25611,6 +25611,7 @@ var Header = function (_Component) {
     _this.handleSubmit = _this.handleSubmit.bind(_this);
     _this.sessionField = _this.sessionField.bind(_this);
     _this.logInForm = _this.logInForm.bind(_this);
+    _this.renderErrors = _this.renderErrors.bind(_this);
     return _this;
   }
 
@@ -25667,6 +25668,11 @@ var Header = function (_Component) {
           _react2.default.createElement(
             'div',
             null,
+            this.props.errors ? this.renderErrors() : ''
+          ),
+          _react2.default.createElement(
+            'div',
+            null,
             _react2.default.createElement('input', { type: 'submit', value: 'Submit' })
           )
         ),
@@ -25706,9 +25712,23 @@ var Header = function (_Component) {
       );
     }
   }, {
+    key: 'renderErrors',
+    value: function renderErrors() {
+      return _react2.default.createElement(
+        'ul',
+        null,
+        this.props.errors.map(function (error, i) {
+          return _react2.default.createElement(
+            'li',
+            { key: 'error-' + i },
+            error
+          );
+        })
+      );
+    }
+  }, {
     key: 'render',
     value: function render() {
-      console.log(this.props);
       return _react2.default.createElement(
         'nav',
         null,
