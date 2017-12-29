@@ -2034,7 +2034,7 @@ module.exports = g;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.signup = exports.logOut = exports.logIn = exports.clearSessionErrors = exports.receiveSessionErrors = exports.receiveCurrentUser = exports.RECEIVE_SESSION_ERRORS = exports.CLEAR_SESSION_ERRORS = exports.RECEIVE_CURRENT_USER = undefined;
+exports.signUp = exports.logOut = exports.logIn = exports.clearSessionErrors = exports.receiveSessionErrors = exports.receiveCurrentUser = exports.RECEIVE_SESSION_ERRORS = exports.CLEAR_SESSION_ERRORS = exports.RECEIVE_CURRENT_USER = undefined;
 
 var _session_api_util = __webpack_require__(144);
 
@@ -2085,9 +2085,9 @@ var logOut = exports.logOut = function logOut() {
   };
 };
 
-var signup = exports.signup = function signup(user) {
+var signUp = exports.signUp = function signUp(user) {
   return function (dispatch) {
-    return APIUtil.signup(user).then(function (user) {
+    return APIUtil.signUp(user).then(function (user) {
       dispatch(receiveCurrentUser(user));
       dispatch(clearSessionErrors());
     }, function (err) {
@@ -26747,9 +26747,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _reactRedux = __webpack_require__(17);
 
-var _signup2 = __webpack_require__(147);
+var _signup = __webpack_require__(147);
 
-var _signup3 = _interopRequireDefault(_signup2);
+var _signup2 = _interopRequireDefault(_signup);
 
 var _session_actions = __webpack_require__(37);
 
@@ -26767,13 +26767,13 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     clearSessionErrors: function clearSessionErrors() {
       return dispatch((0, _session_actions.clearSessionErrors)());
     },
-    signup: function signup(user) {
-      return dispatch((0, _session_actions.signup)(user));
+    signUp: function signUp(user) {
+      return dispatch((0, _session_actions.signUp)(user));
     }
   };
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_signup3.default);
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_signup2.default);
 
 /***/ }),
 /* 147 */
@@ -26796,6 +26796,8 @@ var _reactRouterDom = __webpack_require__(6);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -26805,13 +26807,65 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var SignUp = function (_Component) {
   _inherits(SignUp, _Component);
 
-  function SignUp() {
+  function SignUp(props) {
     _classCallCheck(this, SignUp);
 
-    return _possibleConstructorReturn(this, (SignUp.__proto__ || Object.getPrototypeOf(SignUp)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (SignUp.__proto__ || Object.getPrototypeOf(SignUp)).call(this, props));
+
+    _this.state = {
+      email: '',
+      password: ''
+    };
+    _this.handleSubmit = _this.handleSubmit.bind(_this);
+    return _this;
   }
 
   _createClass(SignUp, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.signedIn) {
+        this.props.history.push("/");
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.props.clearSessionErrors();
+    }
+  }, {
+    key: 'renderErrors',
+    value: function renderErrors() {
+      if (this.props.errors) {
+        return _react2.default.createElement(
+          'ul',
+          null,
+          this.props.errors.map(function (error, i) {
+            return _react2.default.createElement(
+              'li',
+              { key: 'error-' + i },
+              error
+            );
+          })
+        );
+      }
+    }
+  }, {
+    key: 'updateFields',
+    value: function updateFields(field) {
+      var _this2 = this;
+
+      return function (e) {
+        return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
+      };
+    }
+  }, {
+    key: 'handleSubmit',
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      var user = this.state;
+      this.props.signUp({ user: user });
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -26819,7 +26873,7 @@ var SignUp = function (_Component) {
         null,
         _react2.default.createElement(
           'form',
-          null,
+          { onSubmit: this.handleSubmit },
           _react2.default.createElement(
             'label',
             null,
@@ -26839,6 +26893,19 @@ var SignUp = function (_Component) {
               onChange: this.updateFields('password'),
               type: 'text',
               values: this.state.password
+            })
+          ),
+          _react2.default.createElement(
+            'div',
+            null,
+            this.renderErrors()
+          ),
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement('input', {
+              type: 'submit',
+              value: 'Signup'
             })
           )
         )
