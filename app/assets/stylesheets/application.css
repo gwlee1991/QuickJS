@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ @import './api/main';
+ @import './api/header';
+
+ body{
+   min-height: 100vh;
+ }

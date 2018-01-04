@@ -26531,7 +26531,7 @@ var Header = function (_Component) {
     value: function logInForm() {
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'signin' },
         _react2.default.createElement(
           'form',
           { onSubmit: this.handleSubmit },
@@ -26571,11 +26571,11 @@ var Header = function (_Component) {
           null,
           _react2.default.createElement(
             'span',
-            null,
+            { className: 'facebook' },
             _react2.default.createElement(
               'a',
               { href: '/auth/facebook' },
-              'facebook'
+              '\xA0'
             )
           )
         )
@@ -26621,11 +26621,11 @@ var Header = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'nav',
-        null,
+        { className: 'header' },
         _react2.default.createElement(
-          'div',
+          'h3',
           null,
-          'logo'
+          "QuickJS</>"
         ),
         this.sessionField()
       );
@@ -26714,7 +26714,7 @@ var SplashPage = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'main-body' },
         _react2.default.createElement(
           'h1',
           null,
