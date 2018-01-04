@@ -1,0 +1,28 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, .2);
+  // width: 100vw;
+  padding: .5em;
+  form{
+    display: flex;
+    justify-content: space-around;
+    padding: .3em;
+  }
+  h3{
+    color: white;
+    font-family:'Zilla Slab', serif;
+    font-size: 1.3em;
+  }
+  .signin {
+    display: flex
+  }
+  .facebook {
+    // height: 1em;
+    // width: 3em;
+    a {
+      background-image: url("./facebook.png");
+
+    }
+  }
+}

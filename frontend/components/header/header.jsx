@@ -33,7 +33,7 @@ class Header extends Component {
 
   logInForm() {
     return (
-      <div>
+      <div className="signin">
         <form onSubmit={this.handleSubmit}>
           <label>
             <input
@@ -58,8 +58,8 @@ class Header extends Component {
           </div>
         </form>
         <div>
-          <span>
-            <a href="/auth/facebook">facebook</a>
+          <span className="facebook">
+            <a href="/auth/facebook">&nbsp;</a>
           </span>
         </div>
       </div>
@@ -83,8 +83,8 @@ class Header extends Component {
 
   render() {
     return (
-      <nav>
-        <div>logo</div>
+      <nav className="header">
+        <h3>{"QuickJS</>"}</h3>
         {this.sessionField()}
       </nav>
     );
