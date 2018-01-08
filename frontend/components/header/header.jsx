@@ -51,11 +51,8 @@ class Header extends Component {
               placeholder="Password"
             />
           </label>
-          <div>{this.props.errors ? this.renderErrors() : ''}</div>
 
-          <div>
-            <input type="submit" value="Submit" />
-          </div>
+          <input className="signInButton" type="submit" value="Sign In" />
         </form>
         <div>
           <span className="facebook">
@@ -74,18 +71,29 @@ class Header extends Component {
         </div>
       );
     }
-    return <div>{this.logInForm()}</div>;
+    return this.logInForm();
   }
 
   renderErrors() {
-    return <ul>{this.props.errors.map((error, i) => <li key={`error-${i}`}>{error}</li>)}</ul>;
+    return (
+      <ul style={{ margin: 0, fontFamily: 'Zilla Slab', color: 'red' }}>
+        {this.props.errors.map((error, i) => (
+          <li style={{ listStyleType: 'none', fontSize: '0.7em' }} key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
     return (
-      <nav className="header">
-        <h3>{"QuickJS</>"}</h3>
-        {this.sessionField()}
+      <nav className="navbar">
+        <h3>{'QuickJS</>'}</h3>
+        <div className="sessionform">
+          {this.sessionField()}
+          <div className="errors">{this.props.errors ? this.renderErrors() : ''}</div>
+        </div>
       </nav>
     );
   }

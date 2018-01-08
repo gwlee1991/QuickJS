@@ -1,28 +1,68 @@
-.header{
+.navbar {
   display: flex;
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, .2);
-  // width: 100vw;
-  padding: .5em;
-  form{
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.5em;
+  align-items: center;
+  form {
     display: flex;
     justify-content: space-around;
-    padding: .3em;
+    padding: 0.3em;
+    label {
+      margin: 0 1em;
+    }
+    input {
+      font-size: 1em;
+      height: 1.6em;
+      padding: 0.1em 0.5em;
+      border-radius: 0.2em;
+      border: 0.1em solid #b2ebf2;
+    }
   }
-  h3{
+  .errors {
+    padding-top: 0.2em;
+    height: 1em;
+  }
+  h3 {
     color: white;
-    font-family:'Zilla Slab', serif;
-    font-size: 1.3em;
+    font-family: 'Zilla Slab', serif;
+    font-size: 1.7em;
+    margin: 0 0 0 1.5em;
   }
   .signin {
-    display: flex
-  }
-  .facebook {
-    // height: 1em;
-    // width: 3em;
-    a {
-      background-image: url("./facebook.png");
+    display: flex;
+    padding-top: 0.7em;
 
+    .signInButton {
+      color: #000;
+      background-color: rgba(255, 255, 255, 0.9);
+      -webkit-transition: color 0.15s ease-in-out;
+      transition: color 0.15s ease-in-out;
+      box-sizing: border-box;
+      display: inline-block;
+      padding: 0 1em;
+      vertical-align: top;
+      font-family: 'Zilla Slab', serif;
+      font-weight: 600;
+      font-size: 1em;
+      text-align: center;
+      text-decoration: none;
+      -webkit-transition: all 0.15s ease-in-out;
+      transition: all 0.15s ease-in-out;
+      border-radius: 0.15em;
+      border: none;
+      cursor: pointer;
+      height: 2em;
     }
+    .signInButton:hover {
+      color: grey;
+    }
+  }
+}
+.facebook {
+  // height: 1em;
+  // width: 3em;
+  a {
+    background-image: url('./facebook.png');
   }
 }

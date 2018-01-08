@@ -26555,16 +26555,7 @@ var Header = function (_Component) {
               placeholder: 'Password'
             })
           ),
-          _react2.default.createElement(
-            'div',
-            null,
-            this.props.errors ? this.renderErrors() : ''
-          ),
-          _react2.default.createElement(
-            'div',
-            null,
-            _react2.default.createElement('input', { type: 'submit', value: 'Submit' })
-          )
+          _react2.default.createElement('input', { className: 'signInButton', type: 'submit', value: 'Sign In' })
         ),
         _react2.default.createElement(
           'div',
@@ -26595,22 +26586,18 @@ var Header = function (_Component) {
           )
         );
       }
-      return _react2.default.createElement(
-        'div',
-        null,
-        this.logInForm()
-      );
+      return this.logInForm();
     }
   }, {
     key: 'renderErrors',
     value: function renderErrors() {
       return _react2.default.createElement(
         'ul',
-        null,
+        { style: { margin: 0, fontFamily: 'Zilla Slab', color: 'red' } },
         this.props.errors.map(function (error, i) {
           return _react2.default.createElement(
             'li',
-            { key: 'error-' + i },
+            { style: { listStyleType: 'none', fontSize: '0.7em' }, key: 'error-' + i },
             error
           );
         })
@@ -26621,13 +26608,22 @@ var Header = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'nav',
-        { className: 'header' },
+        { className: 'navbar' },
         _react2.default.createElement(
           'h3',
           null,
-          "QuickJS</>"
+          'QuickJS</>'
         ),
-        this.sessionField()
+        _react2.default.createElement(
+          'div',
+          { className: 'sessionform' },
+          this.sessionField(),
+          _react2.default.createElement(
+            'div',
+            { className: 'errors' },
+            this.props.errors ? this.renderErrors() : ''
+          )
+        )
       );
     }
   }]);
