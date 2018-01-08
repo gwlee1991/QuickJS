@@ -54,11 +54,9 @@ class Header extends Component {
 
           <input className="signInButton" type="submit" value="Sign In" />
         </form>
-        <div>
-          <span className="facebook">
-            <a href="/auth/facebook">&nbsp;</a>
-          </span>
-        </div>
+        <a href="/auth/facebook">
+          <i className="fa fa-facebook-square fa-3x" aria-hidden="true" />
+        </a>
       </div>
     );
   }

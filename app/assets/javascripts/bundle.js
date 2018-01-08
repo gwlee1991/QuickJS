@@ -26558,17 +26558,9 @@ var Header = function (_Component) {
           _react2.default.createElement('input', { className: 'signInButton', type: 'submit', value: 'Sign In' })
         ),
         _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(
-            'span',
-            { className: 'facebook' },
-            _react2.default.createElement(
-              'a',
-              { href: '/auth/facebook' },
-              '\xA0'
-            )
-          )
+          'a',
+          { href: '/auth/facebook' },
+          _react2.default.createElement('i', { className: 'fa fa-facebook-square fa-3x', 'aria-hidden': 'true' })
         )
       );
     }
@@ -26720,6 +26712,15 @@ var SplashPage = function (_Component) {
           'h2',
           null,
           'A quick overview of JavaScript for beginners!'
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/signup' },
+          _react2.default.createElement(
+            'div',
+            { className: 'signUpButton' },
+            'Sign Up'
+          )
         )
       );
     }

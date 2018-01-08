@@ -32,6 +32,7 @@
   .signin {
     display: flex;
     padding-top: 0.7em;
+    align-items: center;
 
     .signInButton {
       color: #000;
@@ -59,11 +60,8 @@
       color: grey;
     }
   }
-}
-.facebook {
-  // height: 1em;
-  // width: 3em;
-  a {
-    background-image: url('./facebook.png');
+  i {
+    color: #3b5998;
+    margin: 0 0.3em;
   }
 }
