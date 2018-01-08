@@ -9,7 +9,7 @@
     justify-content: space-around;
     padding: 0.3em;
     label {
-      margin: 0 1em;
+      margin-right: 0.6em;
     }
     input {
       font-size: 1em;
@@ -53,6 +53,7 @@
       border: none;
       cursor: pointer;
       height: 2em;
+      margin-left: 0.6em;
     }
     .signInButton:hover {
       color: grey;
