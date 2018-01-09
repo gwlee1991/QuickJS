@@ -1,31 +1,55 @@
 $base: 0.75em;
 
 body {
- background-image: url("./main.jpg");
- background-size: cover;
- background-repeat: no-repeat;
- // background-attachment: fixed;
- background-position: center;
- min-height: 100%;
- margin: 0;
+  background-image: url('https://s3-us-west-1.amazonaws.com/quickjs/splash.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100%;
+  margin: 0;
 }
 
-.main-body{
+.main-body {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   min-height: 80vh;
-  h1{
-    color: rgba(255, 255, 255, .9);
-    font-family:'Zilla Slab', serif;
+  h1 {
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Zilla Slab', serif;
     font-weight: 400;
     font-size: $base*5;
   }
-  h2{
-    color: rgba(255, 255, 255, .9);
-    font-family:'Zilla Slab', serif;
+  h2 {
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Zilla Slab', serif;
     font-weight: 400;
     font-size: $base*3;
+  }
+  .signUpButton {
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-transition: color 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0 1em;
+    vertical-align: top;
+    font-family: 'Zilla Slab', serif;
+    font-weight: 600;
+    font-size: 3em;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+    border-radius: 0.15em;
+    border: none;
+    cursor: pointer;
+    height: 2em;
+    line-height: 2em;
+  }
+  .signUpButton:hover {
+    color: grey;
   }
 }
