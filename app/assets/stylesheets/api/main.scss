@@ -38,7 +38,7 @@ body {
     vertical-align: top;
     font-family: 'Zilla Slab', serif;
     font-weight: 600;
-    font-size: 1em;
+    font-size: 3em;
     text-align: center;
     text-decoration: none;
     -webkit-transition: all 0.15s ease-in-out;
@@ -47,6 +47,7 @@ body {
     border: none;
     cursor: pointer;
     height: 2em;
+    line-height: 2em;
   }
   .signUpButton:hover {
     color: grey;
