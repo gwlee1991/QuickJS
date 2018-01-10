@@ -3152,9 +3152,9 @@ var _header_container = __webpack_require__(119);
 
 var _header_container2 = _interopRequireDefault(_header_container);
 
-var _splash_page = __webpack_require__(145);
+var _splash_page_container = __webpack_require__(221);
 
-var _splash_page2 = _interopRequireDefault(_splash_page);
+var _splash_page_container2 = _interopRequireDefault(_splash_page_container);
 
 var _signup_container = __webpack_require__(146);
 
@@ -3194,7 +3194,7 @@ var App = function (_Component) {
           _reactRouterDom.Switch,
           null,
           _react2.default.createElement(_routes_util.AuthRoute, { path: '/signup', component: _signup_container2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _splash_page2.default })
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _splash_page_container2.default })
         )
       );
     }
@@ -26570,11 +26570,11 @@ var Header = function (_Component) {
       if (this.props.currentUser) {
         return _react2.default.createElement(
           'div',
-          null,
+          { className: 'signin', style: { marginRight: '2em' } },
           _react2.default.createElement(
             'button',
-            { onClick: this.props.logOut },
-            'logOut'
+            { className: 'signInButton', onClick: this.props.logOut },
+            'Sign Out'
           )
         );
       }
@@ -26691,13 +26691,32 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var SplashPage = function (_Component) {
   _inherits(SplashPage, _Component);
 
-  function SplashPage() {
+  function SplashPage(props) {
     _classCallCheck(this, SplashPage);
 
-    return _possibleConstructorReturn(this, (SplashPage.__proto__ || Object.getPrototypeOf(SplashPage)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (SplashPage.__proto__ || Object.getPrototypeOf(SplashPage)).call(this, props));
+
+    _this.signUpButton = _this.signUpButton.bind(_this);
+    return _this;
   }
 
   _createClass(SplashPage, [{
+    key: 'signUpButton',
+    value: function signUpButton() {
+      if (!this.props.currentUser) {
+        return _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/signup', id: 'signUpButton' },
+          _react2.default.createElement(
+            'div',
+            { className: 'signUpButton' },
+            'Sign Up'
+          )
+        );
+      }
+      return null;
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -26713,15 +26732,7 @@ var SplashPage = function (_Component) {
           null,
           'A quick overview of JavaScript for beginners!'
         ),
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/signup' },
-          _react2.default.createElement(
-            'div',
-            { className: 'signUpButton' },
-            'Sign Up'
-          )
-        )
+        this.signUpButton()
       );
     }
   }]);
@@ -29278,6 +29289,35 @@ function isIterateeCall(value, index, object) {
 
 module.exports = isIterateeCall;
 
+
+/***/ }),
+/* 221 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(17);
+
+var _splash_page = __webpack_require__(145);
+
+var _splash_page2 = _interopRequireDefault(_splash_page);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var session = _ref.session;
+  return {
+    currentUser: session.currentUser,
+    errors: session.errors
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(_splash_page2.default);
 
 /***/ })
 /******/ ]);

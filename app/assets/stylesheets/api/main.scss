@@ -20,12 +20,14 @@ body {
     font-family: 'Zilla Slab', serif;
     font-weight: 400;
     font-size: $base*5;
+    margin: 2em 0 0 0;
   }
   h2 {
     color: rgba(255, 255, 255, 0.9);
     font-family: 'Zilla Slab', serif;
     font-weight: 400;
     font-size: $base*3;
+    margin: 0.1em 0;
   }
   .signUpButton {
     color: #000;
@@ -34,11 +36,11 @@ body {
     transition: color 0.15s ease-in-out;
     box-sizing: border-box;
     display: inline-block;
-    padding: 0 1em;
+    padding: 0.5em 1.5em;
     vertical-align: top;
     font-family: 'Zilla Slab', serif;
     font-weight: 600;
-    font-size: 3em;
+    font-size: 2em;
     text-align: center;
     text-decoration: none;
     -webkit-transition: all 0.15s ease-in-out;
@@ -46,8 +48,7 @@ body {
     border-radius: 0.15em;
     border: none;
     cursor: pointer;
-    height: 2em;
-    line-height: 2em;
+    margin: 1.5em 0;
   }
   .signUpButton:hover {
     color: grey;
