@@ -64,8 +64,10 @@ class Header extends Component {
   sessionField() {
     if (this.props.currentUser) {
       return (
-        <div>
-          <button onClick={this.props.logOut}>logOut</button>
+        <div className="signin" style={{ marginRight: '2em' }}>
+          <button className="signInButton" onClick={this.props.logOut}>
+            Sign Out
+          </button>
         </div>
       );
     }
