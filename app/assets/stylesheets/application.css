@@ -16,6 +16,7 @@
 
 @import './api/main';
 @import './api/header';
+@import './api/signup';
 
 body {
   min-height: 100vh;
