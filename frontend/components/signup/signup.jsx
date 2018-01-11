@@ -88,8 +88,8 @@ class SignUp extends Component {
               <label>
                 Email:
                 <input
+                  type="email"
                   onChange={this.updateFields('email')}
-                  type="text"
                   values={this.state.email}
                 />
               </label>
@@ -101,7 +101,7 @@ class SignUp extends Component {
                   values={this.state.password}
                 />
               </label>
-              <div>{this.renderErrors()}</div>
+              <div className="errors">{this.props.signUpErrors ? this.renderErrors() : ''}</div>
               <input className="signUpButton" type="submit" value="Sign Up" />
             </form>
           </div>

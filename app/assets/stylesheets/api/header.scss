@@ -21,8 +21,11 @@
     }
   }
   .errors {
-    padding-top: 0.2em;
+    // padding-top: 0.2em;
     height: 1em;
+    ul {
+      padding-left: 1em;
+    }
   }
   h3 {
     color: white;
