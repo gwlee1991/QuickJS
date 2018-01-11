@@ -2,35 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 
-const customStyles = {
-  overlay: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    zIndex: 10,
-  },
-  content: {
-    position: 'fixed',
-    height: '28em',
-    width: '21em',
-    top: '50%',
-    left: '50%',
-    border: '0.1em solid black',
-    transform: 'translate(-50%, -50%)',
-    padding: '1em',
-    overflow: 'hidden',
-    WebkitOverflowScrolling: 'touch',
-    outline: 'none',
-    borderRadius: '0.1em',
-    zIndex: 11,
-    opacity: 100,
-    transition: 'opacity 0.5s',
-  },
-};
-
 class SignUp extends Component {
   constructor(props) {
     super(props);
@@ -44,9 +15,14 @@ class SignUp extends Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
-  openModal() {
+  componentWillMount() {
     this.props.clearSessionErrors();
-    this.setState({ modalIsOpen: true });
+  }
+
+  openModal() {
+    this.setState({ modalIsOpen: true }, () => {
+      this.props.clearSessionErrors();
+    });
   }
 
   closeModal() {
@@ -60,12 +36,16 @@ class SignUp extends Component {
       this.props.history.push('/');
     }
   }
+
   componentWillUnmount() {
     this.props.clearSessionErrors();
   }
+
   renderErrors() {
-    if (this.props.errors) {
-      return <ul>{this.props.errors.map((error, i) => <li key={`error-${i}`}>{error}</li>)}</ul>;
+    if (this.props.signUpErrors) {
+      return (
+        <ul>{this.props.signUpErrors.map((error, i) => <li key={`error-${i}`}>{error}</li>)}</ul>
+      );
     }
   }
   updateFields(field) {

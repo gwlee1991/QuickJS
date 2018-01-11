@@ -8,17 +8,20 @@ import { Provider } from 'react-redux';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore();
-  if (window.currentUser){
-      const preloadedState = { session: { currentUser: window.currentUser }};
-      store = configureStore(preloadedState);
-      delete window.currentUser;
-    } else {
-      store = configureStore();
-    }
+  if (window.currentUser) {
+    const preloadedState = { session: { currentUser: window.currentUser } };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
+  window.getState = store.getState;
   const root = document.getElementById('root');
   ReactDOM.render(
     <Provider store={store}>
       <Root />
-    </Provider>, root);
+    </Provider>,
+    root,
+  );
 });
 // add provider around App to provide state to all children compoenents
