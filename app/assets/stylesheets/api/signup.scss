@@ -1,11 +1,11 @@
-.close{
+.close {
   display: flex;
   justify-content: flex-end;
-  i{
+  i {
     color: red;
   }
 }
-.signup-main{
+.signup-main {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -14,20 +14,30 @@
   form {
     display: flex;
     flex-direction: column;
-  }
-  h1{
     font-family: 'Zilla Slab', serif;
+    width: 85%;
   }
-  h2{
+  h1 {
     font-family: 'Zilla Slab', serif;
+    margin: 0.5em 0;
+  }
+  h2 {
+    font-family: 'Zilla Slab', serif;
+    margin: 0 0 0.5em 0;
   }
   input {
+    font-family: 'Zilla Slab', serif;
     font-size: 1em;
     height: 1.6em;
     padding: 0.1em 0.5em;
     border-radius: 0.2em;
     border: 0.1em solid #b2ebf2;
-    margin-bottom: .8em;
+    margin-bottom: 0.4em;
+    margin-top: 0.5em;
+  }
+  .errors {
+    height: 1em;
+    margin-top: 0.5em;
   }
   .signUpButton {
     color: #000;
@@ -37,7 +47,7 @@
     box-sizing: border-box;
     display: inline-block;
     padding: 0 1.5em;
-    vertical-align: top;
+    vertical-align: bottom;
     font-family: 'Zilla Slab', serif;
     font-weight: 600;
     font-size: 1.5em;
@@ -49,16 +59,46 @@
     border: 1px solid black;
     cursor: pointer;
     height: 2.2em;
+    margin-top: 1.5em;
   }
   .signUpButton:hover {
     color: grey;
   }
-  label{
+  label {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 10px;
+    padding-top: 1em;
     font-family: 'Zilla Slab', serif;
+    font-weight: bold;
+  }
+}
 
+.ReactModalPortal {
+  .ReactModal__Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    z-index: 10;
+  }
+  .ReactModal__Content {
+    position: fixed;
+    height: 28em;
+    width: 23em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.5em;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: none;
+    border-radius: 0.2em;
+    z-index: 11;
+    opacity: 100;
+    transition: opacity 0.5s;
+    background-color: white;
   }
 }

@@ -2034,7 +2034,7 @@ module.exports = g;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.signUp = exports.logOut = exports.logIn = exports.clearSessionErrors = exports.receiveSessionErrors = exports.receiveCurrentUser = exports.RECEIVE_SESSION_ERRORS = exports.CLEAR_SESSION_ERRORS = exports.RECEIVE_CURRENT_USER = undefined;
+exports.signUp = exports.logOut = exports.logIn = exports.clearSessionErrors = exports.receiveSignInErrors = exports.receiveSignUpErrors = exports.receiveCurrentUser = exports.RECEIVE_SIGNUP_ERRORS = exports.RECEIVE_SIGNIN_ERRORS = exports.CLEAR_SESSION_ERRORS = exports.RECEIVE_CURRENT_USER = undefined;
 
 var _session_api_util = __webpack_require__(148);
 
@@ -2044,7 +2044,8 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var RECEIVE_CURRENT_USER = exports.RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 var CLEAR_SESSION_ERRORS = exports.CLEAR_SESSION_ERRORS = 'CLEAR_SESSION_ERRORS';
-var RECEIVE_SESSION_ERRORS = exports.RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
+var RECEIVE_SIGNIN_ERRORS = exports.RECEIVE_SIGNIN_ERRORS = 'RECEIVE_SIGNIN_ERRORS';
+var RECEIVE_SIGNUP_ERRORS = exports.RECEIVE_SIGNUP_ERRORS = 'RECEIVE_SIGNUP_ERRORS';
 
 var receiveCurrentUser = exports.receiveCurrentUser = function receiveCurrentUser(currentUser) {
   return {
@@ -2053,9 +2054,16 @@ var receiveCurrentUser = exports.receiveCurrentUser = function receiveCurrentUse
   };
 };
 
-var receiveSessionErrors = exports.receiveSessionErrors = function receiveSessionErrors(errors) {
+var receiveSignUpErrors = exports.receiveSignUpErrors = function receiveSignUpErrors(errors) {
   return {
-    type: RECEIVE_SESSION_ERRORS,
+    type: RECEIVE_SIGNUP_ERRORS,
+    errors: errors
+  };
+};
+
+var receiveSignInErrors = exports.receiveSignInErrors = function receiveSignInErrors(errors) {
+  return {
+    type: RECEIVE_SIGNIN_ERRORS,
     errors: errors
   };
 };
@@ -2072,7 +2080,7 @@ var logIn = exports.logIn = function logIn(user) {
       dispatch(receiveCurrentUser(user));
       dispatch(clearSessionErrors());
     }, function (err) {
-      dispatch(receiveSessionErrors(err.responseJSON));
+      dispatch(receiveSignInErrors(err.responseJSON));
     });
   };
 };
@@ -2091,7 +2099,7 @@ var signUp = exports.signUp = function signUp(user) {
       dispatch(receiveCurrentUser(user));
       dispatch(clearSessionErrors());
     }, function (err) {
-      return dispatch(receiveSessionErrors(err.responseJSON));
+      return dispatch(receiveSignUpErrors(err.responseJSON));
     });
   };
 };
@@ -4663,6 +4671,7 @@ document.addEventListener('DOMContentLoaded', function () {
   } else {
     store = (0, _store2.default)();
   }
+  window.getState = store.getState;
   var root = document.getElementById('root');
   _reactDom2.default.render(_react2.default.createElement(
     _reactRedux.Provider,
@@ -25512,9 +25521,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mapStateToProps = function mapStateToProps(_ref) {
   var session = _ref.session;
+
+  var errors = session.errors ? session.errors.signIn : [];
   return {
     currentUser: session.currentUser,
-    errors: session.errors
+    signInErrors: errors
   };
 };
 
@@ -26791,7 +26802,7 @@ var Header = function (_Component) {
       return _react2.default.createElement(
         'ul',
         { style: { margin: 0, fontFamily: 'Zilla Slab', color: 'red' } },
-        this.props.errors.map(function (error, i) {
+        this.props.signInErrors.map(function (error, i) {
           return _react2.default.createElement(
             'li',
             { style: { listStyleType: 'none', fontSize: '0.7em' }, key: 'error-' + i },
@@ -26818,7 +26829,7 @@ var Header = function (_Component) {
           _react2.default.createElement(
             'div',
             { className: 'errors' },
-            this.props.errors ? this.renderErrors() : ''
+            this.props.signInErrors ? this.renderErrors() : ''
           )
         )
       );
@@ -26887,9 +26898,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mapStateToProps = function mapStateToProps(_ref) {
   var session = _ref.session;
+
+  var errors = session.errors ? session.errors.signUp : [];
   return {
     currentUser: session.currentUser,
-    errors: session.errors
+    signInErrors: errors
   };
 };
 
@@ -27000,7 +27013,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var mapStateToProps = function mapStateToProps(_ref) {
   var session = _ref.session;
   return {
-    errors: session.errors
+    signUpErrors: session.errors.signUp
   };
 };
 
@@ -27050,35 +27063,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var customStyles = {
-  overlay: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    zIndex: 10
-  },
-  content: {
-    position: 'fixed',
-    height: "400px",
-    width: "250px",
-    top: '50%',
-    left: '50%',
-    border: '1px solid black',
-    "transform": 'translate(-50%, -50%)',
-    padding: '36px',
-    overflow: 'auto',
-    WebkitOverflowScrolling: 'touch',
-    outline: 'none',
-    borderRadius: '3px',
-    zIndex: 11,
-    opacity: 100,
-    transition: 'opacity 0.5s'
-  }
-};
-
 var SignUp = function (_Component) {
   _inherits(SignUp, _Component);
 
@@ -27099,23 +27083,31 @@ var SignUp = function (_Component) {
   }
 
   _createClass(SignUp, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      this.props.clearSessionErrors();
+    }
+  }, {
     key: 'openModal',
     value: function openModal() {
-      this.props.clearSessionErrors();
-      this.setState({ modalIsOpen: true });
+      var _this2 = this;
+
+      this.setState({ modalIsOpen: true }, function () {
+        _this2.props.clearSessionErrors();
+      });
     }
   }, {
     key: 'closeModal',
     value: function closeModal() {
       this.props.clearSessionErrors();
       this.setState({ modalIsOpen: false });
-      this.props.history.push("/");
+      this.props.history.push('/');
     }
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       if (nextProps.signedIn) {
-        this.props.history.push("/");
+        this.props.history.push('/');
       }
     }
   }, {
@@ -27126,14 +27118,14 @@ var SignUp = function (_Component) {
   }, {
     key: 'renderErrors',
     value: function renderErrors() {
-      if (this.props.errors) {
+      if (this.props.signUpErrors) {
         return _react2.default.createElement(
           'ul',
-          null,
-          this.props.errors.map(function (error, i) {
+          { style: { margin: 0, fontFamily: 'Zilla Slab', color: 'red' } },
+          this.props.signUpErrors.map(function (error, i) {
             return _react2.default.createElement(
               'li',
-              { key: 'error-' + i },
+              { style: { listStyleType: 'none', fontSize: '0.7em' }, key: 'error-' + i },
               error
             );
           })
@@ -27143,10 +27135,10 @@ var SignUp = function (_Component) {
   }, {
     key: 'updateFields',
     value: function updateFields(field) {
-      var _this2 = this;
+      var _this3 = this;
 
       return function (e) {
-        return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
+        return _this3.setState(_defineProperty({}, field, e.currentTarget.value));
       };
     }
   }, {
@@ -27167,9 +27159,10 @@ var SignUp = function (_Component) {
         {
           isOpen: this.state.modalIsOpen,
           onRequestClose: this.closeModal,
-          style: customStyles,
           contentLabel: 'Signup Modal',
-          ariaHideApp: false },
+          ariaHideApp: false,
+          className: 'ReactModalPortal'
+        },
         _react2.default.createElement(
           'div',
           null,
@@ -27199,8 +27192,8 @@ var SignUp = function (_Component) {
                 null,
                 'Email:',
                 _react2.default.createElement('input', {
+                  type: 'email',
                   onChange: this.updateFields('email'),
-                  type: 'text',
                   values: this.state.email
                 })
               ),
@@ -27216,14 +27209,10 @@ var SignUp = function (_Component) {
               ),
               _react2.default.createElement(
                 'div',
-                null,
-                this.renderErrors()
+                { className: 'errors' },
+                this.props.signUpErrors ? this.renderErrors() : ''
               ),
-              _react2.default.createElement('input', {
-                className: 'signUpButton',
-                type: 'submit',
-                value: 'Sign Up'
-              })
+              _react2.default.createElement('input', { className: 'signUpButton', type: 'submit', value: 'Sign Up' })
             )
           )
         )
@@ -28360,7 +28349,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var nullUser = Object.freeze({
   currentUser: null,
-  errors: []
+  errors: { signIn: [], signUp: [] }
 });
 
 var SessionReducer = function SessionReducer() {
@@ -28372,11 +28361,18 @@ var SessionReducer = function SessionReducer() {
     case _session_actions.RECEIVE_CURRENT_USER:
       var currentUser = action.currentUser;
       return (0, _merge2.default)({}, state, { currentUser: currentUser });
-    case _session_actions.RECEIVE_SESSION_ERRORS:
-      var errors = action.errors;
-      return (0, _merge2.default)({}, state, { errors: errors });
+
+    case _session_actions.RECEIVE_SIGNIN_ERRORS:
+      var signInErrors = action.errors;
+      return (0, _merge2.default)({}, state, { errors: { signIn: signInErrors, signUp: [] } });
+
+    case _session_actions.RECEIVE_SIGNUP_ERRORS:
+      var signUpErrors = action.errors;
+      return (0, _merge2.default)({}, state, { errors: { signIn: [], signUp: signUpErrors } });
+
     case _session_actions.CLEAR_SESSION_ERRORS:
-      return Object.assign({}, state, { errors: [] });
+      return Object.assign({}, state, { errors: { signIn: [], signUp: [] } });
+
     default:
       return state;
   }

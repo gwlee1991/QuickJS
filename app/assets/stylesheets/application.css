@@ -14,7 +14,7 @@
  *= require_self
  */
 
-@import './api/main';
+@import './api/splash';
 @import './api/header';
 @import './api/signup';
 

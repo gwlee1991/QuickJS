@@ -77,7 +77,7 @@ class Header extends Component {
   renderErrors() {
     return (
       <ul style={{ margin: 0, fontFamily: 'Zilla Slab', color: 'red' }}>
-        {this.props.errors.map((error, i) => (
+        {this.props.signInErrors.map((error, i) => (
           <li style={{ listStyleType: 'none', fontSize: '0.7em' }} key={`error-${i}`}>
             {error}
           </li>
@@ -92,7 +92,7 @@ class Header extends Component {
         <h3>{'QuickJS</>'}</h3>
         <div className="sessionform">
           {this.sessionField()}
-          <div className="errors">{this.props.errors ? this.renderErrors() : ''}</div>
+          <div className="errors">{this.props.signInErrors ? this.renderErrors() : ''}</div>
         </div>
       </nav>
     );
