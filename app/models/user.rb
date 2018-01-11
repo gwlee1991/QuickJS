@@ -1,14 +1,15 @@
 class User < ApplicationRecord
   validates :email, uniqueness: true
   validate :oauth_or_email
-  validate :password_if_email_entered
   after_initialize :ensure_session_token
 
   attr_reader :password
 
   def oauth_or_email
-    unless [:uid, :email].any?{ |val| val.present? }
-      errors.add :base, 'either sign in with facebook or enter email'
+    if self.uid == nil && self.email.length == 0
+      errors.add :base, 'please enter email or log in with facebook'
+    elsif self.uid == nil && self.email.length != 0 && self.password.length < 8
+      errors.add :base, "password has to be longer than 7 characters"
     end
   end
 
@@ -21,11 +22,6 @@ class User < ApplicationRecord
     user
   end
 
-  def password_if_email_entered
-    if :email && :password.length < 8
-      errors.add :base, 'password has to be longer than 7 characters'
-    end
-  end
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
