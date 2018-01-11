@@ -1,11 +1,11 @@
-.close{
+.close {
   display: flex;
   justify-content: flex-end;
-  i{
+  i {
     color: red;
   }
 }
-.signup-main{
+.signup-main {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -15,10 +15,10 @@
     display: flex;
     flex-direction: column;
   }
-  h1{
+  h1 {
     font-family: 'Zilla Slab', serif;
   }
-  h2{
+  h2 {
     font-family: 'Zilla Slab', serif;
   }
   input {
@@ -27,7 +27,7 @@
     padding: 0.1em 0.5em;
     border-radius: 0.2em;
     border: 0.1em solid #b2ebf2;
-    margin-bottom: .8em;
+    margin-bottom: 0.8em;
   }
   .signUpButton {
     color: #000;
@@ -53,12 +53,40 @@
   .signUpButton:hover {
     color: grey;
   }
-  label{
+  label {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 10px;
     font-family: 'Zilla Slab', serif;
+  }
+}
 
+.ReactModalPortal {
+  .ReactModal__Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    z-index: 10;
+  }
+  .ReactModal__Content {
+    position: fixed;
+    height: 25em;
+    width: 21em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1em;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: none;
+    border-radius: 0.1em;
+    z-index: 11;
+    opacity: 100;
+    transition: opacity 0.5s;
+    background-color: white;
   }
 }

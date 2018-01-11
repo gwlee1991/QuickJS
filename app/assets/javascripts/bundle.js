@@ -27062,17 +27062,17 @@ var customStyles = {
   },
   content: {
     position: 'fixed',
-    height: "400px",
-    width: "250px",
+    height: '28em',
+    width: '21em',
     top: '50%',
     left: '50%',
-    border: '1px solid black',
-    "transform": 'translate(-50%, -50%)',
-    padding: '36px',
-    overflow: 'auto',
+    border: '0.1em solid black',
+    transform: 'translate(-50%, -50%)',
+    padding: '1em',
+    overflow: 'hidden',
     WebkitOverflowScrolling: 'touch',
     outline: 'none',
-    borderRadius: '3px',
+    borderRadius: '0.1em',
     zIndex: 11,
     opacity: 100,
     transition: 'opacity 0.5s'
@@ -27109,13 +27109,13 @@ var SignUp = function (_Component) {
     value: function closeModal() {
       this.props.clearSessionErrors();
       this.setState({ modalIsOpen: false });
-      this.props.history.push("/");
+      this.props.history.push('/');
     }
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       if (nextProps.signedIn) {
-        this.props.history.push("/");
+        this.props.history.push('/');
       }
     }
   }, {
@@ -27167,9 +27167,10 @@ var SignUp = function (_Component) {
         {
           isOpen: this.state.modalIsOpen,
           onRequestClose: this.closeModal,
-          style: customStyles,
           contentLabel: 'Signup Modal',
-          ariaHideApp: false },
+          ariaHideApp: false,
+          className: 'ReactModalPortal'
+        },
         _react2.default.createElement(
           'div',
           null,
@@ -27219,11 +27220,7 @@ var SignUp = function (_Component) {
                 null,
                 this.renderErrors()
               ),
-              _react2.default.createElement('input', {
-                className: 'signUpButton',
-                type: 'submit',
-                value: 'Sign Up'
-              })
+              _react2.default.createElement('input', { className: 'signUpButton', type: 'submit', value: 'Sign Up' })
             )
           )
         )
