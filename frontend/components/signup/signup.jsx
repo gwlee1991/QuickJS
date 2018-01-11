@@ -44,7 +44,13 @@ class SignUp extends Component {
   renderErrors() {
     if (this.props.signUpErrors) {
       return (
-        <ul>{this.props.signUpErrors.map((error, i) => <li key={`error-${i}`}>{error}</li>)}</ul>
+        <ul style={{ margin: 0, fontFamily: 'Zilla Slab', color: 'red' }}>
+          {this.props.signUpErrors.map((error, i) => (
+            <li style={{ listStyleType: 'none', fontSize: '0.7em' }} key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
       );
     }
   }
