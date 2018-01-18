@@ -97,29 +97,14 @@ const curriculum3 = [
             "",
 
             "List of Arithmetic Assignments:",
-            "+=        : Addition",
-            "-=        : Subtraction",
-            "*=        : Multiplication",
-            "/=        : Division",
-            "%=        : Modulo",
-            "++        : Add 1",
-            "--        : Subtract 1",
+            "+=   : Addition         Ex: x += y       Same as: x = x + y",
+            "-=   : Subtraction      Ex: x -= y       Same as: x = x - y",
+            "*=   : Multiplication   Ex: x *= y       Same as: x = x * y",
+            "/=   : Division         Ex: x /= y       Same as: x = x / y",
+            "%=   : Modulo           Ex: x %= y       Same as: x = x % y",
+            "++   : Add 1            Ex: x++          Same as: x += 1",
+            "--   : Subtract 1       Ex: x--          Same as: x -= 1",
             "",
-
-            "While the '++' and '--' operators seem different, they are essentially just adding 1 or subtracting 1 from the variable.",
-            "",
-
-            "Increment: ++",
-            "var x = 4",
-            "x++",
-            "x === 5",
-
-            "",
-            "Decrement: --",
-            "let x = 4",
-            "x--;",
-            "x === 3",
-            "These can simply be read as 'x += 1' or 'x -= 1'"
           ]
         ]
       }
