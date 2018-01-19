@@ -6,9 +6,9 @@ class User < ApplicationRecord
   attr_reader :password
 
   def oauth_or_email
-    if self.uid == nil && self.email.length == 0
+    if self.uid == nil && self.email.nil? && self.email.length == 0
       errors.add :base, 'please enter email or log in with facebook'
-    elsif self.uid == nil && self.email.length != 0 && self.password.length < 8
+    elsif self.uid == nil && self.email.nil? && self.email.length != 0 && self.password.length < 8
       errors.add :base, "password has to be longer than 7 characters"
     end
   end

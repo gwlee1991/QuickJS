@@ -70,6 +70,7 @@ class SignUp extends Component {
     };
     this.props.signUp({ user });
   }
+  
   render() {
     if (this.state.modalIsOpen === undefined) {
       this.openModal();

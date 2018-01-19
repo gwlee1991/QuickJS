@@ -1,6 +1,6 @@
-const curriculum3 = [
+export const curriculum = 
   {
-    title: "Chapter3",
+    title: "Chapter2",
     topics: [
       {
         title: "JavaScript Arithmetic Operators",
@@ -128,7 +128,4 @@ const curriculum3 = [
         ]
       }
     ]
-  }
-];
-
-export default curriculum3;
+  };

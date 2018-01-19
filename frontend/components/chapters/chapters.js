@@ -5,7 +5,8 @@ class Chapter extends Component{
   render(){
     return(
       <div>
-        {this.props.chapter}
+        {this.props.chapter.title}
+        {this.props.chapter.subtitle}
       </div>
     );
   }
