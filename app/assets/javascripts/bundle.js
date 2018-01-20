@@ -3215,6 +3215,10 @@ var _signup_container = __webpack_require__(151);
 
 var _signup_container2 = _interopRequireDefault(_signup_container);
 
+var _mainpage_container = __webpack_require__(233);
+
+var _mainpage_container2 = _interopRequireDefault(_mainpage_container);
+
 var _routes_util = __webpack_require__(160);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -3248,6 +3252,7 @@ var App = function (_Component) {
         _react2.default.createElement(
           _reactRouterDom.Switch,
           null,
+          _react2.default.createElement(_routes_util.ProtectedRoute, { path: '/main', component: _mainpage_container2.default }),
           _react2.default.createElement(_routes_util.AuthRoute, { path: '/signup', component: _signup_container2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _splash_page_container2.default })
         )
@@ -27109,7 +27114,7 @@ var SignUp = function (_Component) {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       if (nextProps.signedIn) {
-        this.props.history.push('/');
+        this.props.history.push('/main');
       }
     }
   }, {
@@ -28207,7 +28212,7 @@ var Protected = function Protected(_ref2) {
       loggedIn = _ref2.loggedIn,
       exact = _ref2.exact;
   return _react2.default.createElement(_reactRouterDom.Route, { path: path, render: function render(props) {
-      return loggedIn ? exact ? _react2.default.createElement(Component, _extends({}, props, { exact: true })) : _react2.default.createElement(Component, props) : _react2.default.createElement(_reactRouterDom.Redirect, { to: '/signup' });
+      return loggedIn ? exact ? _react2.default.createElement(Component, _extends({}, props, { exact: true })) : _react2.default.createElement(Component, props) : _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
     } });
 };
 
@@ -30538,6 +30543,231 @@ function isIterateeCall(value, index, object) {
 
 module.exports = isIterateeCall;
 
+
+/***/ }),
+/* 233 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(13);
+
+var _Mainpage = __webpack_require__(239);
+
+var _Mainpage2 = _interopRequireDefault(_Mainpage);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {};
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {};
+};
+var MainpageContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_Mainpage2.default);
+
+exports.default = MainpageContainer;
+
+/***/ }),
+/* 234 */,
+/* 235 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(6);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Chapter = function (_Component) {
+  _inherits(Chapter, _Component);
+
+  function Chapter() {
+    _classCallCheck(this, Chapter);
+
+    return _possibleConstructorReturn(this, (Chapter.__proto__ || Object.getPrototypeOf(Chapter)).apply(this, arguments));
+  }
+
+  _createClass(Chapter, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        this.props.chapter.title,
+        this.props.chapter.subtitle
+      );
+    }
+  }]);
+
+  return Chapter;
+}(_react.Component);
+
+exports.default = Chapter;
+
+/***/ }),
+/* 236 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _chapter = __webpack_require__(237);
+
+var Chap0 = _interopRequireWildcard(_chapter);
+
+var _chapter2 = __webpack_require__(238);
+
+var Chap2 = _interopRequireWildcard(_chapter2);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var curriculum = [Chap0.curriculum, Chap2.curriculum];
+
+exports.default = curriculum;
+
+/***/ }),
+/* 237 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var curriculum = exports.curriculum = {
+  title: "Chapter0",
+  subitle: "Setting Up the Environment",
+  topics: [{
+    title: "Setting Up the Environment",
+    videoID: "",
+    subtitle: "3 ways to write code in Javscript",
+    headers: ["1. The most simple way to run Javascript is to use an online compiler called repl.it.", "2. The second way is to download node which is basically a wrapper for Javascript outside of the browser", "3. The last way is to create Javascript files and then running the files. For the purpose of this course, we will run the files through node. Javascript files have an extension of .js (ex. document.js)", "4. You can download free text editors for writing Javascript in file with a .js extension.(think of it as ms word for programming languages)."],
+    contents: [["-Navigate to https://repl.it/", "-On the part where it says `choose your language`, pick Javascript", "-Start coding in Javascript"], ["Navigate to https://nodejs.org/en/", "Download nodejs. Use the recommended version", "Once downloaded and installed, open terminal. (command + space) and then search for terminal", "~$node", "start coding"], ["create file with js extension", "save and run by typing 'node filename.js'"], ["VS code(Visual Studio Code) => 'https://code.visualstudio.com/'", "Atom => 'https://atom.io/"]]
+  }]
+};
+
+/***/ }),
+/* 238 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var curriculum = exports.curriculum = {
+  title: "Chapter2",
+  topics: [{
+    title: "JavaScript Arithmetic Operators",
+    videoID: "",
+    subtitle: "How to use Arithmetic Operators in JS",
+    headers: ["1. List of Comparison Operators and examples.", "2. List of JavaScript Arithmetic Operators and examples.", "3. Operator Precedence.", "4. List of Assignment Operators and examples."],
+    contents: [["Comparison Operators let us compare values.", "List of Comparison Operators:", "<     Less than                        Ex: x < y", "<=    Less than or equal to            Ex: x <= y", ">     Greater than                     Ex: x > y", ">=    Greater than or equal to         Ex: x >= y", "===   Strict equal to                  Ex: x === y", "!==   Strict not equal to    Ex: x !== y", "", "In JavaScript it is possible to compare values of different types using the '==' operator,", "but using the strict '===' is all we need to compare values in this course.", "", "If we wanted to do multiple comparisons at once, we can take advantage of the '&&' and '||' operators.", "&&    Logical And           Ex: x < y && y === 10", "||    Logical Or            Ex: x < y || y >= 10", "These operators compare true and false statements and return true or false depending on the outcome.", "Example: let x = 5", "x < 6 && x > 0 will return true because x is less than 6 AND x is greater than 0.", "x < 6 || x > 100 will return true because x is less than 6. With OR operations only 1 side has to be true.", "This can get kind of tricky, below is a table to help clarify the outcomes of && and || statements.", "", "Logical AND '&&'", "false && false === false", "false && true === false", "true && true === true", "true && false === false", "", "Logical OR '||'", "false || false === false", "false || true === true", "true || true === true", "true || false === true"], ["Here is a list of list of common operators that you would normally see on a calculator, ", "as well as examples on how to use them in JavaScript.", "", "Operator : Description", "+        : Addition", "-        : Subtraction", "*        : Multiplication", "/        : Division", "%        : Modulo", "**       : Exponent", "Examples: ", "Addition: +", "let x = 5 + 5", "x === 10", "", "Subtraction: -", "let x = 5 - 2", "x === 3", "", "Multiplication: *", "let x = 10 * 10", "x === 100", "", "Division: / ", "let x = 100 / 10", "x === 10", "", "Modulo gives us the remainder from division.", "Modulo: %", "let x = 21 % 5", "x === 1", "", "Exponent: **", "let x = 10 ** 10", "x === 100", ""], ["Operator precedence works the same way it does in traditional mathmatics that many learn in school.", "Operator Precedence:", "1. Parentheses ()", "2. Multiplication, Division, and Modulo. * / % ", "3. Addition and Subtraction. + - ", "", "Some examples would be: ", "(1 + 5) * 10 == ", "2 * 10 * (2 + 3) == 100", ""], ["The math operators listed in our previous section can be combined with the assignment variable to create shortcuts.", "While we could use:", "let x = x + 1", "We can also shorten our code and save room by typing:", "let x += 1", "This can be done with the following assignment operators:", "", "List of Arithmetic Assignments:", "+=   : Addition         Ex: x += y       Same as: x = x + y", "-=   : Subtraction      Ex: x -= y       Same as: x = x - y", "*=   : Multiplication   Ex: x *= y       Same as: x = x * y", "/=   : Division         Ex: x /= y       Same as: x = x / y", "%=   : Modulo           Ex: x %= y       Same as: x = x % y", "++   : Add 1            Ex: x++          Same as: x += 1", "--   : Subtract 1       Ex: x--          Same as: x -= 1", ""]]
+  }]
+};
+
+/***/ }),
+/* 239 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(6);
+
+var _chapters = __webpack_require__(235);
+
+var _chapters2 = _interopRequireDefault(_chapters);
+
+var _quickJS = __webpack_require__(236);
+
+var _quickJS2 = _interopRequireDefault(_quickJS);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MainPage = function (_Component) {
+  _inherits(MainPage, _Component);
+
+  function MainPage(props) {
+    _classCallCheck(this, MainPage);
+
+    var _this = _possibleConstructorReturn(this, (MainPage.__proto__ || Object.getPrototypeOf(MainPage)).call(this, props));
+
+    _this.array = _quickJS2.default;
+    return _this;
+  }
+
+  _createClass(MainPage, [{
+    key: 'renderChapterComponents',
+    value: function renderChapterComponents() {
+      return;
+      // return(
+      //   this.array.map((curriculum, i) => {
+      //     return <Chapter key={i} chapter={curriculum} />;
+      //   })
+      // );
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        this.renderChapterComponents()
+      );
+    }
+  }]);
+
+  return MainPage;
+}(_react.Component);
+
+exports.default = MainPage;
 
 /***/ })
 /******/ ]);

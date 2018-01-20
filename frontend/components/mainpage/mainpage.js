@@ -8,12 +8,14 @@ class MainPage extends Component{
     super(props);
     this.array = curriculum;
   }
+
   renderChapterComponents(){
-    return(
-      this.array.map((curriculum, i) => {
-        return <Chapter key={i} chapter={curriculum} />;
-      })
-    );
+    return;
+    // return(
+    //   this.array.map((curriculum, i) => {
+    //     return <Chapter key={i} chapter={curriculum} />;
+    //   })
+    // );
   }
   render(){
     return(
