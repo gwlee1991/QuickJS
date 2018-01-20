@@ -1,6 +1,7 @@
 export const curriculum = 
   {
     title: "Chapter2",
+    subtitle: "Operators",
     topics: [
       {
         title: "JavaScript Arithmetic Operators",

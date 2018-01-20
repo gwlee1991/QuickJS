@@ -1,6 +1,6 @@
 export const curriculum = {
     title: "Chapter0",
-    subitle: "Setting Up the Environment",
+    subtitle: "Setting Up the Environment",
     topics: [
       {
         title: "Setting Up the Environment",

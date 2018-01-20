@@ -10,12 +10,11 @@ class MainPage extends Component{
   }
 
   renderChapterComponents(){
-    return;
-    // return(
-    //   this.array.map((curriculum, i) => {
-    //     return <Chapter key={i} chapter={curriculum} />;
-    //   })
-    // );
+    return(
+      this.array.map((curriculum, i) => {
+        return <Chapter key={i} chapter={curriculum} />;
+      })
+    );
   }
   render(){
     return(

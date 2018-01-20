@@ -2079,6 +2079,7 @@ var logIn = exports.logIn = function logIn(user) {
     return APIUtil.logIn(user).then(function (user) {
       dispatch(receiveCurrentUser(user));
       dispatch(clearSessionErrors());
+      //final resort history.push('/main'); => don't forget to pass history as argument to line 27
     }, function (err) {
       dispatch(receiveSignInErrors(err.responseJSON));
     });
@@ -25517,6 +25518,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _reactRedux = __webpack_require__(13);
 
+var _reactRouterDom = __webpack_require__(6);
+
 var _header = __webpack_require__(147);
 
 var _header2 = _interopRequireDefault(_header);
@@ -25537,6 +25540,7 @@ var mapStateToProps = function mapStateToProps(_ref) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
+    //final resort logIn: (user, history) => dispatch(logIn(user, history)),
     logIn: function logIn(user) {
       return dispatch((0, _session_actions.logIn)(user));
     },
@@ -25546,7 +25550,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_header2.default);
+exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_header2.default));
 
 /***/ }),
 /* 124 */
@@ -26746,7 +26750,8 @@ var Header = function (_Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var user = this.state;
-      this.props.logIn({ user: user });
+      this.props.login({ user: user });
+      // this.props.logIn({ user }, this.props.history);
     }
   }, {
     key: 'logInForm',
@@ -26820,6 +26825,7 @@ var Header = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      console.log(this.props);
       return _react2.default.createElement(
         'nav',
         { className: 'navbar' },
@@ -30665,7 +30671,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var curriculum = exports.curriculum = {
   title: "Chapter0",
-  subitle: "Setting Up the Environment",
+  subtitle: "Setting Up the Environment",
   topics: [{
     title: "Setting Up the Environment",
     videoID: "",
@@ -30687,6 +30693,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var curriculum = exports.curriculum = {
   title: "Chapter2",
+  subtitle: "Operators",
   topics: [{
     title: "JavaScript Arithmetic Operators",
     videoID: "",
@@ -30746,12 +30753,9 @@ var MainPage = function (_Component) {
   _createClass(MainPage, [{
     key: 'renderChapterComponents',
     value: function renderChapterComponents() {
-      return;
-      // return(
-      //   this.array.map((curriculum, i) => {
-      //     return <Chapter key={i} chapter={curriculum} />;
-      //   })
-      // );
+      return this.array.map(function (curriculum, i) {
+        return _react2.default.createElement(_chapters2.default, { key: i, chapter: curriculum });
+      });
     }
   }, {
     key: 'render',

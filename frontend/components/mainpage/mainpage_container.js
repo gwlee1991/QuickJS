@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Mainpage from './Mainpage';
+import MainPage from './Mainpage';
 
 const mapStateToProps = state => ({
   
@@ -8,6 +8,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
 
 });
-const MainpageContainer = connect(mapStateToProps, mapDispatchToProps)(Mainpage);
+const MainpageContainer = connect(mapStateToProps, mapDispatchToProps)(MainPage);
   
 export default MainpageContainer

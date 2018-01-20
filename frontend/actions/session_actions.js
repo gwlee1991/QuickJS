@@ -24,11 +24,12 @@ export const clearSessionErrors = () => ({
   type: CLEAR_SESSION_ERRORS,
 });
 
-export const logIn = user => dispatch =>
+export const logIn = (user) => dispatch =>
   APIUtil.logIn(user).then(
     (user) => {
       dispatch(receiveCurrentUser(user));
       dispatch(clearSessionErrors());
+      //final resort history.push('/main'); => don't forget to pass history as argument to line 27
     },
     (err) => {
       dispatch(receiveSignInErrors(err.responseJSON));

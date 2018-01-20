@@ -28,7 +28,8 @@ class Header extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.logIn({ user });
+    this.props.login({ user });
+    // this.props.logIn({ user }, this.props.history);
   }
 
   logInForm() {
@@ -87,6 +88,7 @@ class Header extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <nav className="navbar">
         <h3>{'QuickJS</>'}</h3>
