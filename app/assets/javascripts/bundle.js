@@ -2088,7 +2088,8 @@ var logIn = exports.logIn = function logIn(user) {
 var logOut = exports.logOut = function logOut() {
   return function (dispatch) {
     return APIUtil.logOut().then(function () {
-      return dispatch(receiveCurrentUser(null));
+      dispatch(receiveCurrentUser(null));
+      dispatch(clearSessionErrors());
     });
   };
 };
@@ -27012,6 +27013,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mapStateToProps = function mapStateToProps(_ref) {
   var session = _ref.session;
+
   return {
     signUpErrors: session.errors.signUp
   };
