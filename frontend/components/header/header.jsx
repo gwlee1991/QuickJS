@@ -88,7 +88,6 @@ class Header extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <nav className="navbar">
         <h3>{'QuickJS</>'}</h3>
