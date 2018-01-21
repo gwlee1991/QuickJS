@@ -30672,11 +30672,17 @@ var curriculum = exports.curriculum = {
   title: "Chapter0",
   subtitle: "Setting Up the Environment",
   topics: [{
-    title: "Setting Up the Environment",
+    title: "Intro to QuickJS",
     videoID: "",
-    subtitle: "3 ways to write code in Javscript",
-    headers: ["1. The most simple way to run Javascript is to use an online compiler called repl.it.", "2. The second way is to download node which is basically a wrapper for Javascript outside of the browser", "3. The last way is to create Javascript files and then running the files. For the purpose of this course, we will run the files through node. Javascript files have an extension of .js (ex. document.js)", "4. You can download free text editors for writing Javascript in file with a .js extension.(think of it as ms word for programming languages)."],
-    contents: [["-Navigate to https://repl.it/", "-On the part where it says `choose your language`, pick Javascript", "-Start coding in Javascript"], ["Navigate to https://nodejs.org/en/", "Download nodejs. Use the recommended version", "Once downloaded and installed, open terminal. (command + space) and then search for terminal", "~$node", "start coding"], ["create file with js extension", "save and run by typing 'node filename.js'"], ["VS code(Visual Studio Code) => 'https://code.visualstudio.com/'", "Atom => 'https://atom.io/"]]
+    subtitle: "",
+    headers: [""],
+    contents: [[""]]
+  }, {
+    title: "Repl.it",
+    videoId: "",
+    subtitle: "Using an online compiler to write Javascript code",
+    header: ["What is Repl.it?", "How do I use repli.it?"],
+    contents: [["Repl.it is a simple online compiler, IDE, interpreter that allows you to code in various languages.", "It has a console, letting you see the result of your code immediately."], ["Navigate to 'https://repl.it'.", "Choose your primary language that you would like to code in (for the purpose of this course, I would choose Javascript).", "Start coding and run code to see results inside the given console."]]
   }]
 };
 
