@@ -1,24 +1,8 @@
-# README
+# QuickJS (In Progress)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+QuickJS is a full-stack web application made to teach JavaScript to beginners using examples, videos, and quizzes.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Utilizes:
+- A Ruby on Rails backend
+- A PostgreSQL database
+- React JS with a Redux architectural framework on the frontend.
