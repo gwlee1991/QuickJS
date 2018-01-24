@@ -28,8 +28,8 @@ class Header extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.login({ user });
-    // this.props.logIn({ user }, this.props.history);
+    // this.props.logIn({ user });
+    this.props.logIn({ user }, this.props.history);
   }
 
   logInForm() {
@@ -37,12 +37,7 @@ class Header extends Component {
       <div className="signin">
         <form onSubmit={this.handleSubmit}>
           <label>
-            <input
-              type="email"
-              value={this.state.email}
-              onChange={this.update('email')}
-              placeholder="Email address"
-            />
+            <input type="email" value={this.state.email} onChange={this.update('email')} placeholder="Email address" />
           </label>
           <label>
             <input
