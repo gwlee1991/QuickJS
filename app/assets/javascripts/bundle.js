@@ -27146,13 +27146,9 @@ var SplashPage = function (_Component) {
           'A quick overview of JavaScript for beginners!'
         ),
         _react2.default.createElement(
-          'button',
-          { onClick: this.openModal, id: 'signUpButton' },
-          _react2.default.createElement(
-            'div',
-            { className: 'signUpButton' },
-            'Sign Up'
-          )
+          'div',
+          { className: 'signUpButton', onClick: this.openModal },
+          'Sign Up'
         ),
         this.renderModal()
       );

@@ -111,9 +111,11 @@ class SplashPage extends Component {
       <div className="main-body">
         <h1>Welcome to QuickJS</h1>
         <h2>A quick overview of JavaScript for beginners!</h2>
-        <button onClick={this.openModal} id="signUpButton">
-          <div className="signUpButton">Sign Up</div>
-        </button>
+
+        <div className="signUpButton" onClick={this.openModal}>
+          Sign Up
+        </div>
+
         {this.renderModal()}
       </div>
     );
