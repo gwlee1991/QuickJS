@@ -26933,19 +26933,30 @@ var _splash_page = __webpack_require__(150);
 
 var _splash_page2 = _interopRequireDefault(_splash_page);
 
+var _session_actions = __webpack_require__(37);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(_ref) {
   var session = _ref.session;
-
-  var errors = session.errors ? session.errors.signUp : [];
   return {
     currentUser: session.currentUser,
-    signInErrors: errors
+    signUpErrors: session.errors ? session.errors.signUp : []
   };
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps)(_splash_page2.default);
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    clearSessionErrors: function clearSessionErrors() {
+      return dispatch((0, _session_actions.clearSessionErrors)());
+    },
+    signUp: function signUp(user) {
+      return dispatch((0, _session_actions.signUp)(user));
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_splash_page2.default);
 
 /***/ }),
 /* 150 */
@@ -26966,11 +26977,13 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(5);
 
-var _signup_container = __webpack_require__(151);
+var _reactModal = __webpack_require__(153);
 
-var _signup_container2 = _interopRequireDefault(_signup_container);
+var _reactModal2 = _interopRequireDefault(_reactModal);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -26987,41 +27000,144 @@ var SplashPage = function (_Component) {
     var _this = _possibleConstructorReturn(this, (SplashPage.__proto__ || Object.getPrototypeOf(SplashPage)).call(this, props));
 
     _this.state = {
-      signUp: false
+      modalIsOpen: false,
+      email: '',
+      password: ''
     };
-    _this.signUpButton = _this.signUpButton.bind(_this);
-    _this.handleClick = _this.handleClick.bind(_this);
     _this.renderModal = _this.renderModal.bind(_this);
+    _this.handleSubmit = _this.handleSubmit.bind(_this);
+    _this.openModal = _this.openModal.bind(_this);
+    _this.closeModal = _this.closeModal.bind(_this);
     return _this;
   }
 
   _createClass(SplashPage, [{
-    key: 'signUpButton',
-    value: function signUpButton() {
-      if (!this.props.currentUser) {
-        return _react2.default.createElement(
-          'button',
-          { onClick: this.handleClick, id: 'signUpButton' },
-          _react2.default.createElement(
-            'div',
-            { className: 'signUpButton' },
-            'Sign Up'
-          )
-        );
-      }
-      return null;
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      this.props.clearSessionErrors();
     }
   }, {
-    key: 'handleClick',
-    value: function handleClick() {
-      this.setState({ signUp: !this.state.signUp });
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.signedIn) {
+        this.props.history.push('/');
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.props.clearSessionErrors();
+    }
+  }, {
+    key: 'openModal',
+    value: function openModal() {
+      var _this2 = this;
+
+      this.setState({ modalIsOpen: true }, function () {
+        _this2.props.clearSessionErrors();
+      });
+    }
+  }, {
+    key: 'closeModal',
+    value: function closeModal() {
+      this.props.clearSessionErrors();
+      this.setState({ modalIsOpen: false });
+      // this.props.history.push('/');
+    }
+  }, {
+    key: 'updateFields',
+    value: function updateFields(field) {
+      var _this3 = this;
+
+      return function (e) {
+        return _this3.setState(_defineProperty({}, field, e.currentTarget.value));
+      };
+    }
+  }, {
+    key: 'handleSubmit',
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      var user = {
+        email: this.state.email,
+        password: this.state.password
+      };
+      this.props.signUp({ user: user });
+    }
+  }, {
+    key: 'renderErrors',
+    value: function renderErrors() {
+      if (this.props.signUpErrors) {
+        return _react2.default.createElement(
+          'ul',
+          { style: { margin: 0, fontFamily: 'Zilla Slab', color: 'red' } },
+          this.props.signUpErrors.map(function (error, i) {
+            return _react2.default.createElement(
+              'li',
+              { style: { listStyleType: 'none', fontSize: '0.7em' }, key: 'error-' + i },
+              error
+            );
+          })
+        );
+      }
     }
   }, {
     key: 'renderModal',
     value: function renderModal() {
-      if (this.state.signUp) {
-        return _react2.default.createElement(_signup_container2.default, null);
-      }
+      return _react2.default.createElement(
+        _reactModal2.default,
+        {
+          isOpen: this.state.modalIsOpen,
+          onRequestClose: this.closeModal,
+          contentLabel: 'Signup Modal',
+          ariaHideApp: false,
+          className: 'ReactModalPortal'
+        },
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'div',
+            { className: 'close' },
+            _react2.default.createElement('i', { onClick: this.closeModal, className: 'fa fa-window-close', 'aria-hidden': 'true' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'signup-main' },
+            _react2.default.createElement(
+              'h1',
+              null,
+              'Welcome!'
+            ),
+            _react2.default.createElement(
+              'h2',
+              null,
+              'Sign Up Here'
+            ),
+            _react2.default.createElement(
+              'form',
+              { onSubmit: this.handleSubmit },
+              _react2.default.createElement(
+                'label',
+                null,
+                'Email:',
+                _react2.default.createElement('input', { type: 'email', onChange: this.updateFields('email'), values: this.state.email })
+              ),
+              _react2.default.createElement(
+                'label',
+                null,
+                'Password:',
+                _react2.default.createElement('input', { onChange: this.updateFields('password'), type: 'password', values: this.state.password })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'errors' },
+                this.props.signUpErrors ? this.renderErrors() : ''
+              ),
+              _react2.default.createElement('input', { className: 'signUpButton', type: 'submit', value: 'Sign Up' })
+            )
+          )
+        )
+      );
     }
   }, {
     key: 'render',
@@ -27039,7 +27155,15 @@ var SplashPage = function (_Component) {
           null,
           'A quick overview of JavaScript for beginners!'
         ),
-        this.signUpButton(),
+        _react2.default.createElement(
+          'button',
+          { onClick: this.openModal, id: 'signUpButton' },
+          _react2.default.createElement(
+            'div',
+            { className: 'signUpButton' },
+            'Sign Up'
+          )
+        ),
         this.renderModal()
       );
     }
@@ -27150,6 +27274,18 @@ var SignUp = function (_Component) {
       this.props.clearSessionErrors();
     }
   }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.signedIn) {
+        this.props.history.push('/');
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.props.clearSessionErrors();
+    }
+  }, {
     key: 'openModal',
     value: function openModal() {
       var _this2 = this;
@@ -27164,18 +27300,6 @@ var SignUp = function (_Component) {
       this.props.clearSessionErrors();
       this.setState({ modalIsOpen: false });
       // this.props.history.push('/');
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.signedIn) {
-        this.props.history.push('/');
-      }
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      this.props.clearSessionErrors();
     }
   }, {
     key: 'renderErrors',

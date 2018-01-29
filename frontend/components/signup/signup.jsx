@@ -19,6 +19,16 @@ class SignUp extends Component {
     this.props.clearSessionErrors();
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.signedIn) {
+      this.props.history.push('/');
+    }
+  }
+
+  componentWillUnmount() {
+    this.props.clearSessionErrors();
+  }
+
   openModal() {
     this.setState({ modalIsOpen: true }, () => {
       this.props.clearSessionErrors();
@@ -29,16 +39,6 @@ class SignUp extends Component {
     this.props.clearSessionErrors();
     this.setState({ modalIsOpen: false });
     // this.props.history.push('/');
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.signedIn) {
-      this.props.history.push('/');
-    }
-  }
-
-  componentWillUnmount() {
-    this.props.clearSessionErrors();
   }
 
   renderErrors() {

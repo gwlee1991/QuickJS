@@ -1,37 +1,109 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import SignUpContainer from '../signup/signup_container';
+import Modal from 'react-modal';
 
 class SplashPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      signUp: false,
+      modalIsOpen: false,
+      email: '',
+      password: '',
     };
-    this.signUpButton = this.signUpButton.bind(this);
-    this.handleClick = this.handleClick.bind(this);
     this.renderModal = this.renderModal.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
-  signUpButton() {
-    if (!this.props.currentUser) {
+  componentWillMount() {
+    this.props.clearSessionErrors();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.signedIn) {
+      this.props.history.push('/');
+    }
+  }
+
+  componentWillUnmount() {
+    this.props.clearSessionErrors();
+  }
+
+  openModal() {
+    this.setState({ modalIsOpen: true }, () => {
+      this.props.clearSessionErrors();
+    });
+  }
+
+  closeModal() {
+    this.props.clearSessionErrors();
+    this.setState({ modalIsOpen: false });
+    // this.props.history.push('/');
+  }
+
+  updateFields(field) {
+    return e =>
+      this.setState({
+        [field]: e.currentTarget.value,
+      });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const user = {
+      email: this.state.email,
+      password: this.state.password,
+    };
+    this.props.signUp({ user });
+  }
+
+  renderErrors() {
+    if (this.props.signUpErrors) {
       return (
-        <button onClick={this.handleClick} id="signUpButton">
-          <div className="signUpButton">Sign Up</div>
-        </button>
+        <ul style={{ margin: 0, fontFamily: 'Zilla Slab', color: 'red' }}>
+          {this.props.signUpErrors.map((error, i) => (
+            <li style={{ listStyleType: 'none', fontSize: '0.7em' }} key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
       );
     }
-    return null;
-  }
-
-  handleClick() {
-    this.setState({ signUp: !this.state.signUp });
   }
 
   renderModal() {
-    if (this.state.signUp) {
-      return <SignUpContainer />;
-    }
+    return (
+      <Modal
+        isOpen={this.state.modalIsOpen}
+        onRequestClose={this.closeModal}
+        contentLabel="Signup Modal"
+        ariaHideApp={false}
+        className="ReactModalPortal"
+      >
+        <div>
+          <div className="close">
+            <i onClick={this.closeModal} className="fa fa-window-close" aria-hidden="true" />
+          </div>
+          <div className="signup-main">
+            <h1>Welcome!</h1>
+            <h2>Sign Up Here</h2>
+            <form onSubmit={this.handleSubmit}>
+              <label>
+                Email:
+                <input type="email" onChange={this.updateFields('email')} values={this.state.email} />
+              </label>
+              <label>
+                Password:
+                <input onChange={this.updateFields('password')} type="password" values={this.state.password} />
+              </label>
+              <div className="errors">{this.props.signUpErrors ? this.renderErrors() : ''}</div>
+              <input className="signUpButton" type="submit" value="Sign Up" />
+            </form>
+          </div>
+        </div>
+      </Modal>
+    );
   }
 
   render() {
@@ -39,7 +111,9 @@ class SplashPage extends Component {
       <div className="main-body">
         <h1>Welcome to QuickJS</h1>
         <h2>A quick overview of JavaScript for beginners!</h2>
-        {this.signUpButton()}
+        <button onClick={this.openModal} id="signUpButton">
+          <div className="signUpButton">Sign Up</div>
+        </button>
         {this.renderModal()}
       </div>
     );
