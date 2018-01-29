@@ -21,6 +21,7 @@ class Api::SessionsController < ApplicationController
   def destroy
     @user = current_user
     if @user
+      p @user.password
       @user.reset_session_token!
       if session[:session_token]
         session[:session_token] = nil
