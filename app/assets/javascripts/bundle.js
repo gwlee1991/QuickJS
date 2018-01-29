@@ -3263,27 +3263,21 @@ var App = function (_Component) {
             )
           )
         );
-      } else {
-        return _react2.default.createElement(
+      }
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'header',
+          null,
+          _react2.default.createElement(_header_container2.default, null)
+        ),
+        _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement(
-            'header',
-            null,
-            _react2.default.createElement(_header_container2.default, null)
-          ),
-          _react2.default.createElement(
-            'div',
-            null,
-            _react2.default.createElement(
-              _reactRouterDom.Switch,
-              null,
-              _react2.default.createElement(_routes_util.AuthRoute, { exact: true, path: '/signup', component: _signup_container2.default }),
-              _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _splash_page_container2.default })
-            )
-          )
-        );
-      }
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _splash_page_container2.default })
+        )
+      );
     }
   }]);
 
@@ -27176,238 +27170,12 @@ exports.default = SplashPage;
 
 /***/ }),
 /* 151 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _reactRedux = __webpack_require__(8);
-
-var _signup = __webpack_require__(152);
-
-var _signup2 = _interopRequireDefault(_signup);
-
-var _session_actions = __webpack_require__(37);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var mapStateToProps = function mapStateToProps(_ref) {
-  var session = _ref.session;
-
-  return {
-    signUpErrors: session.errors.signUp
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    clearSessionErrors: function clearSessionErrors() {
-      return dispatch((0, _session_actions.clearSessionErrors)());
-    },
-    signUp: function signUp(user) {
-      return dispatch((0, _session_actions.signUp)(user));
-    }
-  };
-};
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_signup2.default);
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/home/younis/Desktop/QuickJS/frontend/components/signup/signup_container.js'");
 
 /***/ }),
-/* 152 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(5);
-
-var _reactModal = __webpack_require__(153);
-
-var _reactModal2 = _interopRequireDefault(_reactModal);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var SignUp = function (_Component) {
-  _inherits(SignUp, _Component);
-
-  function SignUp(props) {
-    _classCallCheck(this, SignUp);
-
-    var _this = _possibleConstructorReturn(this, (SignUp.__proto__ || Object.getPrototypeOf(SignUp)).call(this, props));
-
-    _this.state = {
-      modalIsOpen: true,
-      email: '',
-      password: ''
-    };
-    _this.handleSubmit = _this.handleSubmit.bind(_this);
-    _this.openModal = _this.openModal.bind(_this);
-    _this.closeModal = _this.closeModal.bind(_this);
-    return _this;
-  }
-
-  _createClass(SignUp, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      this.props.clearSessionErrors();
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.signedIn) {
-        this.props.history.push('/');
-      }
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      this.props.clearSessionErrors();
-    }
-  }, {
-    key: 'openModal',
-    value: function openModal() {
-      var _this2 = this;
-
-      this.setState({ modalIsOpen: true }, function () {
-        _this2.props.clearSessionErrors();
-      });
-    }
-  }, {
-    key: 'closeModal',
-    value: function closeModal() {
-      this.props.clearSessionErrors();
-      this.setState({ modalIsOpen: false });
-      // this.props.history.push('/');
-    }
-  }, {
-    key: 'renderErrors',
-    value: function renderErrors() {
-      if (this.props.signUpErrors) {
-        return _react2.default.createElement(
-          'ul',
-          { style: { margin: 0, fontFamily: 'Zilla Slab', color: 'red' } },
-          this.props.signUpErrors.map(function (error, i) {
-            return _react2.default.createElement(
-              'li',
-              { style: { listStyleType: 'none', fontSize: '0.7em' }, key: 'error-' + i },
-              error
-            );
-          })
-        );
-      }
-    }
-  }, {
-    key: 'updateFields',
-    value: function updateFields(field) {
-      var _this3 = this;
-
-      return function (e) {
-        return _this3.setState(_defineProperty({}, field, e.currentTarget.value));
-      };
-    }
-  }, {
-    key: 'handleSubmit',
-    value: function handleSubmit(e) {
-      e.preventDefault();
-      var user = {
-        email: this.state.email,
-        password: this.state.password
-      };
-      this.props.signUp({ user: user });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      if (this.state.modalIsOpen === undefined) {
-        this.openModal();
-      }
-      console.log('MODAL IS RUNNING');
-      return _react2.default.createElement(
-        _reactModal2.default,
-        {
-          isOpen: this.state.modalIsOpen,
-          onRequestClose: this.closeModal,
-          contentLabel: 'Signup Modal',
-          ariaHideApp: false,
-          className: 'ReactModalPortal'
-        },
-        _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(
-            'div',
-            { className: 'close' },
-            _react2.default.createElement('i', { onClick: this.closeModal, className: 'fa fa-window-close', 'aria-hidden': 'true' })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'signup-main' },
-            _react2.default.createElement(
-              'h1',
-              null,
-              'Welcome!'
-            ),
-            _react2.default.createElement(
-              'h2',
-              null,
-              'Sign Up Here'
-            ),
-            _react2.default.createElement(
-              'form',
-              { onSubmit: this.handleSubmit },
-              _react2.default.createElement(
-                'label',
-                null,
-                'Email:',
-                _react2.default.createElement('input', { type: 'email', onChange: this.updateFields('email'), values: this.state.email })
-              ),
-              _react2.default.createElement(
-                'label',
-                null,
-                'Password:',
-                _react2.default.createElement('input', { onChange: this.updateFields('password'), type: 'password', values: this.state.password })
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'errors' },
-                this.props.signUpErrors ? this.renderErrors() : ''
-              ),
-              _react2.default.createElement('input', { className: 'signUpButton', type: 'submit', value: 'Sign Up' })
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return SignUp;
-}(_react.Component);
-
-exports.default = SignUp;
-
-/***/ }),
+/* 152 */,
 /* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 

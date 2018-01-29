@@ -23,21 +23,17 @@ class App extends Component {
           </div>
         </div>
       );
-    } else {
-      return (
-        <div>
-          <header>
-            <HeaderContainer />
-          </header>
-          <div>
-            <Switch>
-              <AuthRoute exact path="/signup" component={SignupContainer} />
-              <Route path="/" component={SplashPageContainer} />
-            </Switch>
-          </div>
-        </div>
-      );
     }
+    return (
+      <div>
+        <header>
+          <HeaderContainer />
+        </header>
+        <div>
+          <Route path="/" component={SplashPageContainer} />
+        </div>
+      </div>
+    );
   }
 }
 
