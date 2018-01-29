@@ -3214,10 +3214,6 @@ var _splash_page_container = __webpack_require__(149);
 
 var _splash_page_container2 = _interopRequireDefault(_splash_page_container);
 
-var _signup_container = __webpack_require__(151);
-
-var _signup_container2 = _interopRequireDefault(_signup_container);
-
 var _mainpage_container = __webpack_require__(160);
 
 var _mainpage_container2 = _interopRequireDefault(_mainpage_container);
@@ -27169,12 +27165,7 @@ var SplashPage = function (_Component) {
 exports.default = SplashPage;
 
 /***/ }),
-/* 151 */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/home/younis/Desktop/QuickJS/frontend/components/signup/signup_container.js'");
-
-/***/ }),
+/* 151 */,
 /* 152 */,
 /* 153 */
 /***/ (function(module, exports, __webpack_require__) {
