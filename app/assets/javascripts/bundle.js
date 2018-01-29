@@ -2079,7 +2079,7 @@ var logIn = exports.logIn = function logIn(user) {
     return APIUtil.logIn(user).then(function (user) {
       dispatch(receiveCurrentUser(user));
       dispatch(clearSessionErrors());
-      //final resort history.push('/main'); => don't forget to pass history as argument to line 27
+      // final resort history.push('/main'); => don't forget to pass history as argument to line 27
     }, function (err) {
       dispatch(receiveSignInErrors(err.responseJSON));
     });
@@ -3202,6 +3202,8 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRedux = __webpack_require__(8);
+
 var _reactRouterDom = __webpack_require__(5);
 
 var _header_container = __webpack_require__(123);
@@ -3242,29 +3244,59 @@ var App = function (_Component) {
   _createClass(App, [{
     key: 'render',
     value: function render() {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'header',
+      if (this.props.loggedIn) {
+        return _react2.default.createElement(
+          'div',
           null,
-          _react2.default.createElement(_header_container2.default, null)
-        ),
-        _react2.default.createElement(
-          _reactRouterDom.Switch,
+          _react2.default.createElement(
+            'header',
+            null,
+            _react2.default.createElement(_header_container2.default, null)
+          ),
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              _reactRouterDom.Switch,
+              null,
+              _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _mainpage_container2.default })
+            )
+          )
+        );
+      } else {
+        return _react2.default.createElement(
+          'div',
           null,
-          _react2.default.createElement(_routes_util.ProtectedRoute, { path: '/main', component: _mainpage_container2.default }),
-          _react2.default.createElement(_routes_util.AuthRoute, { path: '/signup', component: _signup_container2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _splash_page_container2.default })
-        )
-      );
+          _react2.default.createElement(
+            'header',
+            null,
+            _react2.default.createElement(_header_container2.default, null)
+          ),
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              _reactRouterDom.Switch,
+              null,
+              _react2.default.createElement(_routes_util.AuthRoute, { exact: true, path: '/signup', component: _signup_container2.default }),
+              _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _splash_page_container2.default })
+            )
+          )
+        );
+      }
     }
   }]);
 
   return App;
 }(_react.Component);
 
-exports.default = App;
+var mapStateToProps = function mapStateToProps(state) {
+  return { loggedIn: Boolean(state.session.currentUser) };
+};
+
+var AppContainer = (0, _reactRedux.connect)(mapStateToProps, null)(App);
+
+exports.default = AppContainer;
 
 /***/ }),
 /* 58 */
@@ -26748,10 +26780,11 @@ var Header = function (_Component) {
   }, {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
+      console.log(this.props.history);
       e.preventDefault();
       var user = this.state;
-      // this.props.logIn({ user });
-      this.props.logIn({ user: user }, this.props.history);
+      this.props.logIn({ user: user });
+      // this.props.logIn({ user }).then(() => this.props.history.push('/main'));
     }
   }, {
     key: 'logInForm',
@@ -26933,6 +26966,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(5);
 
+var _signup_container = __webpack_require__(151);
+
+var _signup_container2 = _interopRequireDefault(_signup_container);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26949,7 +26986,12 @@ var SplashPage = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (SplashPage.__proto__ || Object.getPrototypeOf(SplashPage)).call(this, props));
 
+    _this.state = {
+      signUp: false
+    };
     _this.signUpButton = _this.signUpButton.bind(_this);
+    _this.handleClick = _this.handleClick.bind(_this);
+    _this.renderModal = _this.renderModal.bind(_this);
     return _this;
   }
 
@@ -26958,8 +27000,8 @@ var SplashPage = function (_Component) {
     value: function signUpButton() {
       if (!this.props.currentUser) {
         return _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/signup', id: 'signUpButton' },
+          'button',
+          { onClick: this.handleClick, id: 'signUpButton' },
           _react2.default.createElement(
             'div',
             { className: 'signUpButton' },
@@ -26968,6 +27010,18 @@ var SplashPage = function (_Component) {
         );
       }
       return null;
+    }
+  }, {
+    key: 'handleClick',
+    value: function handleClick() {
+      this.setState({ signUp: !this.state.signUp });
+    }
+  }, {
+    key: 'renderModal',
+    value: function renderModal() {
+      if (this.state.signUp) {
+        return _react2.default.createElement(_signup_container2.default, null);
+      }
     }
   }, {
     key: 'render',
@@ -26985,7 +27039,8 @@ var SplashPage = function (_Component) {
           null,
           'A quick overview of JavaScript for beginners!'
         ),
-        this.signUpButton()
+        this.signUpButton(),
+        this.renderModal()
       );
     }
   }]);
@@ -27108,13 +27163,13 @@ var SignUp = function (_Component) {
     value: function closeModal() {
       this.props.clearSessionErrors();
       this.setState({ modalIsOpen: false });
-      this.props.history.push('/');
+      // this.props.history.push('/');
     }
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       if (nextProps.signedIn) {
-        this.props.history.push('/main');
+        this.props.history.push('/');
       }
     }
   }, {
@@ -27164,6 +27219,7 @@ var SignUp = function (_Component) {
       if (this.state.modalIsOpen === undefined) {
         this.openModal();
       }
+      console.log('MODAL IS RUNNING');
       return _react2.default.createElement(
         _reactModal2.default,
         {
@@ -27201,21 +27257,13 @@ var SignUp = function (_Component) {
                 'label',
                 null,
                 'Email:',
-                _react2.default.createElement('input', {
-                  type: 'email',
-                  onChange: this.updateFields('email'),
-                  values: this.state.email
-                })
+                _react2.default.createElement('input', { type: 'email', onChange: this.updateFields('email'), values: this.state.email })
               ),
               _react2.default.createElement(
                 'label',
                 null,
                 'Password:',
-                _react2.default.createElement('input', {
-                  onChange: this.updateFields('password'),
-                  type: 'password',
-                  values: this.state.password
-                })
+                _react2.default.createElement('input', { onChange: this.updateFields('password'), type: 'password', values: this.state.password })
               ),
               _react2.default.createElement(
                 'div',
@@ -28416,8 +28464,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ProtectedRoute = exports.AuthRoute = undefined;
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -28433,17 +28479,16 @@ var Auth = function Auth(_ref) {
       path = _ref.path,
       loggedIn = _ref.loggedIn;
   return _react2.default.createElement(_reactRouterDom.Route, { path: path, render: function render(props) {
-      return !loggedIn ? _react2.default.createElement(Component, props) : _react2.default.createElement(_reactRouterDom.Redirect, { to: '/main' });
+      return !loggedIn ? _react2.default.createElement(Component, props) : _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
     } });
 };
 
 var Protected = function Protected(_ref2) {
   var Component = _ref2.component,
       path = _ref2.path,
-      loggedIn = _ref2.loggedIn,
-      exact = _ref2.exact;
+      loggedIn = _ref2.loggedIn;
   return _react2.default.createElement(_reactRouterDom.Route, { path: path, render: function render(props) {
-      return loggedIn ? exact ? _react2.default.createElement(Component, _extends({}, props, { exact: true })) : _react2.default.createElement(Component, props) : _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
+      return !loggedIn ? _react2.default.createElement(Component, props) : _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
     } });
 };
 
@@ -28451,9 +28496,9 @@ var mapStateToProps = function mapStateToProps(state) {
   return { loggedIn: Boolean(state.session.currentUser) };
 };
 
-var AuthRoute = exports.AuthRoute = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps)(Auth));
+var AuthRoute = exports.AuthRoute = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, null)(Auth));
 
-var ProtectedRoute = exports.ProtectedRoute = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps)(Protected));
+var ProtectedRoute = exports.ProtectedRoute = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, null)(Protected));
 
 /***/ }),
 /* 167 */

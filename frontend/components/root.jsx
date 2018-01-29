@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, HashRouter } from 'react-router-dom';
-import App from './App';
+import AppContainer from './App';
 
 const Root = () => (
   <HashRouter>
-    <App />
+    <AppContainer />
   </HashRouter>
 );
 

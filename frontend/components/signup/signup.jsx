@@ -28,12 +28,12 @@ class SignUp extends Component {
   closeModal() {
     this.props.clearSessionErrors();
     this.setState({ modalIsOpen: false });
-    this.props.history.push('/');
+    // this.props.history.push('/');
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn) {
-      this.props.history.push('/main');
+      this.props.history.push('/');
     }
   }
 
@@ -66,7 +66,7 @@ class SignUp extends Component {
     e.preventDefault();
     const user = {
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
     };
     this.props.signUp({ user });
   }
@@ -75,6 +75,7 @@ class SignUp extends Component {
     if (this.state.modalIsOpen === undefined) {
       this.openModal();
     }
+    console.log('MODAL IS RUNNING');
     return (
       <Modal
         isOpen={this.state.modalIsOpen}
@@ -93,19 +94,11 @@ class SignUp extends Component {
             <form onSubmit={this.handleSubmit}>
               <label>
                 Email:
-                <input
-                  type="email"
-                  onChange={this.updateFields('email')}
-                  values={this.state.email}
-                />
+                <input type="email" onChange={this.updateFields('email')} values={this.state.email} />
               </label>
               <label>
                 Password:
-                <input
-                  onChange={this.updateFields('password')}
-                  type="password"
-                  values={this.state.password}
-                />
+                <input onChange={this.updateFields('password')} type="password" values={this.state.password} />
               </label>
               <div className="errors">{this.props.signUpErrors ? this.renderErrors() : ''}</div>
               <input className="signUpButton" type="submit" value="Sign Up" />

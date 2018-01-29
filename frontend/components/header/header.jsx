@@ -26,10 +26,11 @@ class Header extends Component {
   }
 
   handleSubmit(e) {
+    console.log(this.props.history);
     e.preventDefault();
     const user = this.state;
-    // this.props.logIn({ user });
-    this.props.logIn({ user }, this.props.history);
+    this.props.logIn({ user });
+    // this.props.logIn({ user }).then(() => this.props.history.push('/main'));
   }
 
   logInForm() {
