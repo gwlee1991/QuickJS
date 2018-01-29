@@ -3214,10 +3214,6 @@ var _splash_page_container = __webpack_require__(149);
 
 var _splash_page_container2 = _interopRequireDefault(_splash_page_container);
 
-var _signup_container = __webpack_require__(151);
-
-var _signup_container2 = _interopRequireDefault(_signup_container);
-
 var _mainpage_container = __webpack_require__(160);
 
 var _mainpage_container2 = _interopRequireDefault(_mainpage_container);
@@ -3263,27 +3259,21 @@ var App = function (_Component) {
             )
           )
         );
-      } else {
-        return _react2.default.createElement(
+      }
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'header',
+          null,
+          _react2.default.createElement(_header_container2.default, null)
+        ),
+        _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement(
-            'header',
-            null,
-            _react2.default.createElement(_header_container2.default, null)
-          ),
-          _react2.default.createElement(
-            'div',
-            null,
-            _react2.default.createElement(
-              _reactRouterDom.Switch,
-              null,
-              _react2.default.createElement(_routes_util.AuthRoute, { exact: true, path: '/signup', component: _signup_container2.default }),
-              _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _splash_page_container2.default })
-            )
-          )
-        );
-      }
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _splash_page_container2.default })
+        )
+      );
     }
   }]);
 
@@ -26933,149 +26923,15 @@ var _splash_page = __webpack_require__(150);
 
 var _splash_page2 = _interopRequireDefault(_splash_page);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var mapStateToProps = function mapStateToProps(_ref) {
-  var session = _ref.session;
-
-  var errors = session.errors ? session.errors.signUp : [];
-  return {
-    currentUser: session.currentUser,
-    signInErrors: errors
-  };
-};
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps)(_splash_page2.default);
-
-/***/ }),
-/* 150 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(5);
-
-var _signup_container = __webpack_require__(151);
-
-var _signup_container2 = _interopRequireDefault(_signup_container);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var SplashPage = function (_Component) {
-  _inherits(SplashPage, _Component);
-
-  function SplashPage(props) {
-    _classCallCheck(this, SplashPage);
-
-    var _this = _possibleConstructorReturn(this, (SplashPage.__proto__ || Object.getPrototypeOf(SplashPage)).call(this, props));
-
-    _this.state = {
-      signUp: false
-    };
-    _this.signUpButton = _this.signUpButton.bind(_this);
-    _this.handleClick = _this.handleClick.bind(_this);
-    _this.renderModal = _this.renderModal.bind(_this);
-    return _this;
-  }
-
-  _createClass(SplashPage, [{
-    key: 'signUpButton',
-    value: function signUpButton() {
-      if (!this.props.currentUser) {
-        return _react2.default.createElement(
-          'button',
-          { onClick: this.handleClick, id: 'signUpButton' },
-          _react2.default.createElement(
-            'div',
-            { className: 'signUpButton' },
-            'Sign Up'
-          )
-        );
-      }
-      return null;
-    }
-  }, {
-    key: 'handleClick',
-    value: function handleClick() {
-      this.setState({ signUp: !this.state.signUp });
-    }
-  }, {
-    key: 'renderModal',
-    value: function renderModal() {
-      if (this.state.signUp) {
-        return _react2.default.createElement(_signup_container2.default, null);
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'main-body' },
-        _react2.default.createElement(
-          'h1',
-          null,
-          'Welcome to QuickJS'
-        ),
-        _react2.default.createElement(
-          'h2',
-          null,
-          'A quick overview of JavaScript for beginners!'
-        ),
-        this.signUpButton(),
-        this.renderModal()
-      );
-    }
-  }]);
-
-  return SplashPage;
-}(_react.Component);
-
-exports.default = SplashPage;
-
-/***/ }),
-/* 151 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _reactRedux = __webpack_require__(8);
-
-var _signup = __webpack_require__(152);
-
-var _signup2 = _interopRequireDefault(_signup);
-
 var _session_actions = __webpack_require__(37);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(_ref) {
   var session = _ref.session;
-
   return {
-    signUpErrors: session.errors.signUp
+    currentUser: session.currentUser,
+    signUpErrors: session.errors ? session.errors.signUp : []
   };
 };
 
@@ -27090,10 +26946,10 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_signup2.default);
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_splash_page2.default);
 
 /***/ }),
-/* 152 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27125,28 +26981,41 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var SignUp = function (_Component) {
-  _inherits(SignUp, _Component);
+var SplashPage = function (_Component) {
+  _inherits(SplashPage, _Component);
 
-  function SignUp(props) {
-    _classCallCheck(this, SignUp);
+  function SplashPage(props) {
+    _classCallCheck(this, SplashPage);
 
-    var _this = _possibleConstructorReturn(this, (SignUp.__proto__ || Object.getPrototypeOf(SignUp)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (SplashPage.__proto__ || Object.getPrototypeOf(SplashPage)).call(this, props));
 
     _this.state = {
-      modalIsOpen: true,
+      modalIsOpen: false,
       email: '',
       password: ''
     };
+    _this.renderModal = _this.renderModal.bind(_this);
     _this.handleSubmit = _this.handleSubmit.bind(_this);
     _this.openModal = _this.openModal.bind(_this);
     _this.closeModal = _this.closeModal.bind(_this);
     return _this;
   }
 
-  _createClass(SignUp, [{
+  _createClass(SplashPage, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
+      this.props.clearSessionErrors();
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.signedIn) {
+        this.props.history.push('/');
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
       this.props.clearSessionErrors();
     }
   }, {
@@ -27164,35 +27033,6 @@ var SignUp = function (_Component) {
       this.props.clearSessionErrors();
       this.setState({ modalIsOpen: false });
       // this.props.history.push('/');
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.signedIn) {
-        this.props.history.push('/');
-      }
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      this.props.clearSessionErrors();
-    }
-  }, {
-    key: 'renderErrors',
-    value: function renderErrors() {
-      if (this.props.signUpErrors) {
-        return _react2.default.createElement(
-          'ul',
-          { style: { margin: 0, fontFamily: 'Zilla Slab', color: 'red' } },
-          this.props.signUpErrors.map(function (error, i) {
-            return _react2.default.createElement(
-              'li',
-              { style: { listStyleType: 'none', fontSize: '0.7em' }, key: 'error-' + i },
-              error
-            );
-          })
-        );
-      }
     }
   }, {
     key: 'updateFields',
@@ -27214,12 +27054,25 @@ var SignUp = function (_Component) {
       this.props.signUp({ user: user });
     }
   }, {
-    key: 'render',
-    value: function render() {
-      if (this.state.modalIsOpen === undefined) {
-        this.openModal();
+    key: 'renderErrors',
+    value: function renderErrors() {
+      if (this.props.signUpErrors) {
+        return _react2.default.createElement(
+          'ul',
+          { style: { margin: 0, fontFamily: 'Zilla Slab', color: 'red' } },
+          this.props.signUpErrors.map(function (error, i) {
+            return _react2.default.createElement(
+              'li',
+              { style: { listStyleType: 'none', fontSize: '0.7em' }, key: 'error-' + i },
+              error
+            );
+          })
+        );
       }
-      console.log('MODAL IS RUNNING');
+    }
+  }, {
+    key: 'renderModal',
+    value: function renderModal() {
       return _react2.default.createElement(
         _reactModal2.default,
         {
@@ -27276,14 +27129,40 @@ var SignUp = function (_Component) {
         )
       );
     }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'main-body' },
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Welcome to QuickJS'
+        ),
+        _react2.default.createElement(
+          'h2',
+          null,
+          'A quick overview of JavaScript for beginners!'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'signUpButton', onClick: this.openModal },
+          'Sign Up'
+        ),
+        this.renderModal()
+      );
+    }
   }]);
 
-  return SignUp;
+  return SplashPage;
 }(_react.Component);
 
-exports.default = SignUp;
+exports.default = SplashPage;
 
 /***/ }),
+/* 151 */,
+/* 152 */,
 /* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
