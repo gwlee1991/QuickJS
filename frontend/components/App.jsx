@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import HeaderContainer from './header/header_container';
 import SplashPageContainer from './splashPage/splash_page_container';
 import SignupContainer from './signup/signup_container';
@@ -9,19 +10,39 @@ import { ProtectedRoute, AuthRoute } from '../util/routes_util';
 
 class App extends Component {
   render() {
-    return (
-      <div>
-        <header>
-          <HeaderContainer />
-        </header>
-        <Switch>
-          <ProtectedRoute path="/main" component={MainpageContainer} />
-          <AuthRoute path="/signup" component={SignupContainer} />
-          <Route path="/" component={SplashPageContainer} />
-        </Switch>
-      </div>
-    );
+    if (this.props.loggedIn) {
+      return (
+        <div>
+          <header>
+            <HeaderContainer />
+          </header>
+          <div>
+            <Switch>
+              <Route path="/" component={MainpageContainer} />
+            </Switch>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <header>
+            <HeaderContainer />
+          </header>
+          <div>
+            <Switch>
+              <AuthRoute exact path="/signup" component={SignupContainer} />
+              <Route path="/" component={SplashPageContainer} />
+            </Switch>
+          </div>
+        </div>
+      );
+    }
   }
 }
 
-export default App;
+const mapStateToProps = state => ({ loggedIn: Boolean(state.session.currentUser) });
+
+const AppContainer = connect(mapStateToProps, null)(App);
+
+export default AppContainer;

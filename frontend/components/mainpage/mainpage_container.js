@@ -1,13 +1,9 @@
 import { connect } from 'react-redux';
-import MainPage from './Mainpage';
+import MainPage from './mainpage';
 
-const mapStateToProps = state => ({
-  
-});
-  
-const mapDispatchToProps = dispatch => ({
+const mapStateToProps = state => ({});
 
-});
+const mapDispatchToProps = dispatch => ({});
 const MainpageContainer = connect(mapStateToProps, mapDispatchToProps)(MainPage);
-  
-export default MainpageContainer
+
+export default MainpageContainer;
