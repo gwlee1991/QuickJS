@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
     else
       @current_user ||= User.find_by_session_token(session[:session_token])
     end
+    p @current_user
   end
 
   def signed_in?

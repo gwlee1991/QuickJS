@@ -3,7 +3,9 @@ class User < ApplicationRecord
   validate :oauth_or_email
   after_initialize :ensure_session_token
 
-  attr_reader :password
+  def password
+    @password ||= BCrypt::Password.new(self.password_digest)
+  end
 
   def oauth_or_email
     if self.uid == nil && (self.email.nil? || self.email.length == 0)
