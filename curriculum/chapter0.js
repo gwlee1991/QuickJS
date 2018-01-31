@@ -55,7 +55,34 @@ export const curriculum = {
             "6. Start writing Javascript code."
           ]
         ]
-
+      },
+      {
+        title: "Writing js files",
+        videoId: "",
+        subtitle: "Write Javascript files using a code text editor",
+        header: [
+          "How do I write Javascript files?",
+          "What is a code text editor?",
+          "How do I run a JS file that I have written with my code editor?"
+        ],
+        contents: [
+          [
+            "Javascript files have a js extension. (ex. sample.js)",
+            "You could write a Javascript file using a simple notepad"
+          ],
+          [
+            "Code text editor is a text editor just like ms word except it's usually used for writing Code.",
+            "There are a variety of code text editors that you could use such as Visual Studio Code, Atom, Sublime etc. (I currently use VS code)",
+            "Different code editors have different features, but atom or vs code is a good starter."
+          ],
+          [
+            "On our previous video, we have discussed on how to install node onto your computer. We will have to use node to run the Javascript file",
+            "To run our JS file, you first have to navigate to the directory where your file is saved in (ex. let's say it's in Desktop)",
+            "Open up terminal. You should be in your root directory right now",
+            "To go to Desktop type in 'cd Desktop' and press enter",
+            "Now that we are at the directory where the file is saved, type node sample.js and press enter to run the file"
+          ]
+        ]
       }
     ]
   };
