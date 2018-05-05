@@ -10,8 +10,7 @@ import { ProtectedRoute, AuthRoute } from '../util/routes_util';
 class App extends Component {
   render() {
     if (this.props.loggedIn) {
-      return (
-        <div>
+      return <div>
           <header>
             <HeaderContainer />
           </header>
@@ -20,8 +19,7 @@ class App extends Component {
               <Route path="/" component={MainpageContainer} />
             </Switch>
           </div>
-        </div>
-      );
+        </div>;
     }
     return (
       <div>

@@ -8,7 +8,7 @@ class ChapterCard extends Component{
   }
   render(){
     return(
-      <section>
+      <section className="card">
         <div>{this.props.chapter.title}</div>
         <div>{this.props.chapter.subtitle}</div>
       </section>

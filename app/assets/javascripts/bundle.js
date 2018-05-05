@@ -28158,6 +28158,10 @@ var _quickJS = __webpack_require__(161);
 
 var _quickJS2 = _interopRequireDefault(_quickJS);
 
+var _Chapter = __webpack_require__(239);
+
+var _Chapter2 = _interopRequireDefault(_Chapter);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28174,16 +28178,55 @@ var MainPage = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (MainPage.__proto__ || Object.getPrototypeOf(MainPage)).call(this, props));
 
-    _this.array = _quickJS2.default;
+    _this.curriculum = _quickJS2.default;
+    _this.state = {
+      content: false,
+      chapter: null
+    };
+    _this.renderContent = _this.renderContent.bind(_this);
     return _this;
   }
 
   _createClass(MainPage, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var chapters = document.getElementsByClassName("card");
+
+      var _loop = function _loop(i) {
+        var current = chapters[i];
+        current.addEventListener("click", function (e) {
+          e.preventDefault();
+          if (_this2.state.chapter === i) {
+            _this2.setState({ content: !_this2.state.content });
+          } else if (_this2.state.chapter !== i && _this2.state.content === false) {
+            _this2.setState({ content: true, chapter: i });
+          } else if (_this2.state.content && _this2.state.chapter !== i) {
+            _this2.setState({ chapter: i });
+          }
+        });
+      };
+
+      for (var i = 0; i < chapters.length; i++) {
+        _loop(i);
+      }
+    }
+  }, {
     key: 'renderChapterComponents',
     value: function renderChapterComponents() {
-      return this.array.map(function (curriculum, i) {
+      return this.curriculum.map(function (curriculum, i) {
         return _react2.default.createElement(_chapterCard2.default, { key: i, chapter: curriculum });
       });
+    }
+  }, {
+    key: 'renderContent',
+    value: function renderContent() {
+      if (this.state.chapter !== null && this.state.content) {
+        return _react2.default.createElement(_Chapter2.default, { chapter: this.curriculum[this.state.chapter] });
+      } else {
+        return "";
+      }
     }
   }, {
     key: 'render',
@@ -28191,7 +28234,12 @@ var MainPage = function (_Component) {
       return _react2.default.createElement(
         'div',
         { className: 'chapter-container' },
-        this.renderChapterComponents()
+        _react2.default.createElement(
+          'section',
+          { className: 'chapter-card' },
+          this.renderChapterComponents()
+        ),
+        this.renderContent()
       );
     }
   }]);
@@ -30703,7 +30751,7 @@ var ChapterCard = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'section',
-        null,
+        { className: 'card' },
         _react2.default.createElement(
           'div',
           null,
@@ -30744,6 +30792,57 @@ var curriculum = exports.curriculum = {
     contents: [[""]]
   }]
 };
+
+/***/ }),
+/* 239 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Chapter = function (_Component) {
+  _inherits(Chapter, _Component);
+
+  function Chapter(props) {
+    _classCallCheck(this, Chapter);
+
+    return _possibleConstructorReturn(this, (Chapter.__proto__ || Object.getPrototypeOf(Chapter)).call(this, props));
+  }
+
+  _createClass(Chapter, [{
+    key: "render",
+    value: function render() {
+      console.log(this.props.chapter);
+      return _react2.default.createElement(
+        "section",
+        { className: "content-container" },
+        "Chapter Component"
+      );
+    }
+  }]);
+
+  return Chapter;
+}(_react.Component);
+
+exports.default = Chapter;
 
 /***/ })
 /******/ ]);

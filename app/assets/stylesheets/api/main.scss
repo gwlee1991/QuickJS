@@ -1,16 +1,28 @@
 .chapter-container {
   margin: 40px;
-  section {
-    border: 1px solid black;
-    width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+
+  .chapter-card {
     display: flex;
     flex-direction: column;
-    margin: 10px;
-    padding: 10px;
-    div {
+    margin: 15px;
+    padding: 15px;
+
+    .card {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      border: 1px black solid;
+      margin: 10px;
+      padding: 10px;
+      min-width: 200px;
     }
-   }
+  }
+  .content-container {
+    width: 70%;
+    padding: 20px;
+  }
 }
