@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { link } from 'react-router-dom';
-import Chapter from '../chapters/chapters';
+import ChapterCard from '../chapters/chapterCard';
 import curriculum from '../../../curriculum/quickJS';
 
 class MainPage extends Component {
@@ -11,12 +11,12 @@ class MainPage extends Component {
 
   renderChapterComponents() {
     return (
-      this.array.map((curriculum, i) => <Chapter key={i} chapter={curriculum} />)
+      this.array.map((curriculum, i) => <ChapterCard key={i} chapter={curriculum} />)
     );
   }
   render() {
     return (
-      <div>
+      <div className="chapter-container">
         {this.renderChapterComponents()}
       </div>
     );

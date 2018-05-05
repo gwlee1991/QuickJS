@@ -28150,9 +28150,9 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(5);
 
-var _chapters = __webpack_require__(160);
+var _chapterCard = __webpack_require__(237);
 
-var _chapters2 = _interopRequireDefault(_chapters);
+var _chapterCard2 = _interopRequireDefault(_chapterCard);
 
 var _quickJS = __webpack_require__(161);
 
@@ -28182,7 +28182,7 @@ var MainPage = function (_Component) {
     key: 'renderChapterComponents',
     value: function renderChapterComponents() {
       return this.array.map(function (curriculum, i) {
-        return _react2.default.createElement(_chapters2.default, { key: i, chapter: curriculum });
+        return _react2.default.createElement(_chapterCard2.default, { key: i, chapter: curriculum });
       });
     }
   }, {
@@ -28190,7 +28190,7 @@ var MainPage = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'chapter-container' },
         this.renderChapterComponents()
       );
     }
@@ -28202,59 +28202,7 @@ var MainPage = function (_Component) {
 exports.default = MainPage;
 
 /***/ }),
-/* 160 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(5);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Chapter = function (_Component) {
-  _inherits(Chapter, _Component);
-
-  function Chapter() {
-    _classCallCheck(this, Chapter);
-
-    return _possibleConstructorReturn(this, (Chapter.__proto__ || Object.getPrototypeOf(Chapter)).apply(this, arguments));
-  }
-
-  _createClass(Chapter, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        null,
-        this.props.chapter.title,
-        this.props.chapter.subtitle
-      );
-    }
-  }]);
-
-  return Chapter;
-}(_react.Component);
-
-exports.default = Chapter;
-
-/***/ }),
+/* 160 */,
 /* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28269,13 +28217,17 @@ var _chapter = __webpack_require__(162);
 
 var Chap0 = _interopRequireWildcard(_chapter);
 
-var _chapter2 = __webpack_require__(163);
+var _chapter2 = __webpack_require__(238);
 
-var Chap2 = _interopRequireWildcard(_chapter2);
+var Chap1 = _interopRequireWildcard(_chapter2);
+
+var _chapter3 = __webpack_require__(163);
+
+var Chap2 = _interopRequireWildcard(_chapter3);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var curriculum = [Chap0.curriculum, Chap2.curriculum];
+var curriculum = [Chap0.curriculum, Chap1.curriculum, Chap2.curriculum];
 
 exports.default = curriculum;
 
@@ -28290,7 +28242,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var curriculum = exports.curriculum = {
-  title: "Chapter0",
+  title: "Chapter 0",
   subtitle: "Setting Up the Environment",
   topics: [{
     // QuickJS introduction video and introduce instructors
@@ -30709,6 +30661,89 @@ function isIterateeCall(value, index, object) {
 
 module.exports = isIterateeCall;
 
+
+/***/ }),
+/* 237 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(5);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ChapterCard = function (_Component) {
+  _inherits(ChapterCard, _Component);
+
+  function ChapterCard(props) {
+    _classCallCheck(this, ChapterCard);
+
+    return _possibleConstructorReturn(this, (ChapterCard.__proto__ || Object.getPrototypeOf(ChapterCard)).call(this, props));
+  }
+
+  _createClass(ChapterCard, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'section',
+        null,
+        _react2.default.createElement(
+          'div',
+          null,
+          this.props.chapter.title
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          this.props.chapter.subtitle
+        )
+      );
+    }
+  }]);
+
+  return ChapterCard;
+}(_react.Component);
+
+exports.default = ChapterCard;
+
+/***/ }),
+/* 238 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var curriculum = exports.curriculum = {
+  title: "Chapter 1",
+  subtitle: "Primary Data Types",
+  topics: [{
+    title: "",
+    videoID: "",
+    subtitle: "",
+    headers: [""],
+    contents: [[""]]
+  }]
+};
 
 /***/ })
 /******/ ]);
