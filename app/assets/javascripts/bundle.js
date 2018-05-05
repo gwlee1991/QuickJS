@@ -30903,10 +30903,18 @@ var Chapter = function (_Component) {
       var _this3 = this;
 
       var topic = this.props.chapter.topics[this.state.chapter];
-      console.log(topic);
       return _react2.default.createElement(
         'div',
         null,
+        _react2.default.createElement(
+          'span',
+          {
+            onClick: function onClick(e) {
+              return _this3.setState({ content: false, chapter: null });
+            }
+          },
+          "< back"
+        ),
         _react2.default.createElement(
           'h4',
           null,
@@ -30920,9 +30928,11 @@ var Chapter = function (_Component) {
         this.renderer(topic),
         _react2.default.createElement(
           'span',
-          { onClick: function onClick(e) {
+          {
+            onClick: function onClick(e) {
               return _this3.setState({ content: false, chapter: null });
-            } },
+            }
+          },
           "< back"
         )
       );
@@ -30930,7 +30940,6 @@ var Chapter = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      console.log(this.props.chapter);
       if (!this.state.content) {
         return _react2.default.createElement(
           'section',

@@ -52,20 +52,25 @@ class Chapter extends Component {
 
   renderTopicContent(){
     const topic = this.props.chapter.topics[this.state.chapter];
-    console.log(topic);
-    return (
-      <div>
+    return <div>
+        <span
+          onClick={e => this.setState({ content: false, chapter: null })}
+        >
+          {"< back"}
+        </span>
         <h4>{topic.title}</h4>
         <h5>{topic.subtitle}</h5>
         {this.renderer(topic)}
-        <span onClick={e => this.setState({content: false, chapter: null})}>{"< back"}</span>
-      </div>
-    )
+        <span
+          onClick={e => this.setState({ content: false, chapter: null })}
+        >
+          {"< back"}
+        </span>
+      </div>;
     
   }
 
   render(){
-    console.log(this.props.chapter);
     if (!this.state.content) {
       return(
         <section className="content-container">
