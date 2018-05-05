@@ -6,19 +6,19 @@ export const curriculum = {
         // QuickJS introduction video and introduce instructors
         title: "Intro to QuickJS",
         videoID: "",
-        subtitle: "",
+        subtitle: "Dummy subtitle",
         headers: [
-          ""
+          "dummy header"
         ],
         contents: [
-          [""]
+          ["dummy content"]
         ]
       },
       {
         title: "Repl.it",
         videoId: "",
         subtitle: "Using an online compiler to write Javascript code",
-        header:[
+        headers:[
           "What is Repl.it?",
           "How do I use repli.it?"
         ],
@@ -38,7 +38,7 @@ export const curriculum = {
         title: "Node.js",
         videoId: "",
         subtitle: "Setting up a Javascript environment on your computer to run Javascript code",
-        header: [
+        headers: [
           "What is Node.js?",
           "How do I install Node.js?"
         ],
@@ -60,7 +60,7 @@ export const curriculum = {
         title: "Writing js files",
         videoId: "",
         subtitle: "Write Javascript files using a code text editor",
-        header: [
+        headers: [
           "How do I write Javascript files?",
           "What is a code text editor?",
           "How do I run a JS file that I have written with my code editor?"

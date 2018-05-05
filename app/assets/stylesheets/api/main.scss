@@ -25,4 +25,12 @@
     width: 70%;
     padding: 20px;
   }
+
+  li {
+    list-style-type: none;
+  }
+
+  li:hover {
+    font-weight: 700;
+  }
 }
