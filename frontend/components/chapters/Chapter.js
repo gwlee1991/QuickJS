@@ -4,9 +4,10 @@ class Chapter extends Component {
   constructor(props){
     super(props);
     this.state = {
-      content: false,
-      chapter: null
+      content: this.props.defaultContent,
+      chapter: this.props.defaultChapter
     }
+    console.log(this.state);
   }
 
   addEventListenerToLi(element, i){

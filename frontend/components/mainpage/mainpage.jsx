@@ -41,7 +41,7 @@ class MainPage extends Component {
   renderContent() {
     if(this.state.chapter !== null && this.state.content) {
       return (
-        <Chapter chapter={this.curriculum[this.state.chapter]}/>
+        <Chapter chapter={this.curriculum[this.state.chapter]} defaultContent={false} defaultChapter={null}/>
       )
     } else {
       return "";

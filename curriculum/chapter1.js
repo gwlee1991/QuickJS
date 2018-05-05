@@ -3,14 +3,14 @@ export const curriculum = {
   subtitle: "Primary Data Types",
   topics: [
     {
-      title: "",
+      title: "Strings",
       videoID: "",
-      subtitle: "",
+      subtitle: "strings",
       headers: [
-        ""
+        "dummy headers"
       ],
       contents: [
-        [""]
+        ["dummy contents"]
       ]
     }
   ]

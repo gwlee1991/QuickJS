@@ -28223,7 +28223,7 @@ var MainPage = function (_Component) {
     key: 'renderContent',
     value: function renderContent() {
       if (this.state.chapter !== null && this.state.content) {
-        return _react2.default.createElement(_Chapter2.default, { chapter: this.curriculum[this.state.chapter] });
+        return _react2.default.createElement(_Chapter2.default, { chapter: this.curriculum[this.state.chapter], defaultContent: false, defaultChapter: null });
       } else {
         return "";
       }
@@ -30785,11 +30785,11 @@ var curriculum = exports.curriculum = {
   title: "Chapter 1",
   subtitle: "Primary Data Types",
   topics: [{
-    title: "",
+    title: "Strings",
     videoID: "",
-    subtitle: "",
-    headers: [""],
-    contents: [[""]]
+    subtitle: "strings",
+    headers: ["dummy headers"],
+    contents: [["dummy contents"]]
   }]
 };
 
@@ -30827,9 +30827,10 @@ var Chapter = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Chapter.__proto__ || Object.getPrototypeOf(Chapter)).call(this, props));
 
     _this.state = {
-      content: false,
-      chapter: null
+      content: _this.props.defaultContent,
+      chapter: _this.props.defaultChapter
     };
+    console.log(_this.state);
     return _this;
   }
 

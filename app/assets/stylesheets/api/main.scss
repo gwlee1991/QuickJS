@@ -24,6 +24,8 @@
   .content-container {
     width: 70%;
     padding: 20px;
+    overflow: scroll;
+    height: 70vh;
   }
 
   li {
