@@ -4,7 +4,7 @@ export const curriculum = {
   topics: [
     {
       title: "Strings",
-      videoID: "",
+      videoId: "oFzGOw2dYpM&t=1s",
       subtitle: "strings",
       headers: [
         "dummy headers"

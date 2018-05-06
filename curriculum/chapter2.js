@@ -5,7 +5,7 @@ export const curriculum =
     topics: [
       {
         title: "JavaScript Arithmetic Operators",
-        videoID: "",
+        videoId: "oFzGOw2dYpM&t=1s",
         subtitle: "How to use Arithmetic Operators in JS",
         headers: [
           "1. List of Comparison Operators and examples.",

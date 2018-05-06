@@ -20,7 +20,7 @@ class YoutubePlayer extends Component {
     };
     if (this.state.data.length > 0) {
       return (
-        <Youtube videoId="oFzGOw2dYpM" opts={opts} onReady={this.onReady} />
+        <Youtube videoId={this.props.videoId} opts={opts} onReady={this.onReady} />
       );
     }
   }
@@ -30,18 +30,21 @@ class YoutubePlayer extends Component {
   }
 
   componentDidMount() {
-    fetchVideo("oFzGOw2dYpM").then(response =>
+    fetchVideo(this.props.videoId).then(response =>
       this.setState({ data: response.items })
     );
   }
 
   render() {
-    console.log(window);
-    return (
-      <div>
-        {this.renderYTPlayer()}
-      </div>
-    );
+    if (this.props.videoId !== "") {
+      return (
+        <div>
+          {this.renderYTPlayer()}
+        </div>
+      );
+    } else {
+      return "";
+    }
   }
 }
 
