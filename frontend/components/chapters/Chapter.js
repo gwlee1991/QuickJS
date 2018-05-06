@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import YoutubePlayer from '../youtube/player';
 
 class Chapter extends Component {
   constructor(props){
@@ -61,6 +62,7 @@ class Chapter extends Component {
         </span>
         <h4>{topic.title}</h4>
         <h5>{topic.subtitle}</h5>
+        <YoutubePlayer />
         {this.renderer(topic)}
         <span
           onClick={e => this.setState({ content: false, chapter: null })}
