@@ -28478,7 +28478,7 @@ var MainPage = function (_Component) {
         var current = chapters[i];
         current.addEventListener("click", function (e) {
           e.preventDefault();
-          if (_this2.state.chapter === i) {
+          if (_this2.state.chapter === i && _this2.state.content) {
             _this2.setState({ content: !_this2.state.content });
           } else if (_this2.state.chapter !== i && _this2.state.content === false) {
             _this2.setState({ content: true, chapter: i });

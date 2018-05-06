@@ -21,7 +21,7 @@ class MainPage extends Component {
       let current = chapters[i];
       current.addEventListener("click", e => {
         e.preventDefault();
-        if (this.state.chapter === i) {
+        if (this.state.chapter === i && this.state.content) {
           this.setState({ content: !this.state.content });
         } else if ((this.state.chapter !== i) && (this.state.content === false)) {
           this.setState({ content: true, chapter: i });
