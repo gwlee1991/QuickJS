@@ -26,13 +26,13 @@ class Chapter extends Component {
     }
   }
 
-  componentDidUpdate(){
-    const topics = document.querySelectorAll("li");
-    for (let i = 0; i < topics.length; i++) {
-      let current = topics[i];
-      this.addEventListenerToLi(current, i);
-    }
-  }
+  // componentDidUpdate(){
+  //   const topics = document.querySelectorAll("li");
+  //   for (let i = 0; i < topics.length; i++) {
+  //     let current = topics[i];
+  //     this.addEventListenerToLi(current, i);
+  //   }
+  // }
 
   renderTopicOptions(){
     return this.props.chapter.topics.map((topic, i) => {

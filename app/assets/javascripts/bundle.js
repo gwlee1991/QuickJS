@@ -28768,15 +28768,15 @@ var Chapter = function (_Component) {
         this.addEventListenerToLi(current, i);
       }
     }
-  }, {
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      var topics = document.querySelectorAll("li");
-      for (var i = 0; i < topics.length; i++) {
-        var current = topics[i];
-        this.addEventListenerToLi(current, i);
-      }
-    }
+
+    // componentDidUpdate(){
+    //   const topics = document.querySelectorAll("li");
+    //   for (let i = 0; i < topics.length; i++) {
+    //     let current = topics[i];
+    //     this.addEventListenerToLi(current, i);
+    //   }
+    // }
+
   }, {
     key: 'renderTopicOptions',
     value: function renderTopicOptions() {
