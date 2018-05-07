@@ -8,7 +8,7 @@ class Chapter extends Component {
       content: this.props.defaultContent,
       chapter: this.props.defaultChapter
     }
-    console.log(this.state);
+    console.log(this.state); 
   }
 
   addEventListenerToLi(element, i){
