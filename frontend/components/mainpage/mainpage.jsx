@@ -10,7 +10,7 @@ class MainPage extends Component {
     super(props);
     this.curriculum = curriculum;
     this.state = {
-      chapter: null,
+      chapter: 0,
       topic: null
     }
     this.renderContent = this.renderContent.bind(this);
