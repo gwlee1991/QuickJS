@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import { link } from 'react-router-dom';
+import { link, Switch, Route } from 'react-router-dom';
 import ChapterCard from '../chapters/chapterCard';
 import curriculum from '../../../curriculum/quickJS';
 import Chapter from '../chapters/Chapter';
+import Topic from '../chapters/Topic';
 
 class MainPage extends Component {
   constructor(props) {
     super(props);
     this.curriculum = curriculum;
     this.state = {
-      content: false,
-      chapter: null
+      chapter: null,
+      topic: null
     }
     this.renderContent = this.renderContent.bind(this);
   }
@@ -21,14 +22,35 @@ class MainPage extends Component {
       let current = chapters[i];
       current.addEventListener("click", e => {
         e.preventDefault();
-        if (this.state.chapter === i && this.state.content) {
-          this.setState({ content: !this.state.content });
-        } else if ((this.state.chapter !== i) && (this.state.content === false)) {
-          this.setState({ content: true, chapter: i });
-        } else if ((this.state.content) && this.state.chapter !== i) {
-          this.setState({ chapter: i});
+        if (this.state.chapter === null) {
+          this.setState({ chapter: i, topic: null})
+        } else if (this.state.chapter === i) {
+          this.setState({ chapter: null, topic: null })
         }
       })
+    }
+
+    if (document.getElementsByClassName("topic-option")) {
+      this.addEventListenerOnTopicOptions();
+    }
+  }
+
+  componentDidUpdate(){
+    if(document.getElementsByClassName("topic-option")) {
+      this.addEventListenerOnTopicOptions();
+    }
+  }
+
+  addEventListenerOnTopicOptions(){
+    const topics = document.getElementsByClassName("topic-option");
+    for (let i = 0; i < topics.length; i++) {
+      let current = topics[i];
+      current.addEventListener("click", e => {
+        e.preventDefault();
+        if (this.state.topic === null) {
+          this.setState({ topic: i });
+        }
+      });
     }
   }
 
@@ -39,12 +61,12 @@ class MainPage extends Component {
   }
 
   renderContent() {
-    if(this.state.chapter !== null && this.state.content) {
-      return (
-        <Chapter chapter={this.curriculum[this.state.chapter]} defaultContent={false} defaultChapter={null}/>
-      )
-    } else {
-      return "";
+    if(this.state.chapter !== null && this.state.topic === null) {
+      return <Chapter chapter={this.curriculum[this.state.chapter]} />
+    } else if (this.state.chapter !== null && this.state.topic !== null) {
+      let chapter = this.curriculum[this.state.chapter];
+      let topic = chapter.topics[this.state.topic];
+      return <Topic topic={topic}/>
     }
   }
 
