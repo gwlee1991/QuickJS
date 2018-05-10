@@ -4,7 +4,7 @@ export const curriculum = {
   topics: [
     {
       title: "Expressions",
-      videoId: "oFzGOw2dYpM&t=1s",
+      videoId: "oFzGOw2dYpM",
       subtitle: "",
       headers: [
         ""
@@ -15,7 +15,7 @@ export const curriculum = {
     },
     {
       title: "Statements",
-      videoId: "oFzGOw2dYpM&t=1s",
+      videoId: "oFzGOw2dYpM",
       subtitle: "",
       headers: [
         ""
@@ -26,7 +26,7 @@ export const curriculum = {
     },
     {
       title: "Functions",
-      videoId: "oFzGOw2dYpM&t=1s",
+      videoId: "oFzGOw2dYpM",
       subtitle: "",
       headers: [
         ""

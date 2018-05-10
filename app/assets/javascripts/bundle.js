@@ -28694,25 +28694,25 @@ var curriculum = exports.curriculum = {
   topics: [{
     // QuickJS introduction video and introduce instructors
     title: "Intro to QuickJS",
-    videoId: "oFzGOw2dYpM&t=1s",
+    videoId: "oFzGOw2dYpM",
     subtitle: "Dummy subtitle",
     headers: ["dummy header"],
     contents: [["dummy content"]]
   }, {
     title: "Repl.it",
-    videoId: "oFzGOw2dYpM&t=1s",
+    videoId: "oFzGOw2dYpM",
     subtitle: "Using an online compiler to write Javascript code",
     headers: ["What is Repl.it?", "How do I use repli.it?"],
     contents: [["Repl.it is a simple online compiler, IDE, interpreter that allows you to code in various languages.", "It has a console, letting you see the result of your code immediately."], ["Navigate to 'https://repl.it'.", "Choose your primary language that you would like to code in (for the purpose of this course, I would choose Javascript).", "Start coding and run code to see results inside the given console."]]
   }, {
     title: "Node.js",
-    videoId: "oFzGOw2dYpM&t=1s",
+    videoId: "oFzGOw2dYpM",
     subtitle: "Setting up a Javascript environment on your computer to run Javascript code",
     headers: ["What is Node.js?", "How do I install Node.js?"],
     contents: [["Node.js is a Javascript runtime that allows code execution outside of the browser."], ["1. Navigate to https://nodejs.org/en/", "2. Install the recommended version for your operating system", "3. Once downloaded and installed, open up your terminal", "4. Your terminal should look like ~$. This means that you are in the root directory.", "5. Type in node and press enter. If your input field shows >, that means you are on the node environment", "6. Start writing Javascript code."]]
   }, {
     title: "Writing js files",
-    videoId: "oFzGOw2dYpM&t=1s",
+    videoId: "oFzGOw2dYpM",
     subtitle: "Write Javascript files using a code text editor",
     headers: ["How do I write Javascript files?", "What is a code text editor?", "How do I run a JS file that I have written with my code editor?"],
     contents: [["Javascript files have a js extension. (ex. sample.js)", "You could write a Javascript file using a simple notepad"], ["Code text editor is a text editor just like ms word except it's usually used for writing Code.", "There are a variety of code text editors that you could use such as Visual Studio Code, Atom, Sublime etc. (I currently use VS code)", "Different code editors have different features, but atom or vs code is a good starter."], ["On our previous video, we have discussed on how to install node onto your computer. We will have to use node to run the Javascript file", "To run our JS file, you first have to navigate to the directory where your file is saved in (ex. let's say it's in Desktop)", "Open up terminal. You should be in your root directory right now", "To go to Desktop type in 'cd Desktop' and press enter", "Now that we are at the directory where the file is saved, type node sample.js and press enter to run the file"]]
@@ -28734,7 +28734,7 @@ var curriculum = exports.curriculum = {
   subtitle: "Primary Data Types",
   topics: [{
     title: "Strings",
-    videoId: "oFzGOw2dYpM&t=1s",
+    videoId: "oFzGOw2dYpM",
     subtitle: "strings",
     headers: ["dummy headers"],
     contents: [["dummy contents"]]
@@ -28756,7 +28756,7 @@ var curriculum = exports.curriculum = {
   subtitle: "Operators",
   topics: [{
     title: "JavaScript Arithmetic Operators",
-    videoId: "oFzGOw2dYpM&t=1s",
+    videoId: "oFzGOw2dYpM",
     subtitle: "How to use Arithmetic Operators in JS",
     headers: ["1. List of Comparison Operators and examples.", "2. List of JavaScript Arithmetic Operators and examples.", "3. Operator Precedence.", "4. List of Assignment Operators and examples."],
     contents: [["Comparison Operators let us compare values.", "List of Comparison Operators:", "<     Less than                        Ex: x < y", "<=    Less than or equal to            Ex: x <= y", ">     Greater than                     Ex: x > y", ">=    Greater than or equal to         Ex: x >= y", "===   Strict equal to                  Ex: x === y", "!==   Strict not equal to    Ex: x !== y", "", "In JavaScript it is possible to compare values of different types using the '==' operator,", "but using the strict '===' is all we need to compare values in this course.", "", "If we wanted to do multiple comparisons at once, we can take advantage of the '&&' and '||' operators.", "&&    Logical And           Ex: x < y && y === 10", "||    Logical Or            Ex: x < y || y >= 10", "These operators compare true and false statements and return true or false depending on the outcome.", "Example: let x = 5", "x < 6 && x > 0 will return true because x is less than 6 AND x is greater than 0.", "x < 6 || x > 100 will return true because x is less than 6. With OR operations only 1 side has to be true.", "This can get kind of tricky, below is a table to help clarify the outcomes of && and || statements.", "", "Logical AND '&&'", "false && false === false", "false && true === false", "true && true === true", "true && false === false", "", "Logical OR '||'", "false || false === false", "false || true === true", "true || true === true", "true || false === true"], ["Here is a list of list of common operators that you would normally see on a calculator, ", "as well as examples on how to use them in JavaScript.", "", "Operator : Description", "+        : Addition", "-        : Subtraction", "*        : Multiplication", "/        : Division", "%        : Modulo", "**       : Exponent", "Examples: ", "Addition: +", "let x = 5 + 5", "x === 10", "", "Subtraction: -", "let x = 5 - 2", "x === 3", "", "Multiplication: *", "let x = 10 * 10", "x === 100", "", "Division: / ", "let x = 100 / 10", "x === 10", "", "Modulo gives us the remainder from division.", "Modulo: %", "let x = 21 % 5", "x === 1", "", "Exponent: **", "let x = 10 ** 10", "x === 100", ""], ["Operator precedence works the same way it does in traditional mathmatics that many learn in school.", "Operator Precedence:", "1. Parentheses ()", "2. Multiplication, Division, and Modulo. * / % ", "3. Addition and Subtraction. + - ", "", "Some examples would be: ", "(1 + 5) * 10 == ", "2 * 10 * (2 + 3) == 100", ""], ["The math operators listed in our previous section can be combined with the assignment variable to create shortcuts.", "While we could use:", "let x = x + 1", "We can also shorten our code and save room by typing:", "let x += 1", "This can be done with the following assignment operators:", "", "List of Arithmetic Assignments:", "+=   : Addition         Ex: x += y       Same as: x = x + y", "-=   : Subtraction      Ex: x -= y       Same as: x = x - y", "*=   : Multiplication   Ex: x *= y       Same as: x = x * y", "/=   : Division         Ex: x /= y       Same as: x = x / y", "%=   : Modulo           Ex: x %= y       Same as: x = x % y", "++   : Add 1            Ex: x++          Same as: x += 1", "--   : Subtract 1       Ex: x--          Same as: x -= 1", ""]]
@@ -28883,26 +28883,26 @@ var YoutubePlayer = function (_Component) {
     return _this;
   }
 
+  // renderYTPlayer() {
+  // const opts = {
+  //   height: "390",
+  //   width: "640",
+  //   playerVars: {
+  //     autoplay: 1
+  //   }
+  // };
+  // if (this.state.data.length > 0) {
+  //   return (
+  //     <Youtube videoId={this.props.videoId} opts={opts} onReady={this.onReady} />
+  //   );
+  // }
+  // }
+
+  // onReady(e) {
+  //   e.target.pauseVideo();
+  // }
+
   _createClass(YoutubePlayer, [{
-    key: 'renderYTPlayer',
-    value: function renderYTPlayer() {
-      var opts = {
-        height: "390",
-        width: "640",
-        playerVars: {
-          autoplay: 1
-        }
-      };
-      if (this.state.data.length > 0) {
-        return _react2.default.createElement(_reactYoutube2.default, { videoId: this.props.videoId, opts: opts, onReady: this.onReady });
-      }
-    }
-  }, {
-    key: 'onReady',
-    value: function onReady(e) {
-      e.target.pauseVideo();
-    }
-  }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _this2 = this;
@@ -28914,11 +28914,12 @@ var YoutubePlayer = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      if (this.props.videoId !== "") {
+      if (this.props.videoId !== "" && this.state.data.length > 0) {
+        var videoId = this.props.videoId;
         return _react2.default.createElement(
           'div',
           null,
-          this.renderYTPlayer()
+          _react2.default.createElement('iframe', { width: '690', height: '390', src: 'https://www.youtube.com/embed/' + this.props.videoId + '?enablejsapi=1' })
         );
       } else {
         return "";

@@ -10,24 +10,24 @@ class YoutubePlayer extends Component {
     };
   }
 
-  renderYTPlayer() {
-    const opts = {
-      height: "390",
-      width: "640",
-      playerVars: {
-        autoplay: 1
-      }
-    };
-    if (this.state.data.length > 0) {
-      return (
-        <Youtube videoId={this.props.videoId} opts={opts} onReady={this.onReady} />
-      );
-    }
-  }
+  // renderYTPlayer() {
+    // const opts = {
+    //   height: "390",
+    //   width: "640",
+    //   playerVars: {
+    //     autoplay: 1
+    //   }
+    // };
+    // if (this.state.data.length > 0) {
+    //   return (
+    //     <Youtube videoId={this.props.videoId} opts={opts} onReady={this.onReady} />
+    //   );
+    // }
+  // }
 
-  onReady(e) {
-    e.target.pauseVideo();
-  }
+  // onReady(e) {
+  //   e.target.pauseVideo();
+  // }
 
   componentDidMount() {
     fetchVideo(this.props.videoId).then(response =>
@@ -36,12 +36,11 @@ class YoutubePlayer extends Component {
   }
 
   render() {
-    if (this.props.videoId !== "") {
-      return (
-        <div>
-          {this.renderYTPlayer()}
-        </div>
-      );
+    if (this.props.videoId !== "" && this.state.data.length > 0) {
+      let videoId = this.props.videoId;
+      return <div>
+          <iframe width="690" height="390" src={`https://www.youtube.com/embed/${this.props.videoId}?enablejsapi=1`} />
+        </div>;
     } else {
       return "";
     }

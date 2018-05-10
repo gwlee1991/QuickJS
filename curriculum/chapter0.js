@@ -5,7 +5,7 @@ export const curriculum = {
       {
         // QuickJS introduction video and introduce instructors
         title: "Intro to QuickJS",
-        videoId: "oFzGOw2dYpM&t=1s",
+        videoId: "oFzGOw2dYpM",
         subtitle: "Dummy subtitle",
         headers: [
           "dummy header"
@@ -16,7 +16,7 @@ export const curriculum = {
       },
       {
         title: "Repl.it",
-        videoId: "oFzGOw2dYpM&t=1s",
+        videoId: "oFzGOw2dYpM",
         subtitle: "Using an online compiler to write Javascript code",
         headers:[
           "What is Repl.it?",
@@ -36,7 +36,7 @@ export const curriculum = {
       },
       {
         title: "Node.js",
-        videoId: "oFzGOw2dYpM&t=1s",
+        videoId: "oFzGOw2dYpM",
         subtitle: "Setting up a Javascript environment on your computer to run Javascript code",
         headers: [
           "What is Node.js?",
@@ -58,7 +58,7 @@ export const curriculum = {
       },
       {
         title: "Writing js files",
-        videoId: "oFzGOw2dYpM&t=1s",
+        videoId: "oFzGOw2dYpM",
         subtitle: "Write Javascript files using a code text editor",
         headers: [
           "How do I write Javascript files?",
