@@ -23,9 +23,11 @@ class MainPage extends Component {
       current.addEventListener("click", e => {
         e.preventDefault();
         if (this.state.chapter === null) {
-          this.setState({ chapter: i, topic: null})
+          this.setState({ chapter: i, topic: null});
         } else if (this.state.chapter === i) {
-          this.setState({ chapter: null, topic: null })
+          this.setState({ chapter: null, topic: null });
+        } else if (this.state.chapter !== null && this.state.chapter !== i) {
+          this.setState({ chapter: i, topic: null });
         }
       })
     }
@@ -66,7 +68,13 @@ class MainPage extends Component {
     } else if (this.state.chapter !== null && this.state.topic !== null) {
       let chapter = this.curriculum[this.state.chapter];
       let topic = chapter.topics[this.state.topic];
-      return <Topic topic={topic}/>
+      return (
+        <section>
+          <span onClick={e => this.setState({ topic: null })}>{"< back"}</span>
+          <Topic topic={topic}/>
+          <span onClick={e => this.setState({ topic: null })}>{"< back"}</span>
+        </section>
+      )
     }
   }
 
