@@ -10,17 +10,27 @@
     margin: 15px;
     padding: 15px;
 
+    
     .card {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      border: 1px black solid;
+      border: 1px rgba(255, 255, 255, 0.884) solid;
       margin: 10px;
       padding: 10px;
       min-width: 200px;
+      background-color: rgba(255, 255, 255, 0.884);
+      opacity: 0.7;
+      
+    }
+
+    .card:hover {
+      background-color: lightgrey;
+      cursor: pointer;
     }
   }
+
   .content-container {
     width: 70%;
     padding: 20px;
@@ -30,9 +40,11 @@
 
   li {
     list-style-type: none;
+    width: fit-content;
   }
 
   li:hover {
     font-weight: 700;
+    cursor: pointer;
   }
 }

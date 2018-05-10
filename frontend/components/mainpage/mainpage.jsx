@@ -64,12 +64,13 @@ class MainPage extends Component {
 
   renderContent() {
     if(this.state.chapter !== null && this.state.topic === null) {
-      return <Chapter chapter={this.curriculum[this.state.chapter]} />
+      let chapter = this.curriculum[this.state.chapter];
+      return <Chapter chapter={chapter} />
     } else if (this.state.chapter !== null && this.state.topic !== null) {
       let chapter = this.curriculum[this.state.chapter];
       let topic = chapter.topics[this.state.topic];
       return (
-        <section>
+        <section className="content-container">
           <span onClick={e => this.setState({ topic: null })}>{"< back"}</span>
           <Topic topic={topic}/>
           <span onClick={e => this.setState({ topic: null })}>{"< back"}</span>

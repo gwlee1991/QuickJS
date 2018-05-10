@@ -28541,13 +28541,14 @@ var MainPage = function (_Component) {
       var _this4 = this;
 
       if (this.state.chapter !== null && this.state.topic === null) {
-        return _react2.default.createElement(_Chapter2.default, { chapter: this.curriculum[this.state.chapter] });
-      } else if (this.state.chapter !== null && this.state.topic !== null) {
         var chapter = this.curriculum[this.state.chapter];
-        var topic = chapter.topics[this.state.topic];
+        return _react2.default.createElement(_Chapter2.default, { chapter: chapter });
+      } else if (this.state.chapter !== null && this.state.topic !== null) {
+        var _chapter = this.curriculum[this.state.chapter];
+        var topic = _chapter.topics[this.state.topic];
         return _react2.default.createElement(
           'section',
-          null,
+          { className: 'content-container' },
           _react2.default.createElement(
             'span',
             { onClick: function onClick(e) {
@@ -28821,6 +28822,11 @@ var Chapter = function (_Component) {
           this.props.chapter.title,
           " - ",
           this.props.chapter.subtitle
+        ),
+        _react2.default.createElement(
+          "h4",
+          null,
+          "Topics"
         ),
         this.renderTopicOptions()
       );

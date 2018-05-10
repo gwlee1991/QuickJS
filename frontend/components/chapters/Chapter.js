@@ -15,6 +15,7 @@ class Chapter extends Component {
     return(
       <section className="content-container">
         <h3>{this.props.chapter.title} - {this.props.chapter.subtitle}</h3>
+        <h4>Topics</h4>
         {this.renderTopicOptions()}
       </section>
     );
