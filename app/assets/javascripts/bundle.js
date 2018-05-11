@@ -28695,7 +28695,7 @@ var curriculum = exports.curriculum = {
     // QuickJS introduction video and introduce instructors
     title: "Intro to QuickJS",
     videoId: "oFzGOw2dYpM",
-    subtitle: "Dummy subtitle",
+    subtitle: "Introduction",
     headers: [""],
     contents: [[""]]
   }, {
@@ -28731,13 +28731,25 @@ Object.defineProperty(exports, "__esModule", {
 });
 var curriculum = exports.curriculum = {
   title: "Chapter 1",
-  subtitle: "Primary Data Types",
+  subtitle: "Basic Syntax",
   topics: [{
-    title: "Strings",
+    title: "Statements",
     videoId: "oFzGOw2dYpM",
-    subtitle: "strings",
-    headers: ["dummy headers"],
-    contents: [["dummy contents"]]
+    subtitle: "The building blocks of a programming language.",
+    headers: ["What is a statement?", "What makes a statement?", "What is a code block?"],
+    contents: [["Statement is a line or lines of code that are executable.", "Just like an essay is built of sentences, Javascript programming is built of multiple statements."], ["Like a sentence, which is built with words and special characters that follow a specific rule, statement is built with different components", "Values, operators, expressions(a combination of values, variables, and operators, which computes to a value), keywords, comments are all building blocks of a statement.", "Finally, like a sentence ending with a period, Statements end with a ';'.", "\tvar a = 5;", "\tlet b = \"cat\";", "\tconst c = 6 + 2;"], ["Code blocks can be thought as paragraphs.", "Statements can be clustered together as a block by enclosing them inside curly brackets {}. This is done so that the statements are executed together.", "Below is an if statement which executes the code block when the statment inside the () evaluates to a truthy value. This may not make sense for now but I promise, we will go over this is a later chapter.", "if ( (5 + 3) === 8){ //note that in Javascript an comparison is done with === instead of =", "\tlet a = 5;", "\tlet b = 4;", "\tlet c = a + b;", "}", "if 5 + 3 is 8 the 3 statements inside the block are run."]]
+  }, {
+    title: "Variables",
+    videoId: "",
+    subtitle: "Declaring Variables",
+    headers: ["What are variables?", "How do we correctly declare a variable?", "Why do I keep using '//'?"],
+    contents: [["Variables are a reference to memory space in the computer to store data values!!", "What does that even mean? Think of a highschool that has a bunch of lockers. Each locker has a number where students store their books, bag, clothes etc. Think of the locker number as a variable. The number represents the specific locker where the student's valuables are stored."], ["In ES6, there are 4 ways to declare a variable. You can use \"let\", \"const\", and \"var\" in front of a variable to declare it, or you can simply declare a new variable without the given keywords to save the variable to the global object. We will go over the diffences of the variable types in a later chapter once we start to talk about functions.", "let a = 2; // '=' here is not the same equals used in mathematics. '=' in computer programming is an assignment operator that assigns the value 2 to the variable a", "const b = 'a'; // 'a' is not the same a declared above.", "var c = a; // a here is the same a that was declared above."], ["In Javascript '//' is used to write comments. Comments are not executed when the code is run and is commently used to explain the code that is written.", "For comments that go over multiple lines, we wrap the comments around with '/* comment */'.", "Sometimes, we use comments to purposely stop code from being executed."]]
+  }, {
+    title: "Data Types",
+    videoId: "",
+    subtitle: "Primitive Data Types",
+    headers: ["Numbers", "Strings", "Booleans", "Undefined", "Null", "NaN", "Truthy and Falsy values"],
+    contents: [["Javascript numbers do not distinguish integers and floats(decimals).", "let a = 5;", "let b = 3.14;", "However, most lower level languages like Java or C++, requires you to define the variable with a int or double.", "int a = 5;", "double b = 3.45;", "int c = 3.2; // throws an error"], ["Strings is a series of characters enclosed either between \"\" or \'\'.", "let dog = 'Susan'; ", "let cat = \"Meow\"; ", "let frog = \'froggo\"; //this is wrong! "], ["Booleans only have two values; true or false", "let a = true;", "let b = false;", "let c = 5;", "let d = 5;", "(c === d) //returns true"], ["Undefined is a data type to represent values that have yet not been initialized.", "let a; //here we have declared the variable a but have not assigned a value to it.", "a; //returns undefined", "a === undefined // returns true"], ["Null represent a value of nothing which is different from undefined.", "let a;", "a === null // returns false since a is undefined", "Although we are going over null in the primitive data types, null is an object."], ["NaN stands for Not a Number. It is a numeric data type value representing an undefined or unrepresentable value", "\"five\"/3 //returns NaN a string cannot be divided by a numeric number"], ["Truthy values are values that evalute to true in a statement and Falsy values are values that evalute to false", "It is easier to memorize the falsy values since there are only a few cases the falsy values", "Falsy: NaN, null, 0, ''(empty string), undefined", "Falsy values return false inside a if statement", "if (null) { return true; } else { return false; } //this statement would return false"]]
   }]
 };
 
@@ -28755,11 +28767,17 @@ var curriculum = exports.curriculum = {
   title: "Chapter2",
   subtitle: "Operators",
   topics: [{
-    title: "JavaScript Arithmetic Operators",
+    title: "Arithmetic Operators",
     videoId: "oFzGOw2dYpM",
     subtitle: "How to use Arithmetic Operators in JS",
     headers: ["1. List of Comparison Operators and examples.", "2. List of JavaScript Arithmetic Operators and examples.", "3. Operator Precedence.", "4. List of Assignment Operators and examples."],
     contents: [["Comparison Operators let us compare values.", "List of Comparison Operators:", "<     Less than                        Ex: x < y", "<=    Less than or equal to            Ex: x <= y", ">     Greater than                     Ex: x > y", ">=    Greater than or equal to         Ex: x >= y", "===   Strict equal to                  Ex: x === y", "!==   Strict not equal to    Ex: x !== y", "", "In JavaScript it is possible to compare values of different types using the '==' operator,", "but using the strict '===' is all we need to compare values in this course.", "", "If we wanted to do multiple comparisons at once, we can take advantage of the '&&' and '||' operators.", "&&    Logical And           Ex: x < y && y === 10", "||    Logical Or            Ex: x < y || y >= 10", "These operators compare true and false statements and return true or false depending on the outcome.", "Example: let x = 5", "x < 6 && x > 0 will return true because x is less than 6 AND x is greater than 0.", "x < 6 || x > 100 will return true because x is less than 6. With OR operations only 1 side has to be true.", "This can get kind of tricky, below is a table to help clarify the outcomes of && and || statements.", "", "Logical AND '&&'", "false && false === false", "false && true === false", "true && true === true", "true && false === false", "", "Logical OR '||'", "false || false === false", "false || true === true", "true || true === true", "true || false === true"], ["Here is a list of list of common operators that you would normally see on a calculator, ", "as well as examples on how to use them in JavaScript.", "", "Operator : Description", "+        : Addition", "-        : Subtraction", "*        : Multiplication", "/        : Division", "%        : Modulo", "**       : Exponent", "Examples: ", "Addition: +", "let x = 5 + 5", "x === 10", "", "Subtraction: -", "let x = 5 - 2", "x === 3", "", "Multiplication: *", "let x = 10 * 10", "x === 100", "", "Division: / ", "let x = 100 / 10", "x === 10", "", "Modulo gives us the remainder from division.", "Modulo: %", "let x = 21 % 5", "x === 1", "", "Exponent: **", "let x = 10 ** 10", "x === 100", ""], ["Operator precedence works the same way it does in traditional mathmatics that many learn in school.", "Operator Precedence:", "1. Parentheses ()", "2. Multiplication, Division, and Modulo. * / % ", "3. Addition and Subtraction. + - ", "", "Some examples would be: ", "(1 + 5) * 10 == ", "2 * 10 * (2 + 3) == 100", ""], ["The math operators listed in our previous section can be combined with the assignment variable to create shortcuts.", "While we could use:", "let x = x + 1", "We can also shorten our code and save room by typing:", "let x += 1", "This can be done with the following assignment operators:", "", "List of Arithmetic Assignments:", "+=   : Addition         Ex: x += y       Same as: x = x + y", "-=   : Subtraction      Ex: x -= y       Same as: x = x - y", "*=   : Multiplication   Ex: x *= y       Same as: x = x * y", "/=   : Division         Ex: x /= y       Same as: x = x / y", "%=   : Modulo           Ex: x %= y       Same as: x = x % y", "++   : Add 1            Ex: x++          Same as: x += 1", "--   : Subtract 1       Ex: x--          Same as: x -= 1", ""]]
+  }, {
+    title: "Strings",
+    videoId: "oFzGOw2dYpM",
+    subtitle: "strings",
+    headers: ["dummy headers"],
+    contents: [["dummy contents"]]
   }]
 };
 

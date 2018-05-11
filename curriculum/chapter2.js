@@ -4,7 +4,7 @@ export const curriculum =
     subtitle: "Operators",
     topics: [
       {
-        title: "JavaScript Arithmetic Operators",
+        title: "Arithmetic Operators",
         videoId: "oFzGOw2dYpM",
         subtitle: "How to use Arithmetic Operators in JS",
         headers: [
@@ -127,6 +127,17 @@ export const curriculum =
             "",
           ]
         ]
-      }
+      },
+      {
+      title: "Strings",
+      videoId: "oFzGOw2dYpM",
+      subtitle: "strings",
+      headers: [
+        "dummy headers"
+      ],
+      contents: [
+        ["dummy contents"]
+      ]
+    }
     ]
   };

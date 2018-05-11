@@ -6,7 +6,7 @@ export const curriculum = {
         // QuickJS introduction video and introduce instructors
         title: "Intro to QuickJS",
         videoId: "oFzGOw2dYpM",
-        subtitle: "Dummy subtitle",
+        subtitle: "Introduction",
         headers: [
           ""
         ],
