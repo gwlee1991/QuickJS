@@ -120,7 +120,7 @@ export const curriculum = {
         [
           "Truthy values are values that evalute to true in a statement and Falsy values are values that evalute to false",
           "It is easier to memorize the falsy values since there are only a few cases the falsy values",
-          "Falsy: NaN, null, 0, ''(empty string), undefined",
+          "Falsy: NaN, null, 0, \"\"(empty string), undefined",
           "Falsy values return false inside a if statement",
           "if (null) { return true; } else { return false; } //this statement would return false"
         ]
