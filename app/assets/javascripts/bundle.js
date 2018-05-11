@@ -28464,7 +28464,7 @@ var MainPage = function (_Component) {
 
     _this.curriculum = _quickJS2.default;
     _this.state = {
-      chapter: 0,
+      chapter: null,
       topic: null
     };
     _this.renderContent = _this.renderContent.bind(_this);
