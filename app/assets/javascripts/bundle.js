@@ -28696,8 +28696,8 @@ var curriculum = exports.curriculum = {
     title: "Intro to QuickJS",
     videoId: "oFzGOw2dYpM",
     subtitle: "Dummy subtitle",
-    headers: ["dummy header"],
-    contents: [["dummy content"]]
+    headers: [""],
+    contents: [[""]]
   }, {
     title: "Repl.it",
     videoId: "oFzGOw2dYpM",

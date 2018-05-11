@@ -8,10 +8,10 @@ export const curriculum = {
         videoId: "oFzGOw2dYpM",
         subtitle: "Dummy subtitle",
         headers: [
-          "dummy header"
+          ""
         ],
         contents: [
-          ["dummy content"]
+          [""]
         ]
       },
       {
