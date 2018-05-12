@@ -11,7 +11,7 @@ class Topic extends Component {
       return <div key={i}>
         <h6>{header}</h6>
         {topic.contents[i].map((content, j) => {
-          return <p key={j}>{content}</p>
+          return <ul key={j}><p>{content}</p></ul>
         })}
         </div>
     })

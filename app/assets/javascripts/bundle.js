@@ -33642,9 +33642,13 @@ var Topic = function (_Component) {
           ),
           topic.contents[i].map(function (content, j) {
             return _react2.default.createElement(
-              'p',
+              'ul',
               { key: j },
-              content
+              _react2.default.createElement(
+                'p',
+                null,
+                content
+              )
             );
           })
         );
