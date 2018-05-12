@@ -71,9 +71,9 @@ class MainPage extends Component {
       let topic = chapter.topics[this.state.topic];
       return (
         <section className="content-container">
-          <span onClick={e => this.setState({ topic: null })}>{"< back"}</span>
+          <span onClick={e => this.setState({ topic: null })} className="bold">{"< back"}</span>
           <Topic topic={topic}/>
-          <span onClick={e => this.setState({ topic: null })}>{"< back"}</span>
+          <span onClick={e => this.setState({ topic: null })} className="bold">{"< back"}</span>
         </section>
       )
     }

@@ -28553,7 +28553,7 @@ var MainPage = function (_Component) {
             'span',
             { onClick: function onClick(e) {
                 return _this4.setState({ topic: null });
-              } },
+              }, className: 'bold' },
             "< back"
           ),
           _react2.default.createElement(_Topic2.default, { topic: topic }),
@@ -28561,7 +28561,7 @@ var MainPage = function (_Component) {
             'span',
             { onClick: function onClick(e) {
                 return _this4.setState({ topic: null });
-              } },
+              }, className: 'bold' },
             "< back"
           )
         );
