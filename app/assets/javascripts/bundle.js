@@ -550,8 +550,8 @@ module.exports = emptyFunction;
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsNative = __webpack_require__(188),
-    getValue = __webpack_require__(193);
+var baseIsNative = __webpack_require__(189),
+    getValue = __webpack_require__(194);
 
 /**
  * Gets the native function at `key` of `object`.
@@ -1003,8 +1003,8 @@ module.exports = eq;
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(43),
-    getRawTag = __webpack_require__(189),
-    objectToString = __webpack_require__(190);
+    getRawTag = __webpack_require__(190),
+    objectToString = __webpack_require__(191);
 
 /** `Object#toString` result references. */
 var nullTag = '[object Null]',
@@ -1260,11 +1260,11 @@ module.exports = function(module) {
 /* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var listCacheClear = __webpack_require__(178),
-    listCacheDelete = __webpack_require__(179),
-    listCacheGet = __webpack_require__(180),
-    listCacheHas = __webpack_require__(181),
-    listCacheSet = __webpack_require__(182);
+var listCacheClear = __webpack_require__(179),
+    listCacheDelete = __webpack_require__(180),
+    listCacheGet = __webpack_require__(181),
+    listCacheHas = __webpack_require__(182),
+    listCacheSet = __webpack_require__(183);
 
 /**
  * Creates an list cache object.
@@ -1337,7 +1337,7 @@ module.exports = nativeCreate;
 /* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isKeyable = __webpack_require__(202);
+var isKeyable = __webpack_require__(203);
 
 /**
  * Gets the data for `map`.
@@ -2273,7 +2273,7 @@ module.exports = Symbol;
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(5),
-    stubFalse = __webpack_require__(224);
+    stubFalse = __webpack_require__(225);
 
 /** Detect free variable `exports`. */
 var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
@@ -2317,9 +2317,9 @@ module.exports = isBuffer;
 /* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsTypedArray = __webpack_require__(225),
-    baseUnary = __webpack_require__(226),
-    nodeUtil = __webpack_require__(227);
+var baseIsTypedArray = __webpack_require__(226),
+    baseUnary = __webpack_require__(227),
+    nodeUtil = __webpack_require__(228);
 
 /* Node.js helper references. */
 var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
@@ -3377,7 +3377,7 @@ var _mainpage_container = __webpack_require__(165);
 
 var _mainpage_container2 = _interopRequireDefault(_mainpage_container);
 
-var _routes_util = __webpack_require__(248);
+var _routes_util = __webpack_require__(249);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -4421,11 +4421,11 @@ exports.default = SafeHTMLElement;
 /***/ (function(module, exports, __webpack_require__) {
 
 var ListCache = __webpack_require__(23),
-    stackClear = __webpack_require__(183),
-    stackDelete = __webpack_require__(184),
-    stackGet = __webpack_require__(185),
-    stackHas = __webpack_require__(186),
-    stackSet = __webpack_require__(187);
+    stackClear = __webpack_require__(184),
+    stackDelete = __webpack_require__(185),
+    stackGet = __webpack_require__(186),
+    stackHas = __webpack_require__(187),
+    stackSet = __webpack_require__(188);
 
 /**
  * Creates a stack cache object to store key-value pairs.
@@ -4496,11 +4496,11 @@ module.exports = toSource;
 /* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var mapCacheClear = __webpack_require__(194),
-    mapCacheDelete = __webpack_require__(201),
-    mapCacheGet = __webpack_require__(203),
-    mapCacheHas = __webpack_require__(204),
-    mapCacheSet = __webpack_require__(205);
+var mapCacheClear = __webpack_require__(195),
+    mapCacheDelete = __webpack_require__(202),
+    mapCacheGet = __webpack_require__(204),
+    mapCacheHas = __webpack_require__(205),
+    mapCacheSet = __webpack_require__(206);
 
 /**
  * Creates a map cache object to store key-value pairs.
@@ -4534,9 +4534,9 @@ module.exports = MapCache;
 /* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var SetCache = __webpack_require__(206),
-    arraySome = __webpack_require__(209),
-    cacheHas = __webpack_require__(210);
+var SetCache = __webpack_require__(207),
+    arraySome = __webpack_require__(210),
+    cacheHas = __webpack_require__(211);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1,
@@ -4635,7 +4635,7 @@ module.exports = Uint8Array;
 /* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseTimes = __webpack_require__(222),
+var baseTimes = __webpack_require__(223),
     isArguments = __webpack_require__(83),
     isArray = __webpack_require__(27),
     isBuffer = __webpack_require__(44),
@@ -4690,7 +4690,7 @@ module.exports = arrayLikeKeys;
 /* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsArguments = __webpack_require__(223),
+var baseIsArguments = __webpack_require__(224),
     isObjectLike = __webpack_require__(11);
 
 /** Used for built-in method references. */
@@ -4878,7 +4878,7 @@ module.exports = getPrototype;
 /***/ (function(module, exports, __webpack_require__) {
 
 var arrayLikeKeys = __webpack_require__(82),
-    baseKeysIn = __webpack_require__(270),
+    baseKeysIn = __webpack_require__(271),
     isArrayLike = __webpack_require__(28);
 
 /**
@@ -4959,11 +4959,11 @@ var _App = __webpack_require__(63);
 
 var _App2 = _interopRequireDefault(_App);
 
-var _root = __webpack_require__(249);
+var _root = __webpack_require__(250);
 
 var _root2 = _interopRequireDefault(_root);
 
-var _store = __webpack_require__(250);
+var _store = __webpack_require__(251);
 
 var _store2 = _interopRequireDefault(_store);
 
@@ -28442,7 +28442,7 @@ var _Chapter = __webpack_require__(172);
 
 var _Chapter2 = _interopRequireDefault(_Chapter);
 
-var _Topic = __webpack_require__(281);
+var _Topic = __webpack_require__(173);
 
 var _Topic2 = _interopRequireDefault(_Topic);
 
@@ -28674,7 +28674,7 @@ var Chap2 = _interopRequireWildcard(_chapter3);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var curriculum = [Chap0.curriculum, Chap1.curriculum, Chap2.curriculum];
+var curriculum = [Chap0.curriculum, Chap1.curriculum];
 
 exports.default = curriculum;
 
@@ -28697,25 +28697,25 @@ var curriculum = exports.curriculum = {
     videoId: "oFzGOw2dYpM",
     subtitle: "Introduction",
     headers: [""],
-    contents: [[""]]
+    contents: [[{ type: "string", string: "" }]]
   }, {
     title: "Repl.it",
     videoId: "oFzGOw2dYpM",
     subtitle: "Using an online compiler to write Javascript code",
     headers: ["What is Repl.it?", "How do I use repli.it?"],
-    contents: [["Repl.it is a simple online compiler, IDE, interpreter that allows you to code in various languages.", "It has a console, letting you see the result of your code immediately."], ["Navigate to 'https://repl.it'.", "Choose your primary language that you would like to code in (for the purpose of this course, I would choose Javascript).", "Start coding and run code to see results inside the given console."]]
+    contents: [[{ type: "string", string: "Repl.it is a simple online compiler, IDE, interpreter that allows you to code in various languages." }, { type: "string", string: "It has a console, letting you see the result of your code immediately." }], [{ type: "string", string: "Navigate to 'https://repl.it'." }, { type: "string", string: "Choose your primary language that you would like to code in (for the purpose of this course, I would choose Javascript)." }, { type: "string", string: "Start coding and run code to see results inside the given console." }]]
   }, {
     title: "Node.js",
     videoId: "oFzGOw2dYpM",
     subtitle: "Setting up a Javascript environment on your computer to run Javascript code",
     headers: ["What is Node.js?", "How do I install Node.js?"],
-    contents: [["Node.js is a Javascript runtime that allows code execution outside of the browser."], ["1. Navigate to https://nodejs.org/en/", "2. Install the recommended version for your operating system", "3. Once downloaded and installed, open up your terminal", "4. Your terminal should look like ~$. This means that you are in the root directory.", "5. Type in node and press enter. If your input field shows >, that means you are on the node environment", "6. Start writing Javascript code."]]
+    contents: [[{ type: "string", string: "Node.js is a Javascript runtime that allows code execution outside of the browser." }], [{ type: "string", string: "1. Navigate to https://nodejs.org/en/" }, { type: "string", string: "2. Install the recommended version for your operating system" }, { type: "string", string: "3. Once downloaded and installed, open up your terminal" }, { type: "string", string: "4. Your terminal should look like ~$. This means that you are in the root directory." }, { type: "string", string: "5. Type in node and press enter. If your input field shows >, that means you are on the node environment" }, { type: "string", string: "6. Start writing Javascript code." }]]
   }, {
     title: "Writing js files",
     videoId: "oFzGOw2dYpM",
     subtitle: "Write Javascript files using a code text editor",
     headers: ["How do I write Javascript files?", "What is a code text editor?", "How do I run a JS file that I have written with my code editor?"],
-    contents: [["Javascript files have a js extension. (ex. sample.js)", "You could write a Javascript file using a simple notepad"], ["Code text editor is a text editor just like ms word except it's usually used for writing Code.", "There are a variety of code text editors that you could use such as Visual Studio Code, Atom, Sublime etc. (I currently use VS code)", "Different code editors have different features, but atom or vs code is a good starter."], ["On our previous video, we have discussed on how to install node onto your computer. We will have to use node to run the Javascript file", "To run our JS file, you first have to navigate to the directory where your file is saved in (ex. let's say it's in Desktop)", "Open up terminal. You should be in your root directory right now", "To go to Desktop type in 'cd Desktop' and press enter", "Now that we are at the directory where the file is saved, type node sample.js and press enter to run the file"]]
+    contents: [[{ type: "string", string: "Javascript files have a js extension. (ex. sample.js)" }, { type: "string", string: "You could write a Javascript file using a simple notepad" }], [{ type: "string", string: "Code text editor is a text editor just like ms word except it's usually used for writing Code." }, { type: "string", string: "There are a variety of code text editors that you could use such as Visual Studio Code, Atom, Sublime etc. (I currently use VS code)" }, { type: "string", string: "Different code editors have different features, but atom or vs code is a good starter." }], [{ type: "string", string: "On our previous video, we have discussed on how to install node onto your computer. We will have to use node to run the Javascript file" }, { type: "string", string: "To run our JS file, you first have to navigate to the directory where your file is saved in (ex. let's say it's in Desktop)" }, { type: "string", string: "Open up terminal. You should be in your root directory right now" }, { type: "string", string: "To go to Desktop type in 'cd Desktop' and press enter" }, { type: "string", string: "Now that we are at the directory where the file is saved, type node sample.js and press enter to run the file" }]]
   }]
 };
 
@@ -28737,19 +28737,19 @@ var curriculum = exports.curriculum = {
     videoId: "oFzGOw2dYpM",
     subtitle: "The building blocks of a programming language.",
     headers: ["What is a statement?", "What makes a statement?", "What is a code block?"],
-    contents: [["Statement is a line or lines of code that are executable.", "Just like an essay is built of sentences, Javascript programming is built of multiple statements."], ["Like a sentence, which is built with words and special characters that follow a specific rule, statement is built with different components", "Values, operators, expressions(a combination of values, variables, and operators, which computes to a value), keywords, comments are all building blocks of a statement.", "Finally, like a sentence ending with a period, Statements end with a ';'.", "\tvar a = 5;", "\tlet b = \"cat\";", "\tconst c = 6 + 2;"], ["Code blocks can be thought as paragraphs.", "Statements can be clustered together as a block by enclosing them inside curly brackets {}. This is done so that the statements are executed together.", "Below is an if statement which executes the code block when the statment inside the () evaluates to a truthy value. This may not make sense for now but I promise, we will go over this is a later chapter.", "if ( (5 + 3) === 8){ //note that in Javascript an comparison is done with === instead of =", "\tlet a = 5;", "\tlet b = 4;", "\tlet c = a + b;", "}", "if 5 + 3 is 8 the 3 statements inside the block are run."]]
+    contents: [[{ type: "string", string: "Statement is a line or lines of code that are executable." }, { type: "string", string: "Just like an essay is built of sentences, Javascript programming is built of multiple statements." }], [{ type: "string", string: "Like a sentence, which is built with words and special characters that follow a specific rule, statement is built with different components" }, { type: "string", string: "Values, operators, expressions(a combination of values, variables, and operators, which computes to a value), keywords, comments are all building blocks of a statement." }, { type: "string", string: "Finally, like a sentence ending with a period, Statements end with a ';'." }, { type: "code", string: "\tvar a = 5;" }, { type: "code", string: "\tlet b = \"cat\";" }, { type: "code", string: "\tconst c = 6 + 2;" }], [{ type: "string", string: "Code blocks can be thought as paragraphs." }, { type: "string", string: "Statements can be clustered together as a block by enclosing them inside curly brackets {}. This is done so that the statements are executed together." }, { type: "string", string: "Below is an if statement which executes the code block when the statment inside the () evaluates to a truthy value. This may not make sense for now but I promise, we will go over this is a later chapter." }, { type: "string", string: "if ( (5 + 3) === 8){ //note that in Javascript an comparison is done with === instead of =" }, { type: "code", string: "\tlet a = 5;" }, { type: "code", string: "\tlet b = 4;" }, { type: "code", string: "\tlet c = a + b;" }, { type: "code", string: "}" }, { type: "string", string: "if 5 + 3 is 8 the 3 statements inside the block are run." }]]
   }, {
     title: "Variables",
     videoId: "",
     subtitle: "Declaring Variables",
     headers: ["What are variables?", "How do we correctly declare a variable?", "Why do I keep using '//'?"],
-    contents: [["Variables are a reference to memory space in the computer to store data values!!", "What does that even mean? Think of a highschool that has a bunch of lockers. Each locker has a number where students store their books, bag, clothes etc. Think of the locker number as a variable. The number represents the specific locker where the student's valuables are stored."], ["In ES6, there are 4 ways to declare a variable. You can use \"let\", \"const\", and \"var\" in front of a variable to declare it, or you can simply declare a new variable without the given keywords to save the variable to the global object. We will go over the diffences of the variable types in a later chapter once we start to talk about functions.", "let a = 2; // '=' here is not the same equals used in mathematics. '=' in computer programming is an assignment operator that assigns the value 2 to the variable a", "const b = 'a'; // 'a' is not the same a declared above.", "var c = a; // a here is the same a that was declared above."], ["In Javascript '//' is used to write comments. Comments are not executed when the code is run and is commently used to explain the code that is written.", "For comments that go over multiple lines, we wrap the comments around with '/* comment */'.", "Sometimes, we use comments to purposely stop code from being executed."]]
+    contents: [[{ type: "string", string: "Variables are a reference to memory space in the computer to store data values!!" }, { type: "string", string: "What does that even mean? Think of a highschool that has a bunch of lockers. Each locker has a number where students store their books, bag, clothes etc. Think of the locker number as a variable. The number represents the specific locker where the student's valuables are stored." }], [{ type: "string", string: "In ES6, there are 4 ways to declare a variable. You can use \"let\", \"const\", and \"var\" in front of a variable to declare it, or you can simply declare a new variable without the given keywords to save the variable to the global object. We will go over the diffences of the variable types in a later chapter once we start to talk about functions." }, { type: "code", string: "let a = 2; // '=' here is not the same equals used in mathematics. '=' in computer programming is an assignment operator that assigns the value 2 to the variable a" }, { type: "code", string: "const b = 'a'; // 'a' is not the same a declared above." }, { type: "code", string: "var c = a; // a here is the same a that was declared above." }], [{ type: "string", string: "In Javascript '//' is used to write comments. Comments are not executed when the code is run and is commonly used to explain the code that is written." }, { type: "string", string: "For comments that go over multiple lines, we wrap the comments around with '/* comment */'." }, { type: "string", string: "Sometimes, we use comments to purposely stop code from being executed." }]]
   }, {
     title: "Data Types",
     videoId: "",
     subtitle: "Primitive Data Types",
     headers: ["Numbers", "Strings", "Booleans", "Undefined", "Null", "NaN", "Truthy and Falsy values"],
-    contents: [["Javascript numbers do not distinguish integers and floats(decimals).", "let a = 5;", "let b = 3.14;", "However, most lower level languages like Java or C++, requires you to define the variable with a int or double.", "int a = 5;", "double b = 3.45;", "int c = 3.2; // throws an error"], ["Strings is a series of characters enclosed either between \"\" or \'\'.", "let dog = 'Susan'; ", "let cat = \"Meow\"; ", "let frog = \'froggo\"; //this is wrong! "], ["Booleans only have two values; true or false", "let a = true;", "let b = false;", "let c = 5;", "let d = 5;", "(c === d) //returns true"], ["Undefined is a data type to represent values that have yet not been initialized.", "let a; //here we have declared the variable a but have not assigned a value to it.", "a; //returns undefined", "a === undefined // returns true"], ["Null represent a value of nothing which is different from undefined.", "let a;", "a === null // returns false since a is undefined", "Although we are going over null in the primitive data types, null is an object."], ["NaN stands for Not a Number. It is a numeric data type value representing an undefined or unrepresentable value", "\"five\"/3 //returns NaN a string cannot be divided by a numeric number"], ["Truthy values are values that evalute to true in a statement and Falsy values are values that evalute to false", "It is easier to memorize the falsy values since there are only a few cases the falsy values", "Falsy: NaN, null, 0, \"\"(empty string), undefined", "Falsy values return false inside a if statement", "if (null) { return true; } else { return false; } //this statement would return false"]]
+    contents: [[{ type: "string", string: "Javascript numbers do not distinguish integers and floats(decimals)." }, { type: "code", string: "let a = 5;" }, { type: "code", string: "let b = 3.14;" }, { type: "code", string: "However, most lower level languages like Java or C++, requires you to define the variable with a int or double." }, { type: "code", string: "int a = 5;" }, { type: "code", string: "double b = 3.45;" }, { type: "code", string: "int c = 3.2; // throws an error" }], [{ type: "string", string: "Strings is a series of characters enclosed either between \"\" or \'\'." }, { type: "code", string: "let dog = 'Susan'; " }, { type: "code", string: "let cat = \"Meow\"; " }, { type: "code", string: "let frog = \'froggo\"; //this is wrong! " }], [{ type: "string", string: "Booleans only have two values; true or false" }, { type: "code", string: "let a = true;" }, { type: "code", string: "let b = false;" }, { type: "code", string: "let c = 5;" }, { type: "code", string: "let d = 5;" }, { type: "code", string: "(c === d) //returns true" }], [{ type: "string", string: "Undefined is a data type to represent values that have yet not been initialized." }, { type: "code", string: "let a; //here we have declared the variable a but have not assigned a value to it." }, { type: "code", string: "a; //returns undefined" }, { type: "code", string: "a === undefined // returns true" }], [{ type: "string", string: "Null represent a value of nothing which is different from undefined." }, { type: "code", string: "let a;" }, { type: "code", string: "a === null // returns false since a is undefined" }, { type: "code", string: "Although we are going over null in the primitive data types, null is an object." }], [{ type: "string", string: "NaN stands for Not a Number. It is a numeric data type value representing an undefined or unrepresentable value" }, { type: "code", string: "\"five\"/3 //returns NaN a string cannot be divided by a numeric number" }], [{ type: "string", string: "Truthy values are values that evalute to true in a statement and Falsy values are values that evalute to false" }, { type: "string", string: "It is easier to memorize the falsy values since there are only a few cases the falsy values" }, { type: "string", string: "Falsy: NaN, null, 0, \"\"(empty string), undefined" }, { type: "string", string: "Falsy values return false inside a if statement" }, { type: "code", string: "if (null) { return true; } else { return false; } //this statement would return false" }]]
   }]
 };
 
@@ -28873,11 +28873,108 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactYoutube = __webpack_require__(174);
+var _player = __webpack_require__(174);
+
+var _player2 = _interopRequireDefault(_player);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Topic = function (_Component) {
+  _inherits(Topic, _Component);
+
+  function Topic(props) {
+    _classCallCheck(this, Topic);
+
+    return _possibleConstructorReturn(this, (Topic.__proto__ || Object.getPrototypeOf(Topic)).call(this, props));
+  }
+
+  _createClass(Topic, [{
+    key: 'renderer',
+    value: function renderer(topic) {
+      return topic.headers.map(function (header, i) {
+        return _react2.default.createElement(
+          'div',
+          { className: 'single-topic', key: i },
+          _react2.default.createElement(
+            'h6',
+            null,
+            header
+          ),
+          topic.contents[i].map(function (content, j) {
+            var classAlias = "";
+            // revisit this to change the whole array of code snippets to 1 long string which can be parsed into a coded format
+            if (content.type === "code") {
+              classAlias = "code-snippet";
+            }
+            return _react2.default.createElement(
+              'ul',
+              { key: j, className: '' + classAlias },
+              _react2.default.createElement(
+                'p',
+                null,
+                content.string
+              )
+            );
+          })
+        );
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var topic = this.props.topic;
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h4',
+          null,
+          topic.title
+        ),
+        _react2.default.createElement(
+          'h5',
+          null,
+          topic.subtitle
+        ),
+        _react2.default.createElement(_player2.default, { videoId: topic.videoId }),
+        this.renderer(topic)
+      );
+    }
+  }]);
+
+  return Topic;
+}(_react.Component);
+
+exports.default = Topic;
+
+/***/ }),
+/* 174 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactYoutube = __webpack_require__(175);
 
 var _reactYoutube2 = _interopRequireDefault(_reactYoutube);
 
-var _youtube_api_util = __webpack_require__(247);
+var _youtube_api_util = __webpack_require__(248);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28951,7 +29048,7 @@ var YoutubePlayer = function (_Component) {
 exports.default = YoutubePlayer;
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -28960,9 +29057,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_isEqual__ = __webpack_require__(175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_isEqual__ = __webpack_require__(176);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_isEqual___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash_isEqual__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_youtube_player__ = __webpack_require__(235);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_youtube_player__ = __webpack_require__(236);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_youtube_player___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_youtube_player__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -29322,10 +29419,10 @@ YouTube.PlayerState = {
 /* harmony default export */ __webpack_exports__["default"] = (YouTube);
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsEqual = __webpack_require__(176);
+var baseIsEqual = __webpack_require__(177);
 
 /**
  * Performs a deep comparison between two values to determine if they are
@@ -29363,10 +29460,10 @@ module.exports = isEqual;
 
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsEqualDeep = __webpack_require__(177),
+var baseIsEqualDeep = __webpack_require__(178),
     isObjectLike = __webpack_require__(11);
 
 /**
@@ -29397,14 +29494,14 @@ module.exports = baseIsEqual;
 
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Stack = __webpack_require__(76),
     equalArrays = __webpack_require__(80),
-    equalByTag = __webpack_require__(211),
-    equalObjects = __webpack_require__(214),
-    getTag = __webpack_require__(230),
+    equalByTag = __webpack_require__(212),
+    equalObjects = __webpack_require__(215),
+    getTag = __webpack_require__(231),
     isArray = __webpack_require__(27),
     isBuffer = __webpack_require__(44),
     isTypedArray = __webpack_require__(45);
@@ -29486,7 +29583,7 @@ module.exports = baseIsEqualDeep;
 
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports) {
 
 /**
@@ -29505,7 +29602,7 @@ module.exports = listCacheClear;
 
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assocIndexOf = __webpack_require__(24);
@@ -29546,7 +29643,7 @@ module.exports = listCacheDelete;
 
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assocIndexOf = __webpack_require__(24);
@@ -29571,7 +29668,7 @@ module.exports = listCacheGet;
 
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assocIndexOf = __webpack_require__(24);
@@ -29593,7 +29690,7 @@ module.exports = listCacheHas;
 
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assocIndexOf = __webpack_require__(24);
@@ -29625,7 +29722,7 @@ module.exports = listCacheSet;
 
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ListCache = __webpack_require__(23);
@@ -29646,7 +29743,7 @@ module.exports = stackClear;
 
 
 /***/ }),
-/* 184 */
+/* 185 */
 /***/ (function(module, exports) {
 
 /**
@@ -29670,7 +29767,7 @@ module.exports = stackDelete;
 
 
 /***/ }),
-/* 185 */
+/* 186 */
 /***/ (function(module, exports) {
 
 /**
@@ -29690,7 +29787,7 @@ module.exports = stackGet;
 
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, exports) {
 
 /**
@@ -29710,7 +29807,7 @@ module.exports = stackHas;
 
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ListCache = __webpack_require__(23),
@@ -29750,11 +29847,11 @@ module.exports = stackSet;
 
 
 /***/ }),
-/* 188 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isFunction = __webpack_require__(42),
-    isMasked = __webpack_require__(191),
+    isMasked = __webpack_require__(192),
     isObject = __webpack_require__(9),
     toSource = __webpack_require__(78);
 
@@ -29803,7 +29900,7 @@ module.exports = baseIsNative;
 
 
 /***/ }),
-/* 189 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(43);
@@ -29855,7 +29952,7 @@ module.exports = getRawTag;
 
 
 /***/ }),
-/* 190 */
+/* 191 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -29883,10 +29980,10 @@ module.exports = objectToString;
 
 
 /***/ }),
-/* 191 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var coreJsData = __webpack_require__(192);
+var coreJsData = __webpack_require__(193);
 
 /** Used to detect methods masquerading as native. */
 var maskSrcKey = (function() {
@@ -29909,7 +30006,7 @@ module.exports = isMasked;
 
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var root = __webpack_require__(5);
@@ -29921,7 +30018,7 @@ module.exports = coreJsData;
 
 
 /***/ }),
-/* 193 */
+/* 194 */
 /***/ (function(module, exports) {
 
 /**
@@ -29940,10 +30037,10 @@ module.exports = getValue;
 
 
 /***/ }),
-/* 194 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Hash = __webpack_require__(195),
+var Hash = __webpack_require__(196),
     ListCache = __webpack_require__(23),
     Map = __webpack_require__(41);
 
@@ -29967,14 +30064,14 @@ module.exports = mapCacheClear;
 
 
 /***/ }),
-/* 195 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var hashClear = __webpack_require__(196),
-    hashDelete = __webpack_require__(197),
-    hashGet = __webpack_require__(198),
-    hashHas = __webpack_require__(199),
-    hashSet = __webpack_require__(200);
+var hashClear = __webpack_require__(197),
+    hashDelete = __webpack_require__(198),
+    hashGet = __webpack_require__(199),
+    hashHas = __webpack_require__(200),
+    hashSet = __webpack_require__(201);
 
 /**
  * Creates a hash object.
@@ -30005,7 +30102,7 @@ module.exports = Hash;
 
 
 /***/ }),
-/* 196 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var nativeCreate = __webpack_require__(25);
@@ -30026,7 +30123,7 @@ module.exports = hashClear;
 
 
 /***/ }),
-/* 197 */
+/* 198 */
 /***/ (function(module, exports) {
 
 /**
@@ -30049,7 +30146,7 @@ module.exports = hashDelete;
 
 
 /***/ }),
-/* 198 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var nativeCreate = __webpack_require__(25);
@@ -30085,7 +30182,7 @@ module.exports = hashGet;
 
 
 /***/ }),
-/* 199 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var nativeCreate = __webpack_require__(25);
@@ -30114,7 +30211,7 @@ module.exports = hashHas;
 
 
 /***/ }),
-/* 200 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var nativeCreate = __webpack_require__(25);
@@ -30143,7 +30240,7 @@ module.exports = hashSet;
 
 
 /***/ }),
-/* 201 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getMapData = __webpack_require__(26);
@@ -30167,7 +30264,7 @@ module.exports = mapCacheDelete;
 
 
 /***/ }),
-/* 202 */
+/* 203 */
 /***/ (function(module, exports) {
 
 /**
@@ -30188,7 +30285,7 @@ module.exports = isKeyable;
 
 
 /***/ }),
-/* 203 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getMapData = __webpack_require__(26);
@@ -30210,7 +30307,7 @@ module.exports = mapCacheGet;
 
 
 /***/ }),
-/* 204 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getMapData = __webpack_require__(26);
@@ -30232,7 +30329,7 @@ module.exports = mapCacheHas;
 
 
 /***/ }),
-/* 205 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getMapData = __webpack_require__(26);
@@ -30260,12 +30357,12 @@ module.exports = mapCacheSet;
 
 
 /***/ }),
-/* 206 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var MapCache = __webpack_require__(79),
-    setCacheAdd = __webpack_require__(207),
-    setCacheHas = __webpack_require__(208);
+    setCacheAdd = __webpack_require__(208),
+    setCacheHas = __webpack_require__(209);
 
 /**
  *
@@ -30293,7 +30390,7 @@ module.exports = SetCache;
 
 
 /***/ }),
-/* 207 */
+/* 208 */
 /***/ (function(module, exports) {
 
 /** Used to stand-in for `undefined` hash values. */
@@ -30318,7 +30415,7 @@ module.exports = setCacheAdd;
 
 
 /***/ }),
-/* 208 */
+/* 209 */
 /***/ (function(module, exports) {
 
 /**
@@ -30338,7 +30435,7 @@ module.exports = setCacheHas;
 
 
 /***/ }),
-/* 209 */
+/* 210 */
 /***/ (function(module, exports) {
 
 /**
@@ -30367,7 +30464,7 @@ module.exports = arraySome;
 
 
 /***/ }),
-/* 210 */
+/* 211 */
 /***/ (function(module, exports) {
 
 /**
@@ -30386,15 +30483,15 @@ module.exports = cacheHas;
 
 
 /***/ }),
-/* 211 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(43),
     Uint8Array = __webpack_require__(81),
     eq = __webpack_require__(16),
     equalArrays = __webpack_require__(80),
-    mapToArray = __webpack_require__(212),
-    setToArray = __webpack_require__(213);
+    mapToArray = __webpack_require__(213),
+    setToArray = __webpack_require__(214);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1,
@@ -30504,7 +30601,7 @@ module.exports = equalByTag;
 
 
 /***/ }),
-/* 212 */
+/* 213 */
 /***/ (function(module, exports) {
 
 /**
@@ -30528,7 +30625,7 @@ module.exports = mapToArray;
 
 
 /***/ }),
-/* 213 */
+/* 214 */
 /***/ (function(module, exports) {
 
 /**
@@ -30552,10 +30649,10 @@ module.exports = setToArray;
 
 
 /***/ }),
-/* 214 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getAllKeys = __webpack_require__(215);
+var getAllKeys = __webpack_require__(216);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1;
@@ -30647,12 +30744,12 @@ module.exports = equalObjects;
 
 
 /***/ }),
-/* 215 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetAllKeys = __webpack_require__(216),
-    getSymbols = __webpack_require__(218),
-    keys = __webpack_require__(221);
+var baseGetAllKeys = __webpack_require__(217),
+    getSymbols = __webpack_require__(219),
+    keys = __webpack_require__(222);
 
 /**
  * Creates an array of own enumerable property names and symbols of `object`.
@@ -30669,10 +30766,10 @@ module.exports = getAllKeys;
 
 
 /***/ }),
-/* 216 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayPush = __webpack_require__(217),
+var arrayPush = __webpack_require__(218),
     isArray = __webpack_require__(27);
 
 /**
@@ -30695,7 +30792,7 @@ module.exports = baseGetAllKeys;
 
 
 /***/ }),
-/* 217 */
+/* 218 */
 /***/ (function(module, exports) {
 
 /**
@@ -30721,11 +30818,11 @@ module.exports = arrayPush;
 
 
 /***/ }),
-/* 218 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayFilter = __webpack_require__(219),
-    stubArray = __webpack_require__(220);
+var arrayFilter = __webpack_require__(220),
+    stubArray = __webpack_require__(221);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -30757,7 +30854,7 @@ module.exports = getSymbols;
 
 
 /***/ }),
-/* 219 */
+/* 220 */
 /***/ (function(module, exports) {
 
 /**
@@ -30788,7 +30885,7 @@ module.exports = arrayFilter;
 
 
 /***/ }),
-/* 220 */
+/* 221 */
 /***/ (function(module, exports) {
 
 /**
@@ -30817,11 +30914,11 @@ module.exports = stubArray;
 
 
 /***/ }),
-/* 221 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var arrayLikeKeys = __webpack_require__(82),
-    baseKeys = __webpack_require__(228),
+    baseKeys = __webpack_require__(229),
     isArrayLike = __webpack_require__(28);
 
 /**
@@ -30860,7 +30957,7 @@ module.exports = keys;
 
 
 /***/ }),
-/* 222 */
+/* 223 */
 /***/ (function(module, exports) {
 
 /**
@@ -30886,7 +30983,7 @@ module.exports = baseTimes;
 
 
 /***/ }),
-/* 223 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(17),
@@ -30910,7 +31007,7 @@ module.exports = baseIsArguments;
 
 
 /***/ }),
-/* 224 */
+/* 225 */
 /***/ (function(module, exports) {
 
 /**
@@ -30934,7 +31031,7 @@ module.exports = stubFalse;
 
 
 /***/ }),
-/* 225 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(17),
@@ -31000,7 +31097,7 @@ module.exports = baseIsTypedArray;
 
 
 /***/ }),
-/* 226 */
+/* 227 */
 /***/ (function(module, exports) {
 
 /**
@@ -31020,7 +31117,7 @@ module.exports = baseUnary;
 
 
 /***/ }),
-/* 227 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(77);
@@ -31049,11 +31146,11 @@ module.exports = nodeUtil;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22)(module)))
 
 /***/ }),
-/* 228 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isPrototype = __webpack_require__(46),
-    nativeKeys = __webpack_require__(229);
+    nativeKeys = __webpack_require__(230);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -31085,7 +31182,7 @@ module.exports = baseKeys;
 
 
 /***/ }),
-/* 229 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var overArg = __webpack_require__(86);
@@ -31097,14 +31194,14 @@ module.exports = nativeKeys;
 
 
 /***/ }),
-/* 230 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var DataView = __webpack_require__(231),
+var DataView = __webpack_require__(232),
     Map = __webpack_require__(41),
-    Promise = __webpack_require__(232),
-    Set = __webpack_require__(233),
-    WeakMap = __webpack_require__(234),
+    Promise = __webpack_require__(233),
+    Set = __webpack_require__(234),
+    WeakMap = __webpack_require__(235),
     baseGetTag = __webpack_require__(17),
     toSource = __webpack_require__(78);
 
@@ -31161,7 +31258,7 @@ module.exports = getTag;
 
 
 /***/ }),
-/* 231 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(8),
@@ -31174,7 +31271,7 @@ module.exports = DataView;
 
 
 /***/ }),
-/* 232 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(8),
@@ -31187,7 +31284,7 @@ module.exports = Promise;
 
 
 /***/ }),
-/* 233 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(8),
@@ -31200,7 +31297,7 @@ module.exports = Set;
 
 
 /***/ }),
-/* 234 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(8),
@@ -31213,7 +31310,7 @@ module.exports = WeakMap;
 
 
 /***/ }),
-/* 235 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31225,15 +31322,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _sister = __webpack_require__(236);
+var _sister = __webpack_require__(237);
 
 var _sister2 = _interopRequireDefault(_sister);
 
-var _loadYouTubeIframeApi = __webpack_require__(237);
+var _loadYouTubeIframeApi = __webpack_require__(238);
 
 var _loadYouTubeIframeApi2 = _interopRequireDefault(_loadYouTubeIframeApi);
 
-var _YouTubePlayer = __webpack_require__(239);
+var _YouTubePlayer = __webpack_require__(240);
 
 var _YouTubePlayer2 = _interopRequireDefault(_YouTubePlayer);
 
@@ -31312,7 +31409,7 @@ exports.default = function (maybeElementId) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 236 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -31378,7 +31475,7 @@ module.exports = Sister;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(21)))
 
 /***/ }),
-/* 237 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31388,7 +31485,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _loadScript = __webpack_require__(238);
+var _loadScript = __webpack_require__(239);
 
 var _loadScript2 = _interopRequireDefault(_loadScript);
 
@@ -31433,7 +31530,7 @@ exports.default = function (emitter) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 238 */
+/* 239 */
 /***/ (function(module, exports) {
 
 
@@ -31504,7 +31601,7 @@ function ieOnEnd (script, cb) {
 
 
 /***/ }),
-/* 239 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31514,19 +31611,19 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _debug = __webpack_require__(240);
+var _debug = __webpack_require__(241);
 
 var _debug2 = _interopRequireDefault(_debug);
 
-var _functionNames = __webpack_require__(243);
+var _functionNames = __webpack_require__(244);
 
 var _functionNames2 = _interopRequireDefault(_functionNames);
 
-var _eventNames = __webpack_require__(244);
+var _eventNames = __webpack_require__(245);
 
 var _eventNames2 = _interopRequireDefault(_eventNames);
 
-var _FunctionStateMap = __webpack_require__(245);
+var _FunctionStateMap = __webpack_require__(246);
 
 var _FunctionStateMap2 = _interopRequireDefault(_FunctionStateMap);
 
@@ -31706,7 +31803,7 @@ exports.default = YouTubePlayer;
 module.exports = exports['default'];
 
 /***/ }),
-/* 240 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {/**
@@ -31715,7 +31812,7 @@ module.exports = exports['default'];
  * Expose `debug()` as the module.
  */
 
-exports = module.exports = __webpack_require__(241);
+exports = module.exports = __webpack_require__(242);
 exports.log = log;
 exports.formatArgs = formatArgs;
 exports.save = save;
@@ -31898,7 +31995,7 @@ function localstorage() {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 241 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -31914,7 +32011,7 @@ exports.coerce = coerce;
 exports.disable = disable;
 exports.enable = enable;
 exports.enabled = enabled;
-exports.humanize = __webpack_require__(242);
+exports.humanize = __webpack_require__(243);
 
 /**
  * The currently active debug mode names, and names to skip.
@@ -32106,7 +32203,7 @@ function coerce(val) {
 
 
 /***/ }),
-/* 242 */
+/* 243 */
 /***/ (function(module, exports) {
 
 /**
@@ -32264,7 +32361,7 @@ function plural(ms, n, name) {
 
 
 /***/ }),
-/* 243 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32282,7 +32379,7 @@ exports.default = ['cueVideoById', 'loadVideoById', 'cueVideoByUrl', 'loadVideoB
 module.exports = exports['default'];
 
 /***/ }),
-/* 244 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32302,7 +32399,7 @@ exports.default = ['ready', 'stateChange', 'playbackQualityChange', 'playbackRat
 module.exports = exports['default'];
 
 /***/ }),
-/* 245 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32312,7 +32409,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _PlayerStates = __webpack_require__(246);
+var _PlayerStates = __webpack_require__(247);
 
 var _PlayerStates2 = _interopRequireDefault(_PlayerStates);
 
@@ -32339,7 +32436,7 @@ exports.default = {
 module.exports = exports['default'];
 
 /***/ }),
-/* 246 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32359,7 +32456,7 @@ exports.default = {
 module.exports = exports["default"];
 
 /***/ }),
-/* 247 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32377,7 +32474,7 @@ var fetchVideo = exports.fetchVideo = function fetchVideo(videoId) {
 };
 
 /***/ }),
-/* 248 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32425,7 +32522,7 @@ var AuthRoute = exports.AuthRoute = (0, _reactRouterDom.withRouter)((0, _reactRe
 var ProtectedRoute = exports.ProtectedRoute = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, null)(Protected));
 
 /***/ }),
-/* 249 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32458,7 +32555,7 @@ var Root = function Root() {
 exports.default = Root;
 
 /***/ }),
-/* 250 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32470,11 +32567,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(38);
 
-var _reduxThunk = __webpack_require__(251);
+var _reduxThunk = __webpack_require__(252);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _root_reducer = __webpack_require__(252);
+var _root_reducer = __webpack_require__(253);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32486,7 +32583,7 @@ var configureStore = function configureStore() {
 exports.default = configureStore;
 
 /***/ }),
-/* 251 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32515,7 +32612,7 @@ thunk.withExtraArgument = createThunkMiddleware;
 exports['default'] = thunk;
 
 /***/ }),
-/* 252 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32528,7 +32625,7 @@ exports.rootReducer = undefined;
 
 var _redux = __webpack_require__(38);
 
-var _session_reducer = __webpack_require__(253);
+var _session_reducer = __webpack_require__(254);
 
 var _session_reducer2 = _interopRequireDefault(_session_reducer);
 
@@ -32539,7 +32636,7 @@ var rootReducer = exports.rootReducer = (0, _redux.combineReducers)({
 });
 
 /***/ }),
-/* 253 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32551,7 +32648,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _session_actions = __webpack_require__(40);
 
-var _merge = __webpack_require__(254);
+var _merge = __webpack_require__(255);
 
 var _merge2 = _interopRequireDefault(_merge);
 
@@ -32591,11 +32688,11 @@ var SessionReducer = function SessionReducer() {
 exports.default = SessionReducer;
 
 /***/ }),
-/* 254 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseMerge = __webpack_require__(255),
-    createAssigner = __webpack_require__(272);
+var baseMerge = __webpack_require__(256),
+    createAssigner = __webpack_require__(273);
 
 /**
  * This method is like `_.assign` except that it recursively merges own and
@@ -32636,13 +32733,13 @@ module.exports = merge;
 
 
 /***/ }),
-/* 255 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Stack = __webpack_require__(76),
     assignMergeValue = __webpack_require__(87),
-    baseFor = __webpack_require__(256),
-    baseMergeDeep = __webpack_require__(258),
+    baseFor = __webpack_require__(257),
+    baseMergeDeep = __webpack_require__(259),
     isObject = __webpack_require__(9),
     keysIn = __webpack_require__(90);
 
@@ -32683,10 +32780,10 @@ module.exports = baseMerge;
 
 
 /***/ }),
-/* 256 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var createBaseFor = __webpack_require__(257);
+var createBaseFor = __webpack_require__(258);
 
 /**
  * The base implementation of `baseForOwn` which iterates over `object`
@@ -32705,7 +32802,7 @@ module.exports = baseFor;
 
 
 /***/ }),
-/* 257 */
+/* 258 */
 /***/ (function(module, exports) {
 
 /**
@@ -32736,23 +32833,23 @@ module.exports = createBaseFor;
 
 
 /***/ }),
-/* 258 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assignMergeValue = __webpack_require__(87),
-    cloneBuffer = __webpack_require__(259),
-    cloneTypedArray = __webpack_require__(260),
-    copyArray = __webpack_require__(262),
-    initCloneObject = __webpack_require__(263),
+    cloneBuffer = __webpack_require__(260),
+    cloneTypedArray = __webpack_require__(261),
+    copyArray = __webpack_require__(263),
+    initCloneObject = __webpack_require__(264),
     isArguments = __webpack_require__(83),
     isArray = __webpack_require__(27),
-    isArrayLikeObject = __webpack_require__(265),
+    isArrayLikeObject = __webpack_require__(266),
     isBuffer = __webpack_require__(44),
     isFunction = __webpack_require__(42),
     isObject = __webpack_require__(9),
-    isPlainObject = __webpack_require__(266),
+    isPlainObject = __webpack_require__(267),
     isTypedArray = __webpack_require__(45),
-    toPlainObject = __webpack_require__(267);
+    toPlainObject = __webpack_require__(268);
 
 /**
  * A specialized version of `baseMerge` for arrays and objects which performs
@@ -32835,7 +32932,7 @@ module.exports = baseMergeDeep;
 
 
 /***/ }),
-/* 259 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(5);
@@ -32877,10 +32974,10 @@ module.exports = cloneBuffer;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22)(module)))
 
 /***/ }),
-/* 260 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var cloneArrayBuffer = __webpack_require__(261);
+var cloneArrayBuffer = __webpack_require__(262);
 
 /**
  * Creates a clone of `typedArray`.
@@ -32899,7 +32996,7 @@ module.exports = cloneTypedArray;
 
 
 /***/ }),
-/* 261 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Uint8Array = __webpack_require__(81);
@@ -32921,7 +33018,7 @@ module.exports = cloneArrayBuffer;
 
 
 /***/ }),
-/* 262 */
+/* 263 */
 /***/ (function(module, exports) {
 
 /**
@@ -32947,10 +33044,10 @@ module.exports = copyArray;
 
 
 /***/ }),
-/* 263 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseCreate = __webpack_require__(264),
+var baseCreate = __webpack_require__(265),
     getPrototype = __webpack_require__(89),
     isPrototype = __webpack_require__(46);
 
@@ -32971,7 +33068,7 @@ module.exports = initCloneObject;
 
 
 /***/ }),
-/* 264 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(9);
@@ -33007,7 +33104,7 @@ module.exports = baseCreate;
 
 
 /***/ }),
-/* 265 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isArrayLike = __webpack_require__(28),
@@ -33046,7 +33143,7 @@ module.exports = isArrayLikeObject;
 
 
 /***/ }),
-/* 266 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(17),
@@ -33114,10 +33211,10 @@ module.exports = isPlainObject;
 
 
 /***/ }),
-/* 267 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var copyObject = __webpack_require__(268),
+var copyObject = __webpack_require__(269),
     keysIn = __webpack_require__(90);
 
 /**
@@ -33152,10 +33249,10 @@ module.exports = toPlainObject;
 
 
 /***/ }),
-/* 268 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var assignValue = __webpack_require__(269),
+var assignValue = __webpack_require__(270),
     baseAssignValue = __webpack_require__(47);
 
 /**
@@ -33198,7 +33295,7 @@ module.exports = copyObject;
 
 
 /***/ }),
-/* 269 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseAssignValue = __webpack_require__(47),
@@ -33232,12 +33329,12 @@ module.exports = assignValue;
 
 
 /***/ }),
-/* 270 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(9),
     isPrototype = __webpack_require__(46),
-    nativeKeysIn = __webpack_require__(271);
+    nativeKeysIn = __webpack_require__(272);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -33271,7 +33368,7 @@ module.exports = baseKeysIn;
 
 
 /***/ }),
-/* 271 */
+/* 272 */
 /***/ (function(module, exports) {
 
 /**
@@ -33297,11 +33394,11 @@ module.exports = nativeKeysIn;
 
 
 /***/ }),
-/* 272 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseRest = __webpack_require__(273),
-    isIterateeCall = __webpack_require__(280);
+var baseRest = __webpack_require__(274),
+    isIterateeCall = __webpack_require__(281);
 
 /**
  * Creates a function like `_.assign`.
@@ -33340,12 +33437,12 @@ module.exports = createAssigner;
 
 
 /***/ }),
-/* 273 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var identity = __webpack_require__(91),
-    overRest = __webpack_require__(274),
-    setToString = __webpack_require__(276);
+    overRest = __webpack_require__(275),
+    setToString = __webpack_require__(277);
 
 /**
  * The base implementation of `_.rest` which doesn't validate or coerce arguments.
@@ -33363,10 +33460,10 @@ module.exports = baseRest;
 
 
 /***/ }),
-/* 274 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var apply = __webpack_require__(275);
+var apply = __webpack_require__(276);
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeMax = Math.max;
@@ -33405,7 +33502,7 @@ module.exports = overRest;
 
 
 /***/ }),
-/* 275 */
+/* 276 */
 /***/ (function(module, exports) {
 
 /**
@@ -33432,11 +33529,11 @@ module.exports = apply;
 
 
 /***/ }),
-/* 276 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseSetToString = __webpack_require__(277),
-    shortOut = __webpack_require__(279);
+var baseSetToString = __webpack_require__(278),
+    shortOut = __webpack_require__(280);
 
 /**
  * Sets the `toString` method of `func` to return `string`.
@@ -33452,10 +33549,10 @@ module.exports = setToString;
 
 
 /***/ }),
-/* 277 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var constant = __webpack_require__(278),
+var constant = __webpack_require__(279),
     defineProperty = __webpack_require__(88),
     identity = __webpack_require__(91);
 
@@ -33480,7 +33577,7 @@ module.exports = baseSetToString;
 
 
 /***/ }),
-/* 278 */
+/* 279 */
 /***/ (function(module, exports) {
 
 /**
@@ -33512,7 +33609,7 @@ module.exports = constant;
 
 
 /***/ }),
-/* 279 */
+/* 280 */
 /***/ (function(module, exports) {
 
 /** Used to detect hot functions by number of calls within a span of milliseconds. */
@@ -33555,7 +33652,7 @@ module.exports = shortOut;
 
 
 /***/ }),
-/* 280 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var eq = __webpack_require__(16),
@@ -33589,98 +33686,6 @@ function isIterateeCall(value, index, object) {
 
 module.exports = isIterateeCall;
 
-
-/***/ }),
-/* 281 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _player = __webpack_require__(173);
-
-var _player2 = _interopRequireDefault(_player);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Topic = function (_Component) {
-  _inherits(Topic, _Component);
-
-  function Topic(props) {
-    _classCallCheck(this, Topic);
-
-    return _possibleConstructorReturn(this, (Topic.__proto__ || Object.getPrototypeOf(Topic)).call(this, props));
-  }
-
-  _createClass(Topic, [{
-    key: 'renderer',
-    value: function renderer(topic) {
-      return topic.headers.map(function (header, i) {
-        return _react2.default.createElement(
-          'div',
-          { key: i },
-          _react2.default.createElement(
-            'h6',
-            null,
-            header
-          ),
-          topic.contents[i].map(function (content, j) {
-            return _react2.default.createElement(
-              'ul',
-              { key: j },
-              _react2.default.createElement(
-                'p',
-                null,
-                content
-              )
-            );
-          })
-        );
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var topic = this.props.topic;
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'h4',
-          null,
-          topic.title
-        ),
-        _react2.default.createElement(
-          'h5',
-          null,
-          topic.subtitle
-        ),
-        _react2.default.createElement(_player2.default, { videoId: topic.videoId }),
-        this.renderer(topic)
-      );
-    }
-  }]);
-
-  return Topic;
-}(_react.Component);
-
-exports.default = Topic;
 
 /***/ })
 /******/ ]);

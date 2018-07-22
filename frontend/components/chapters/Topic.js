@@ -8,10 +8,15 @@ class Topic extends Component {
 
   renderer(topic){
     return topic.headers.map((header, i) => {
-      return <div key={i}>
+      return <div className="single-topic" key={i}>
         <h6>{header}</h6>
         {topic.contents[i].map((content, j) => {
-          return <ul key={j}><p>{content}</p></ul>
+          let classAlias = "";
+          // revisit this to change the whole array of code snippets to 1 long string which can be parsed into a coded format
+          if (content.type === "code") {
+            classAlias = "code-snippet";
+          }
+          return <ul key={j} className={`${classAlias}`}><p>{content.string}</p></ul>
         })}
         </div>
     })
